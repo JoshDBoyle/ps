@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Portal Seekers - Network Map</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <script src="assets/js/html-importer.js"></script>
+	</head>
+	<body class="is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<header id="header">
+					<h1 id="logo"><a href="index.html">Landed</a></h1>
+          <script>HTMLImporter.import("templates/nav.html");</script>
+				</header>
+
+			<!-- Main -->
+      <div class="wrapper style1">
+        <div class="container">
+          <section class="content">
+            <h2 data-bind="text: content.network_map_section_1.title.value"></h2>
+            <p data-bind="text: content.network_map_section_1.body.value"></p>
+            <img class="inline-image"data-bind="attr: { src: content.network_map.image.value[0].url }"/>
+          </section>
+        </div>
+      </div>
+
+      <div class="wrapper style2">
+        <div class="container">
+          <section class="content">
+            <h2 data-bind="text: content.network_map_section_2.title.value"></h2>
+            <p data-bind="text: content.network_map_section_2.body.value"></p>
+            <img class="inline-image" data-bind="attr: { src: content.blinksecs.image.value[0].url }"/>
+          </section>
+        </div>
+      </div>
+
+      <script>HTMLImporter.import("templates/footer.html");</script>
+
+		</div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/jquery.dropotron.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/knockout.js"></script>
+    <script src="assets/js/custom.js"></script>
+
+	</body>
+</html>
