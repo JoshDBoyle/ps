@@ -24,5 +24,6 @@
   }).done(function () {
     ko.applyBindings(model);
     window.dispatchEvent(new Event('data-ready'));
+    document.getElementById("bgVideo").load();
   });
 })(jQuery);

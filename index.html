@@ -103,10 +103,10 @@
 								<h2 class="major">Shopping</h2>
 
 								<section>
-									<h3 class="major">Text</h3>
                   <p>COMING SOON!  For now, this page describes all the elements of this particular HTML template.  When this page is
-                  ready, it will showcase the PS Shop inventory atop the view and then below that hook into the Boundless Shopping API
-                  to allow users to browse the market including some super cool features that I can't talk about yet ;)</p>
+                    ready, it will showcase the PS Shop inventory atop the view and then below that hook into the Boundless Shopping API
+                    to allow users to browse the market including some super cool features that I can't talk about yet ;)</p>
+									<h3 class="major">Text</h3>
 									<p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>.
 									This is <sup>superscript</sup> text and this is <sub>subscript</sub> text.
 									This is <u>underlined</u> and this is code: <code>for (;;) { ... }</code>. Finally, <a href="#">this is a link</a>.</p>
@@ -354,10 +354,9 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 
 		<!-- BG -->
 			<div id="bg">
-        <video id="bgVideo" preload autoplay loop muted>
+        <video id="bgVideo" autoplay muted loop playsinline>
           <!-- Video is embedded in the WEBM format -->
-          <source src="https://assets-us-01.kc-usercontent.com:443/a4f95819-8594-0090-4d5a-9046d8d19c69/0b3e5543-b075-4ffe-b176-33e939a388cf/ps.webm" type="video/webm"/>
-          <!--<source data-bind="attr: { src: content.homepage_video.video.value[0].url }" type="video/webm">-->
+          <source data-bind="attr: { src: homepage_video.video.value[0].url }" type="video/webm"/>
         </video>
       </div>
 
