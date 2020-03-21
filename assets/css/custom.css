@@ -14,3 +14,11 @@ video#bgVideo {
   width: 65%;
   margin-top: 19px;
 }
+
+.logo a {
+  text-decoration: none;
+}
+
+#main article {
+  width: 55rem;
+}
