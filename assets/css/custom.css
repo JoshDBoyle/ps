@@ -17,6 +17,7 @@ video#bgVideo {
 
 .logo a {
   text-decoration: none;
+  border: none;
 }
 
 #main article {
