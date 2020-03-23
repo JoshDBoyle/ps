@@ -341,14 +341,14 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
                 <!-- Additional required wrapper -->
                 <div class="swiper-wrapper" data-bind="foreach: planets">
                   <!-- Slides -->
-                  <div class="swiper-slide" data-bind="attr: { 'data-planet-type': $data[2], 'data-death': $data[3] }">
+                  <div class="planet-slide swiper-slide" data-bind="attr: { 'data-planet-type': $data[2], 'data-death': $data[3] }">
                     <section class="planet-header">
                       <section class="planet-header-left">
                         <h2 data-bind="text: $data[1]"></h2>
                       </section>
                       <section class="planet-header-right">
                         <h3 data-bind="text: $data[2]"></h3>
-                        <h3 data-bind="text: $data[4]"></h3>
+                        <h3 data-bind="text: $root.getRegion($data[4])"></h3>
                         <h3 data-bind="text: 'Tier ' + $data[7]"></h3>
                         <h3 data-bind="text: $data[8]"></h3>
                       </section>
@@ -359,25 +359,61 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
                           <table>
                             <tbody>
                               <tr>
-                                <td>Ash</td>
-                                <td data-bind="text: $data[11]"></td>
-                              </tr>
-                              <tr>
                                 <td>Gleam</td>
-                                <td data-bind="text: $data[12]"></td>
+                                <td data-bind="text: $root.getColorName($data[12])"></td>
+                                <td data-bind="style: {backgroundColor: $root.getColorHex($data[12]) }"></td>
                               </tr>
                               <tr>
                                 <td>Metamorphic Rock</td>
-                                <td data-bind="text: $data[41]"></td>
+                                <td data-bind="text: $root.getColorName($data[41])"></td>
+                                <td data-bind="style: {backgroundColor: $root.getColorHex($data[41]) }"></td>
                               </tr>
                               <tr>
                                 <td>Igneous Rock</td>
-                                <td data-bind="text: $data[40]"></td>
+                                <td data-bind="text: $root.getColorName($data[40])"></td>
+                                <td data-bind="style: {backgroundColor: $root.getColorHex($data[40]) }"></td>
                               </tr>
                               <tr>
                                 <td>Sedimentary Rock</td>
-                                <td data-bind="text: $data[42]"></td>
+                                <td data-bind="text: $root.getColorName($data[42])"></td>
+                                <td data-bind="style: {backgroundColor: $root.getColorHex($data[42]) }"></td>
                               </tr>
+                              <tr>
+                                <td>Lustrous Trunk</td>
+                                <td data-bind="text: $root.getColorName($data[53])"></td>
+                                <td data-bind="style: {backgroundColor: $root.getColorHex($data[53]) }"></td>
+                              </tr>
+                              <tr>
+                                <td>Twisted Trunk</td>
+                                <td data-bind="text: $root.getColorName($data[54])"></td>
+                                <td data-bind="style: {backgroundColor: $root.getColorHex($data[54]) }"></td>
+                              </tr>
+                              <tr>
+                                <td>Ancient Trunk</td>
+                                <td data-bind="text: $root.getColorName($data[50])"></td>
+                                <td data-bind="style: {backgroundColor: $root.getColorHex($data[50]) }"></td>
+                              </tr>
+                              <tr>
+                                <td>Ash</td>
+                                <td data-bind="text: $root.getColorName($data[11])"></td>
+                                <td data-bind="style: {backgroundColor: $root.getColorHex($data[11]) }"></td>
+                              </tr>
+                              <tr>
+                                <td>Exotic Foliage</td>
+                                <td data-bind="text: $root.getColorName($data[51])"></td>
+                                <td data-bind="style: {backgroundColor: $root.getColorHex($data[51]) }"></td>
+                              </tr>
+                              <tr>
+                                <td>Lush Foliage</td>
+                                <td data-bind="text: $root.getColorName($data[52])"></td>
+                                <td data-bind="style: {backgroundColor: $root.getColorHex($data[52]) }"></td>
+                              </tr>
+                              <tr>
+                                <td>Waxy Foliage</td>
+                                <td data-bind="text: $root.getColorName($data[55])"></td>
+                                <td data-bind="style: {backgroundColor: $root.getColorHex($data[55]) }"></td>
+                              </tr>
+
                             </tbody>
                           </table>
                         </section>

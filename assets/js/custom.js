@@ -5,23 +5,32 @@
     'streamList': [],
     'youtubeChannelList': [],
     'usefulLinkList': [],
-    'planets': [],
+    'planets': []
   },  blocks,
       colorMappings,
       colors,
+      regions,
       planetSwiper;
 
-  $.getJSON("data/blocks.json", function(json) {
-    blocks = json;
-  });
+  fetch('/ps/assets/js/data/blocks.json')
+    .then(res => res.json())
+    .then(data => { blocks = data })
+    .catch(err => console.error(err));
 
-  $.getJSON("data/color-mappings.json", function(json) {
-    colorMappings = json;
-  });
+  fetch('/ps/assets/js/data/color-mappings.json')
+    .then(res => res.json())
+    .then(data => { colorMappings = data })
+    .catch(err => console.error(err));
 
-  $.getJSON("data/colors.json", function(json) {
-    colors = json;
-  });
+  fetch('/ps/assets/js/data/colors.json')
+    .then(res => res.json())
+    .then(data => { colors = data })
+    .catch(err => console.error(err));
+
+  fetch('/ps/assets/js/data/regions.json')
+    .then(res => res.json())
+    .then(data => { regions = data })
+    .catch(err => console.error(err));
 
   function initSwiper() {
     planetSwiper = new Swiper ('.swiper-container', {
@@ -34,7 +43,9 @@
         prevEl: '.swiper-button-prev',
       },
       grabCursor: true,
-      freeModeSticky: true
+      freeModeSticky: true,
+      watchSlidesProgress: true,
+      watchSlidesVisibility: true
     });
   }
 
@@ -46,9 +57,9 @@
       let filter = event.target.value;
 
       if(filter === "All"){
-        $("[data-planet-type]").removeClass("non-swiper-slide").addClass("swiper-slide").show();
+        $('.planet-slide').removeClass("non-swiper-slide").addClass("swiper-slide").show();
       } else if(filter === 'Homeworld' || filter === 'Exoworld') {
-        $('.swiper-slide').not("[data-planet-type='" + filter + "']").addClass("non-swiper-slide").removeClass("swiper-slide").hide();
+        $('.planet-slide').not("[data-planet-type='" + filter + "']").addClass("non-swiper-slide").removeClass("swiper-slide").hide();
         $("[data-planet-type='" + filter + "']").removeClass("non-swiper-slide").addClass("swiper-slide").attr("style", null).show();
       } else if(filter === 'Active') {
         let $exos = $(".swiper-wrapper div[data-planet-type='Exoworld']");
@@ -112,6 +123,32 @@
           }
         });
       }).done(function () {
+        model.getColorName = function(value) {
+          if(value) {
+            let arr = value.split(',');
+            return arr[1] === 'True' ? colors['' + arr[0]] : 'NOT AVAILABLE';
+          } else {
+            return '';
+          }
+        };
+
+        model.getColorHex = function(value) {
+          if(value) {
+            let arr = value.split(',');
+            return arr[1] === 'True' ? colorMappings['' + arr[0]] : '';
+          } else {
+            return '';
+          }
+        };
+
+        model.getRegion = function(value) {
+          if(value) {
+            return regions['' + value];
+          } else {
+            return '';
+          }
+        };
+
         ko.applyBindings(model);
 
         window.dispatchEvent(new Event('data-ready'));
