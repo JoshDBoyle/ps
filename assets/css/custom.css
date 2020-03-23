@@ -27,3 +27,26 @@ video#bgVideo {
 section img {
   width: 100%;
 }
+
+footer .links ul {
+  list-style: none;
+  padding-left: 0;
+  padding-right: 15px;
+}
+
+footer .links ul li {
+  padding-left: 0;
+  display: inline-block;
+}
+
+footer .links ul li.shopping {
+  padding-right: 30px;
+}
+
+footer .links ul li.explorer {
+  padding-left: 20px;
+}
+
+footer .links ul li a {
+  border-bottom: none;
+}
