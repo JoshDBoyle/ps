@@ -67,7 +67,9 @@
           navigation: {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
-          }
+          },
+          grabCursor: true,
+          freeModeSticky: true
         });
 
         // We've got gapi initialized and we've got our data from Kontent.  Let's build the explorer!
