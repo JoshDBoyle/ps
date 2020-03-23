@@ -56,8 +56,53 @@ footer .links ul li a {
   height: 600px;
 }
 
+.filters {
+  margin-top: -55px;
+  margin-bottom: 20px;
+}
+
+.filters label {
+  margin-bottom: 0;
+}
+
+.filters select {
+  width: 200px;
+  height: 2rem;
+}
+
+.planet-data {
+  margin: 0 75px;
+}
+
+.planet-header {
+  margin-bottom: 40px;
+}
+
+.planet-header h2, .planet-header h3 {
+  display: inline-block;
+  margin: 0 30px 0 0;
+}
+
+.planet-header h3:last-of-type {
+  margin-right: 0;
+}
+
+.planet-data table td {
+  padding: 0.45em 0.45em;
+}
+
 @media screen and (max-width: 736px) {
   #main article {
     width: 95%;
+  }
+
+  .filters {
+    margin-top: -35px;
+    margin-bottom: 15px;
+  }
+
+  .filters select {
+    width: 150px;
+    height: 2rem;
   }
 }

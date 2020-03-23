@@ -6,13 +6,59 @@
     'youtubeChannelList': [],
     'usefulLinkList': [],
     'planets': [],
-  },  planetsSwiper;
+  },  planetSwiper;
+
+  function initSwiper() {
+    planetSwiper = new Swiper ('.swiper-container', {
+      // Optional parameters
+      direction: 'horizontal',
+      loop: false,
+      observer: true,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      grabCursor: true,
+      freeModeSticky: true
+    });
+  }
 
   /**
    * Populates the Planet Explorer UI based on planetModel
    */
   function buildExplorer() {
+    $(".filters #planet-type").on("change", function(event){
+      let filter = event.target.value;
 
+      if(filter === "All"){
+        $("[data-planet-type]").removeClass("non-swiper-slide").addClass("swiper-slide").show();
+      } else if(filter === 'Homeworld' || filter === 'Exoworld') {
+        $('.swiper-slide').not("[data-planet-type='" + filter + "']").addClass("non-swiper-slide").removeClass("swiper-slide").hide();
+        $("[data-planet-type='" + filter + "']").removeClass("non-swiper-slide").addClass("swiper-slide").attr("style", null).show();
+      } else if(filter === 'Active') {
+        let $exos = $(".swiper-wrapper div[data-planet-type='Exoworld']");
+        let $homeworlds = $(".swiper-wrapper div[data-planet-type='Homeworld']");
+        let $other = $(".swiper-wrapper div:not([data-death]), .swiper-wrapper div[data-death='']");
+
+        $other.removeClass('swiper-slide').addClass('non-swiper-slide').hide();
+        $exos.removeClass('non-swiper-slide').addClass('swiper-slide').show();
+        $homeworlds.removeClass('swiper-slide').addClass('non-swiper-slide').hide();
+        $exos.each(function(index, planet) {
+          const now = new Date();
+          const secondsSinceEpoch = Math.round(now.getTime() / 1000);
+
+          let planetTime = planet.getAttribute('data-death').split(',')[1];
+
+          if(planetTime <= secondsSinceEpoch) {
+            $(planet).removeClass('swiper-slide').addClass('non-swiper-slide').hide();
+          } else {
+            $(planet).removeClass('non-swiper-slide').addClass('swiper-slide').show();
+          }
+        });
+      }
+
+      initSwiper();
+    });
   }
 
   /**
@@ -30,7 +76,7 @@
       });
     }).then(function(response) {
       model.planets = response.result.values;
-      model.planets.splice(0, 1)
+      model.planets.splice(0, 1);
     }, function(reason) {
       console.log('Error: ' + reason);
     }).then(function () {
@@ -59,18 +105,7 @@
         document.getElementById("bgVideo").load();
 
         // Initialize Swiper now that we've gotten all our data
-        planetsSwiper = new Swiper ('.swiper-container', {
-          // Optional parameters
-          direction: 'horizontal',
-          loop: true,
-          observer: true,
-          navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-          },
-          grabCursor: true,
-          freeModeSticky: true
-        });
+        initSwiper();
 
         // We've got gapi initialized and we've got our data from Kontent.  Let's build the explorer!
         buildExplorer();

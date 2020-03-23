@@ -327,14 +327,48 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
             </article>
 
             <article id="explorer">
+              <div class="filters">
+                <label for="planet-type">Planet Type</label>
+                <select id="planet-type">
+                  <option value="All">All</option>
+                  <option value="Homeworld">Home</option>
+                  <option value="Exoworld">Exo</option>
+                  <option value="Active">Active Exo</option>
+                </select>
+              </div>
               <!-- Slider main container -->
               <div class="swiper-container">
                 <!-- Additional required wrapper -->
                 <div class="swiper-wrapper" data-bind="foreach: planets">
                   <!-- Slides -->
-                  <div class="swiper-slide">
-                    <h2 data-bind="text: $data[1]"></h2>
-                    <h3 data-bind="text: $data[2]"></h3>
+                  <div class="swiper-slide" data-bind="attr: { 'data-planet-type': $data[2], 'data-death': $data[3] }">
+                    <section class="planet-header">
+                      <section class="planet-header-left">
+                        <h2 data-bind="text: $data[1]"></h2>
+                      </section>
+                      <section class="planet-header-right">
+                        <h3 data-bind="text: $data[2]"></h3>
+                        <h3 data-bind="text: $data[4]"></h3>
+                        <h3 data-bind="text: 'Tier ' + $data[7]"></h3>
+                        <h3 data-bind="text: $data[8]"></h3>
+                      </section>
+                    </section>
+                    <section class="planet-data">
+                      <section class="table-wrapper">
+                        <table>
+                          <tbody>
+                            <tr>
+                              <td>Ash</td>
+                              <td data-bind="text: $data[11]"></td>
+                            </tr>
+                            <tr>
+                              <td>Gleam</td>
+                              <td data-bind="text: $data[12]"></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </section>
+                    </section>
                   </div>
                 </div>
 
