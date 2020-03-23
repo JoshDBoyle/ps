@@ -6,7 +6,22 @@
     'youtubeChannelList': [],
     'usefulLinkList': [],
     'planets': [],
-  },  planetSwiper;
+  },  blocks,
+      colorMappings,
+      colors,
+      planetSwiper;
+
+  $.getJSON("data/blocks.json", function(json) {
+    blocks = json;
+  });
+
+  $.getJSON("data/color-mappings.json", function(json) {
+    colorMappings = json;
+  });
+
+  $.getJSON("data/colors.json", function(json) {
+    colors = json;
+  });
 
   function initSwiper() {
     planetSwiper = new Swiper ('.swiper-container', {
