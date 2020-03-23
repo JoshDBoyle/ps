@@ -50,3 +50,14 @@ footer .links ul li.explorer {
 footer .links ul li a {
   border-bottom: none;
 }
+
+.swiper-container {
+  width: 100%;
+  height: 600px;
+}
+
+@media screen and (max-width: 736px) {
+  #main article {
+    width: 95%;
+  }
+}
