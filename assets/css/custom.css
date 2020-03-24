@@ -62,12 +62,12 @@ footer .links ul li a {
 }
 
 .filters label {
-  margin-bottom: 0;
+  margin-bottom: 10px;
 }
 
-.filters select {
-  width: 200px;
-  height: 2rem;
+.filters .filter {
+  display: inline-block;
+  margin-right: 30px;
 }
 
 .planet-data {
@@ -75,7 +75,7 @@ footer .links ul li a {
 }
 
 .planet-header {
-  margin-bottom: 40px;
+  margin: 0 75px 20px;
 }
 
 .planet-header h2, .planet-header h3 {
@@ -92,7 +92,25 @@ footer .links ul li a {
 }
 
 .planet-data section.table-wrapper {
-  height: 450px;
+  height: 425px;
+}
+
+.planet-data section.table-wrapper::-webkit-scrollbar-track
+{
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  background-color: #F5F5F5;
+}
+
+.planet-data section.table-wrapper::-webkit-scrollbar
+{
+  width: 12px;
+  background-color: #F5F5F5;
+}
+
+.planet-data section.table-wrapper::-webkit-scrollbar-thumb
+{
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+  background-color: #555;
 }
 
 @media screen and (max-width: 736px) {
@@ -103,10 +121,5 @@ footer .links ul li a {
   .filters {
     margin-top: -35px;
     margin-bottom: 15px;
-  }
-
-  .filters select {
-    width: 150px;
-    height: 2rem;
   }
 }

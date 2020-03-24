@@ -53,7 +53,7 @@
    * Populates the Planet Explorer UI based on planetModel
    */
   function buildExplorer() {
-    $(".filters #planet-type").on("change", function(event){
+    $(".filters #planet-type").on("change", function(event) {
       let filter = event.target.value;
 
       if(filter === "All"){
@@ -83,7 +83,8 @@
         });
       }
 
-      initSwiper();
+      planetSwiper.update();
+      planetSwiper.slideTo(0);
     });
   }
 
@@ -126,7 +127,7 @@
         model.getColorName = function(value) {
           if(value) {
             let arr = value.split(',');
-            return arr[1] === 'True' ? colors['' + arr[0]] : 'NOT AVAILABLE';
+            return arr[1] === 'True' ? colors['' + arr[0]] : 'UNAVAILABLE';
           } else {
             return '';
           }
