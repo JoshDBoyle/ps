@@ -1,5 +1,5 @@
-(function($) {
-  ;let model = {
+;(function($) {
+  var model = {
     'tutorialList': [],
     'discordList': [],
     'streamList': [],
@@ -73,7 +73,7 @@
       // gapi is initialized so let's get our content now
       $.get("https://deliver.kontent.ai/a4f95819-8594-0090-4d5a-9046d8d19c69/items", function(data) {
         $.each(data.items, function(index, item) {
-          let name = item.system.codename;
+          var name = item.system.codename;
           if (name.includes('tutorial_')) {
             model.tutorialList.push(item.elements);
           } else if (name.includes('stream_')) {
@@ -89,7 +89,7 @@
       }).done(function () {
         model.getColorName = function(value) {
           if (value) {
-            let arr = value.split(',');
+            var arr = value.split(',');
             return colors['' + arr[0]];
           } else {
             return '';
@@ -98,7 +98,7 @@
 
         model.getColorHex = function(value) {
           if (value) {
-            let arr = value.split(',');
+            var arr = value.split(',');
             return colorMappings['' + arr[0]];
           } else {
             return '';
@@ -115,10 +115,10 @@
 
         model.getVerified = function(value) {
           if (value) {
-            let arr = value.split(',');
-            return arr[1] === 'True' ? '<i style=\"color: green; font-size: 28px;\" class=\"far fa-check-circle\"></i>' : '<i style=\"color: darkred; font-size: 28px;\" class=\"far fa-question-circle\"></i>';
+            var arr = value.split(',');
+            return arr[1] === 'True' ? '<i style=\"color: green; font-size: 28px;\" class=\"fa fa-check\"></i>' : '<i style=\"color: lightgrey; font-size: 28px;\" class=\"fa fa-question\"></i>';
           } else {
-            return '<i class=\"far fa-question-circle\"></i>'
+            return '<i style=\"color: lightgrey; font-size: 28px;\" class=\"fa fa-question\"></i>';
           }
         };
 
@@ -132,7 +132,7 @@
   }
 
   $(".filters #planet-type").on("change", function(event) {
-    let filter = event.target.value;
+    var filter = event.target.value;
 
     if(filter === "All"){
       $('.planet-slide').removeClass("non-swiper-slide").addClass("swiper-slide").show();
@@ -140,9 +140,9 @@
       $('.planet-slide').not("[data-planet-type='" + filter + "']").addClass("non-swiper-slide").removeClass("swiper-slide").hide();
       $("[data-planet-type='" + filter + "']").removeClass("non-swiper-slide").addClass("swiper-slide").attr("style", null).show();
     } else if(filter === 'Active') {
-      let $exos = $(".swiper-wrapper div[data-planet-type='Exoworld']");
-      let $homeworlds = $(".swiper-wrapper div[data-planet-type='Homeworld']");
-      let $other = $(".swiper-wrapper div:not([data-death]), .swiper-wrapper div[data-death='']");
+      var $exos = $(".swiper-wrapper div[data-planet-type='Exoworld']");
+      var $homeworlds = $(".swiper-wrapper div[data-planet-type='Homeworld']");
+      var $other = $(".swiper-wrapper div:not([data-death]), .swiper-wrapper div[data-death='']");
 
       $other.removeClass('swiper-slide').addClass('non-swiper-slide').hide();
       $exos.removeClass('non-swiper-slide').addClass('swiper-slide').show();
@@ -151,7 +151,7 @@
         const now = new Date();
         const secondsSinceEpoch = Math.round(now.getTime() / 1000);
 
-        let planetTime = planet.getAttribute('data-death').split(',')[1];
+        var planetTime = planet.getAttribute('data-death').split(',')[1];
 
         if(planetTime <= secondsSinceEpoch) {
           $(planet).removeClass('swiper-slide').addClass('non-swiper-slide').hide();
