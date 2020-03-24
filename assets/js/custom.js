@@ -1,5 +1,5 @@
 (function($) {
-  let model = {
+  ;let model = {
     'tutorialList': [],
     'discordList': [],
     'streamList': [],
@@ -38,6 +38,8 @@
       direction: 'horizontal',
       loop: false,
       observer: true,
+      observeParents: true,
+      cache: false,
       navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
@@ -47,47 +49,6 @@
       watchSlidesProgress: true,
       watchSlidesVisibility: true
     });
-  }
-
-  /**
-   * Populates the Planet Explorer UI based on planetModel
-   */
-  function buildExplorer() {
-    $(".filters #planet-type").on("change", function(event) {
-      let filter = event.target.value;
-
-      if(filter === "All"){
-        $('.planet-slide').removeClass("non-swiper-slide").addClass("swiper-slide").show();
-      } else if(filter === 'Homeworld' || filter === 'Exoworld') {
-        $('.planet-slide').not("[data-planet-type='" + filter + "']").addClass("non-swiper-slide").removeClass("swiper-slide").hide();
-        $("[data-planet-type='" + filter + "']").removeClass("non-swiper-slide").addClass("swiper-slide").attr("style", null).show();
-      } else if(filter === 'Active') {
-        let $exos = $(".swiper-wrapper div[data-planet-type='Exoworld']");
-        let $homeworlds = $(".swiper-wrapper div[data-planet-type='Homeworld']");
-        let $other = $(".swiper-wrapper div:not([data-death]), .swiper-wrapper div[data-death='']");
-
-        $other.removeClass('swiper-slide').addClass('non-swiper-slide').hide();
-        $exos.removeClass('non-swiper-slide').addClass('swiper-slide').show();
-        $homeworlds.removeClass('swiper-slide').addClass('non-swiper-slide').hide();
-        $exos.each(function(index, planet) {
-          const now = new Date();
-          const secondsSinceEpoch = Math.round(now.getTime() / 1000);
-
-          let planetTime = planet.getAttribute('data-death').split(',')[1];
-
-          if(planetTime <= secondsSinceEpoch) {
-            $(planet).removeClass('swiper-slide').addClass('non-swiper-slide').hide();
-          } else {
-            $(planet).removeClass('non-swiper-slide').addClass('swiper-slide').show();
-          }
-        });
-      }
-
-      planetSwiper.update();
-      planetSwiper.slideTo(0);
-    });
-
-    planetSwiper.update();
   }
 
   /**
@@ -157,17 +118,45 @@
         window.dispatchEvent(new Event('data-ready'));
 
         document.getElementById("bgVideo").load();
-        $('#bgVideo').bgVideo({
-          fullScreen: true, // Sets the video to be fixed to the full window - your <video> and it's container should be direct descendents of the <body> tag
-          fadeIn: 500, // Milliseconds to fade video in/out (0 for no fade)
-          pauseAfter: 120, // Seconds to play before pausing (0 for forever)
-          fadeOnPause: false, // For all (including manual) pauses
-          fadeOnEnd: true, // When we've reached the pauseAfter time
-          showPausePlay: false, // Show pause/play button
-        });
       });
     });
   }
+
+  $(".filters #planet-type").on("change", function(event) {
+    let filter = event.target.value;
+
+    if(filter === "All"){
+      $('.planet-slide').removeClass("non-swiper-slide").addClass("swiper-slide").show();
+    } else if(filter === 'Homeworld' || filter === 'Exoworld') {
+      $('.planet-slide').not("[data-planet-type='" + filter + "']").addClass("non-swiper-slide").removeClass("swiper-slide").hide();
+      $("[data-planet-type='" + filter + "']").removeClass("non-swiper-slide").addClass("swiper-slide").attr("style", null).show();
+    } else if(filter === 'Active') {
+      let $exos = $(".swiper-wrapper div[data-planet-type='Exoworld']");
+      let $homeworlds = $(".swiper-wrapper div[data-planet-type='Homeworld']");
+      let $other = $(".swiper-wrapper div:not([data-death]), .swiper-wrapper div[data-death='']");
+
+      $other.removeClass('swiper-slide').addClass('non-swiper-slide').hide();
+      $exos.removeClass('non-swiper-slide').addClass('swiper-slide').show();
+      $homeworlds.removeClass('swiper-slide').addClass('non-swiper-slide').hide();
+      $exos.each(function(index, planet) {
+        const now = new Date();
+        const secondsSinceEpoch = Math.round(now.getTime() / 1000);
+
+        let planetTime = planet.getAttribute('data-death').split(',')[1];
+
+        if(planetTime <= secondsSinceEpoch) {
+          $(planet).removeClass('swiper-slide').addClass('non-swiper-slide').hide();
+        } else {
+          $(planet).removeClass('non-swiper-slide').addClass('swiper-slide').show();
+        }
+      });
+    }
+
+    planetSwiper.update();
+    planetSwiper.slideTo(0);
+  });
+
+  initSwiper();
 
   // Loads the JavaScript client library and invokes `start` afterwards.
   gapi.load('client', initializeGapi);
