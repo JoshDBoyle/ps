@@ -348,7 +348,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
                   <div class="planet-slide swiper-slide" data-bind="attr: { 'data-metamorphic': $root.getColorName($data[41]), 'data-igneous': $root.getColorName($data[40]), 'data-sedimentary': $root.getColorName($data[42]), 'data-gleam': $root.getColorName($data[12]), 'data-planet-type': $data[2], 'data-death': $data[3] }">
                     <section class="planet-header">
                       <section class="planet-header-left">
-                        <h2 data-bind="text: $data[1]"></h2>
+                        <a data-bind="attr: { href: $data[56] }" target="_blank"><h2 data-bind="text: $data[1]"></h2></a>
                       </section>
                       <section class="planet-header-right">
                         <h3 data-bind="text: $data[2]"></h3>
@@ -390,7 +390,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
                               <tr>
                                 <td>Gravel</td>
                                 <td data-bind="text: $root.getColorName($data[28])"></td>
-                                <td data-bind="style: {backgroundColor: $root.getColorHex($data[32]) }"></td>
+                                <td data-bind="style: {backgroundColor: $root.getColorHex($data[28]) }"></td>
                               </tr>
                               <tr>
                                 <td>Lustrous Trunk</td>
