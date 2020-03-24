@@ -95,6 +95,12 @@ footer .links ul li a {
   padding: 0.45em 0.45em;
 }
 
+.planet-data table td:nth-of-type(4) {
+  width: 55px;
+  text-align: center;
+  line-height: 28px;
+}
+
 .planet-data section.table-wrapper {
   height: 425px;
 }

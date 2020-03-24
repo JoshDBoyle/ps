@@ -88,28 +88,37 @@
         });
       }).done(function () {
         model.getColorName = function(value) {
-          if(value) {
+          if (value) {
             let arr = value.split(',');
-            return arr[1] === 'True' ? colors['' + arr[0]] : 'UNAVAILABLE';
+            return colors['' + arr[0]];
           } else {
             return '';
           }
         };
 
         model.getColorHex = function(value) {
-          if(value) {
+          if (value) {
             let arr = value.split(',');
-            return arr[1] === 'True' ? colorMappings['' + arr[0]] : '';
+            return colorMappings['' + arr[0]];
           } else {
             return '';
           }
         };
 
         model.getRegion = function(value) {
-          if(value) {
+          if (value) {
             return regions['' + value];
           } else {
             return '';
+          }
+        };
+
+        model.getVerified = function(value) {
+          if (value) {
+            let arr = value.split(',');
+            return arr[1] === 'True' ? '<i style=\"color: green; font-size: 28px;\" class=\"far fa-check-circle\"></i>' : '<i style=\"color: darkred; font-size: 28px;\" class=\"far fa-question-circle\"></i>';
+          } else {
+            return '<i class=\"far fa-question-circle\"></i>'
           }
         };
 
