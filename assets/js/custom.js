@@ -86,6 +86,8 @@
       planetSwiper.update();
       planetSwiper.slideTo(0);
     });
+
+    planetSwiper.update();
   }
 
   /**
@@ -154,14 +156,15 @@
 
         window.dispatchEvent(new Event('data-ready'));
 
-        //Load the background video now that we've gotten it from Kontent
         document.getElementById("bgVideo").load();
-
-        // Initialize Swiper now that we've gotten all our data
-        initSwiper();
-
-        // We've got gapi initialized and we've got our data from Kontent.  Let's build the explorer!
-        buildExplorer();
+        $('#bgVideo').bgVideo({
+          fullScreen: true, // Sets the video to be fixed to the full window - your <video> and it's container should be direct descendents of the <body> tag
+          fadeIn: 500, // Milliseconds to fade video in/out (0 for no fade)
+          pauseAfter: 120, // Seconds to play before pausing (0 for forever)
+          fadeOnPause: false, // For all (including manual) pauses
+          fadeOnEnd: true, // When we've reached the pauseAfter time
+          showPausePlay: false, // Show pause/play button
+        });
       });
     });
   }

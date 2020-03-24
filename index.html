@@ -12,10 +12,19 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
     <link rel="stylesheet" href="assets/css/custom.css" />
     <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
+    <link rel="stylesheet" href="assets/css/jquery.background-video.css">
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
     <script src="https://apis.google.com/js/api.js"></script>
 	</head>
 	<body class="is-preload">
+
+    <!-- BG -->
+      <div id="bg" class="jquery-background-video-wrapper">
+        <video id="bgVideo" class="jquery-background-video" autoplay muted loop playsinline>
+          <!-- Video is embedded in the WEBM format -->
+          <source src="images/bg.webm" type="video/webm"/>
+        </video>
+      </div>
 
 		<!-- Wrapper -->
 			<div id="wrapper">
@@ -29,8 +38,8 @@
 						</div>
 						<div class="content">
 							<div class="inner">
-                <img data-bind="attr: { src: logo.image.value[0].url }"/>
-                <h2 data-bind="text: hero_homepage.description.value"></h2>
+                <img src="images/logo.png"/>
+                <h2>CONNECTING THE BOUNDLESS UNIVERSE...</h2>
 							</div>
 						</div>
 						<nav>
@@ -67,13 +76,13 @@
                 <section>
                   <h2 data-bind="text: network_map_section_1.title.value"></h2>
                   <p data-bind="text: network_map_section_1.body.value"></p>
-                  <img data-bind="attr: { src: network_map.image.value[0].url }"/>
+>
                 </section>
                 <hr/>
                 <section>
                   <h2 data-bind="text: network_map_section_2.title.value"></h2>
                   <p data-bind="text: network_map_section_2.body.value"></p>
-                  <img class="inline-image" data-bind="attr: { src: blinksecs.image.value[0].url }"/>
+
                 </section>
 							</article>
 
@@ -491,13 +500,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 
 			</div>
 
-		<!-- BG -->
-			<div id="bg">
-        <video id="bgVideo" autoplay muted loop playsinline>
-          <!-- Video is embedded in the WEBM format -->
-          <source data-bind="attr: { src: homepage_video.video.value[0].url }" type="video/webm"/>
-        </video>
-      </div>
+
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
@@ -506,6 +509,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
       <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+      <script src="assets/js/jquery.background-video.js"></script>
       <script src="assets/js/knockout.js"></script>
       <script src="assets/js/custom.js"></script>
 
