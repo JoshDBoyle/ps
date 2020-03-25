@@ -5,12 +5,16 @@
     'streamList': [],
     'youtubeChannelList': [],
     'usefulLinkList': [],
-    'planets': []
+    'planets': [],
+    'items': [],
   },  blocks,
       colorMappings,
       colors,
       regions,
-      planetSwiper;
+      planetSwiper,
+      orders = [];
+
+  var sampleShoppingResponse = '00010010000000000100110101100001011011000110110000100010001010010010110000101000001000100100100101101110011010100110010101100011011101000110100101101111011011100000000100000000000000000000000000000000000000000000000000000000111010000000001100000000000000000000000000000000000000000000000011111010111111001111101100000000000100000000011000000000010011010110000101101100011011000010000001001001000101000000000000000000000000000000000000000000000000000000000010010000000000010000000000000000000000000000000000000000000000000000101011111101000001110000000100010000000001110000000001001101011000010110110001101100001000000100100101001001000010100000000000000000000000000000000000000000000000000000000011001000000000000000000000000000000000000000000000000000000000000001010111111101000001110000000100010000';
 
   fetch('/ps/assets/js/data/blocks.json')
     .then(res => res.json())
@@ -32,7 +36,7 @@
     .then(data => { regions = data })
     .catch(err => console.error(err));
 
-  function initSwiper() {
+  function initPlanetExplorer() {
     planetSwiper = new Swiper ('.swiper-container', {
       // Optional parameters
       direction: 'horizontal',
@@ -49,6 +53,83 @@
       watchSlidesProgress: true,
       watchSlidesVisibility: true
     });
+  }
+
+  function initShopping() {
+    model.items =
+    $("#shop").autocomplete({
+      source: model.items
+    });
+  }
+
+  /**
+   * Given the url to call, makes the api call and returns the shopping data as json
+   *
+   * @param url The shopping url to call
+   */
+  function makeApiCall(url) {
+    let request = new XMLHttpRequest();
+
+    request.open("GET", url, true);
+    request.responseType = "arraybuffer";
+
+    request.onload = function () {
+      let arrayBuffer = request.response;
+      if (arrayBuffer) {
+        let byteArray = new Uint8Array(arrayBuffer);
+        orders = parseShoppingApiResponse(byteArray);
+      }
+    };
+
+    request.send(null);
+  }
+
+  /*
+    [
+      u8    : size of beacon-name string
+      u8    : size of guild-tag string
+      char[]: beacon-name string (not null terminated)
+      char[]: guild-tag string (not null terminated)
+      u32   : item count
+      u32   : shop activity
+      i64   : price
+      i16   : location-x
+      i16   : location-z
+      u8    : location-y
+    ] for each result until end of response [ implicit count ]
+  */
+  function parseShoppingApiResponse(byteArray) {
+    let results = [];
+    let byteOffset = 0;
+    let dataView = new DataView(byteArray.buffer);
+    while(byteOffset < byteArray.byteLength) {
+      let beaconNameLength = dataView.getUint8(byteOffset + 0);
+      let guildNameLength = dataView.getUint8(byteOffset + 1);
+      let order = {};
+      order.beaconName = '';
+      for(let i = 0; i < beaconNameLength; i++) {
+        let nameCharInt = dataView.getUint8(byteOffset + 2 + i);
+        order.beaconName += String.fromCharCode(nameCharInt);
+      }
+      order.guildName = '';
+      for(let i = 0; i < guildNameLength; i++) {
+        let nameCharInt = dataView.getUint8(byteOffset + 2 + guildNameLength + i);
+        order.guildName += String.fromCharCode(nameCharInt);
+      }
+      order.qty = dataView.getUint32(byteOffset + 2 + beaconNameLength + guildNameLength, true);
+      order.patrons = dataView.getUint32(byteOffset + 2 + beaconNameLength + guildNameLength + 4, true);
+      order.price = dataView.getBigInt64(byteOffset + 2 + beaconNameLength + guildNameLength + 8, true);
+      order.coordinates = {
+        x : dataView.getInt16(byteOffset + 2 + beaconNameLength + guildNameLength + 16, true),
+        z : dataView.getInt16(byteOffset + 2 + beaconNameLength + guildNameLength + 18, true),
+        y : dataView.getUint8(byteOffset + 2 + beaconNameLength + guildNameLength + 20)
+      };
+
+      order.price = Number(order.price) / 100;
+      results.push(order);
+      byteOffset += 23 + beaconNameLength + guildNameLength;
+    }
+    return results;
   }
 
   /**
@@ -128,6 +209,15 @@
 
         document.getElementById("bgVideo").load();
       });
+    }).then(function() {
+      return gapi.client.sheets.spreadsheets.values.get({
+        spreadsheetId: '1CEbz80I_EUkTEoZjRITm-jhU4eVxYsv6YFz4J9tSEbk',
+        range: 'items!A:C'
+      });
+    }).then(function(response) {
+      model.items = response.result.values;
+      model.items.splice(0, 1);
+      initShopping();
     });
   }
 
@@ -165,7 +255,8 @@
     planetSwiper.slideTo(0);
   });
 
-  initSwiper();
+  initPlanetExplorer();
+  makeApiCall('http://192.168.1.16:8983/api/shopping/S/32805');
 
   // Loads the JavaScript client library and invokes `start` afterwards.
   gapi.load('client', initializeGapi);
