@@ -44,18 +44,36 @@ section img {
 }
 
 .links ul li.shopping {
-  border-radius: 4px 4px 0 0;
+  border-radius: 6px 6px 0 0;
   margin-bottom: 15px;
 }
 
 .links ul li.explorer {
-  border-radius: 0 0 4px 4px;
+  border-radius: 0 0 6px 6px;
 }
 
 .links ul li a {
-  font-size: 24px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
   padding: 10px;
   border: none;
+  line-height: 1.85rem;
+}
+
+.links ul li:hover {
+  background-color: rgba(255, 255, 255, 0.075);
+}
+
+.links .explorer:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: calc(1.98rem - 1px);
+  left: calc(50% - 1px);
+  width: 1px;
+  height: 15px;
+  background: #ffffff;
 }
 
 .swiper-container {
