@@ -97,7 +97,7 @@
       i16   : location-z
       u8    : location-y
     ] for each result until end of response [ implicit count ]
-    testing
+    testingssss
   */
   function parseShoppingApiResponse(byteArray) {
     let results = [];
