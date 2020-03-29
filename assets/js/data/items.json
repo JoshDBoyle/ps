@@ -1,0 +1,4450 @@
+[
+  {
+    "value": 9333,
+    "text": "CONTROL_GUILD_BASE"
+  },
+  {
+    "value": 9427,
+    "text": "SOIL_SILTY_COMPACT"
+  },
+  {
+    "value": 9431,
+    "text": "SOIL_CLAY_COMPACT"
+  },
+  {
+    "value": 9435,
+    "text": "SOIL_PEATY_COMPACT"
+  },
+  {
+    "value": 9439,
+    "text": "ROCK_METAMORPHIC_STONES"
+  },
+  {
+    "value": 9443,
+    "text": "ROCK_IGNEOUS_STONES"
+  },
+  {
+    "value": 9447,
+    "text": "ROCK_SEDIMENTARY_STONES"
+  },
+  {
+    "value": 9451,
+    "text": "ROCK_SEDIMENTARY_BRICK"
+  },
+  {
+    "value": 9455,
+    "text": "ROCK_METAMORPHIC_BRICK"
+  },
+  {
+    "value": 9459,
+    "text": "ROCK_IGNEOUS_BRICK"
+  },
+  {
+    "value": 9471,
+    "text": "ROCK_METAMORPHIC_REFINED"
+  },
+  {
+    "value": 9475,
+    "text": "ROCK_IGNEOUS_REFINED"
+  },
+  {
+    "value": 9479,
+    "text": "ROCK_SEDIMENTARY_REFINED"
+  },
+  {
+    "value": 9483,
+    "text": "ROCK_METAMORPHIC_DECORATIVE1"
+  },
+  {
+    "value": 9487,
+    "text": "ROCK_IGNEOUS_DECORATIVE1"
+  },
+  {
+    "value": 9491,
+    "text": "ROCK_SEDIMENTARY_DECORATIVE1"
+  },
+  {
+    "value": 9495,
+    "text": "ROCK_METAMORPHIC_DECORATIVE2"
+  },
+  {
+    "value": 9499,
+    "text": "ROCK_IGNEOUS_DECORATIVE2"
+  },
+  {
+    "value": 9503,
+    "text": "ROCK_SEDIMENTARY_DECORATIVE2"
+  },
+  {
+    "value": 9539,
+    "text": "WOOD_TWISTED_TIMBER"
+  },
+  {
+    "value": 9543,
+    "text": "WOOD_ANCIENT_TIMBER"
+  },
+  {
+    "value": 9547,
+    "text": "WOOD_LUSTROUS_TIMBER"
+  },
+  {
+    "value": 9555,
+    "text": "CRYSTAL_GLEAM_BASE"
+  },
+  {
+    "value": 9591,
+    "text": "COAL_SOFT_COMPACT"
+  },
+  {
+    "value": 9595,
+    "text": "COAL_DEFAULT_COMPACT"
+  },
+  {
+    "value": 9599,
+    "text": "COAL_HARD_COMPACT"
+  },
+  {
+    "value": 9603,
+    "text": "METAL_COPPER_COMPACT"
+  },
+  {
+    "value": 9607,
+    "text": "METAL_IRON_COMPACT"
+  },
+  {
+    "value": 9611,
+    "text": "METAL_SILVER_COMPACT"
+  },
+  {
+    "value": 9615,
+    "text": "METAL_GOLD_COMPACT"
+  },
+  {
+    "value": 9619,
+    "text": "METAL_TITANIUM_COMPAC"
+  },
+  {
+    "value": 9623,
+    "text": "METAL_COPPER_REFINED"
+  },
+  {
+    "value": 9627,
+    "text": "METAL_IRON_REFINED"
+  },
+  {
+    "value": 9631,
+    "text": "METAL_SILVER_REFINED"
+  },
+  {
+    "value": 9635,
+    "text": "METAL_GOLD_REFINED"
+  },
+  {
+    "value": 9639,
+    "text": "METAL_TITANIUM_REFINED"
+  },
+  {
+    "value": 9643,
+    "text": "METAL_COPPER_MACHINED"
+  },
+  {
+    "value": 9647,
+    "text": "METAL_IRON_MACHINED"
+  },
+  {
+    "value": 9651,
+    "text": "METAL_SILVER_MACHINED"
+  },
+  {
+    "value": 9655,
+    "text": "METAL_GOLD_MACHINED"
+  },
+  {
+    "value": 9659,
+    "text": "METAL_TITANIUM_MACHINED"
+  },
+  {
+    "value": 9663,
+    "text": "GEM_AMETHYST_COMPACT"
+  },
+  {
+    "value": 9667,
+    "text": "GEM_DIAMOND_COMPACT"
+  },
+  {
+    "value": 9671,
+    "text": "GEM_EMERALD_COMPACT"
+  },
+  {
+    "value": 9675,
+    "text": "GEM_TOPAZ_COMPACT"
+  },
+  {
+    "value": 9679,
+    "text": "GEM_RUBY_COMPACT"
+  },
+  {
+    "value": 9683,
+    "text": "GEM_SAPPHIRE_COMPACT"
+  },
+  {
+    "value": 9687,
+    "text": "GEM_AMETHYST_DECORATIVE"
+  },
+  {
+    "value": 9691,
+    "text": "GEM_DIAMOND_DECORATIVE"
+  },
+  {
+    "value": 9695,
+    "text": "GEM_EMERALD_DECORATIVE"
+  },
+  {
+    "value": 9699,
+    "text": "GEM_TOPAZ_DECORATIVE"
+  },
+  {
+    "value": 9703,
+    "text": "GEM_RUBY_DECORATIVE"
+  },
+  {
+    "value": 9707,
+    "text": "GEM_SAPPHIRE_DECORATIVE"
+  },
+  {
+    "value": 9719,
+    "text": "MACHINE_ENGINE_HELIX"
+  },
+  {
+    "value": 9720,
+    "text": "MACHINE_COIN_MACHINE_BASE"
+  },
+  {
+    "value": 9721,
+    "text": "MACHINE_ENGINE_COIN_MACHINE"
+  },
+  {
+    "value": 9722,
+    "text": "MAILBOX_DEFAULT_BASE"
+  },
+  {
+    "value": 9723,
+    "text": "PLAIN_STONE_BEAM"
+  },
+  {
+    "value": 9724,
+    "text": "PLAIN_WOOD_BEAM"
+  },
+  {
+    "value": 9725,
+    "text": "SPECIAL_RIFT_COMPACT"
+  },
+  {
+    "value": 9729,
+    "text": "SPECIAL_BLINK_COMPACT"
+  },
+  {
+    "value": 9733,
+    "text": "SPECIAL_DARKMATTER_COMPACT"
+  },
+  {
+    "value": 9737,
+    "text": "SPECIAL_OORTSTONE_COMPACT"
+  },
+  {
+    "value": 9741,
+    "text": "SPECIAL_RIFT_DECORATIVE"
+  },
+  {
+    "value": 9745,
+    "text": "SPECIAL_BLINK_DECORATIVE"
+  },
+  {
+    "value": 9749,
+    "text": "SPECIAL_DARKMATTER_DECORATIVE"
+  },
+  {
+    "value": 9753,
+    "text": "SPECIAL_OORTSTONE_DECORATIVE"
+  },
+  {
+    "value": 9757,
+    "text": "PLAIN_STONE_POLE"
+  },
+  {
+    "value": 9761,
+    "text": "PLAIN_METAL_BEAM"
+  },
+  {
+    "value": 9762,
+    "text": "PLAIN_GLEAM_BEAM"
+  },
+  {
+    "value": 9763,
+    "text": "STYLISH_STONE_BEAM"
+  },
+  {
+    "value": 9764,
+    "text": "GLASS_DEFAULT_BASE"
+  },
+  {
+    "value": 9768,
+    "text": "DARKGLASS_DEFAULT_BASE"
+  },
+  {
+    "value": 9772,
+    "text": "LANTERN_DEFAULT_BASE"
+  },
+  {
+    "value": 9776,
+    "text": "CRYSTAL_GLEAM_LANTERN"
+  },
+  {
+    "value": 9780,
+    "text": "PORTAL_CONDUIT_BASE"
+  },
+  {
+    "value": 9781,
+    "text": "PHYSICS_TRAMPOLINE_BASE"
+  },
+  {
+    "value": 9785,
+    "text": "PHYSICS_SLIDE_BASE"
+  },
+  {
+    "value": 9789,
+    "text": "MACHINE_WORKBENCH_BASE"
+  },
+  {
+    "value": 9790,
+    "text": "MACHINE_FIREPIT_STONE"
+  },
+  {
+    "value": 9791,
+    "text": "MACHINE_FIREPIT_IRON"
+  },
+  {
+    "value": 9792,
+    "text": "MACHINE_FIREPIT_TITANIUM"
+  },
+  {
+    "value": 9793,
+    "text": "MACHINE_CRUCIBLE_STONE"
+  },
+  {
+    "value": 9794,
+    "text": "MACHINE_CRUCIBLE_IRON"
+  },
+  {
+    "value": 9795,
+    "text": "MACHINE_CRUCIBLE_TITANIUM"
+  },
+  {
+    "value": 9796,
+    "text": "MACHINE_ENGINE_FORGE"
+  },
+  {
+    "value": 9797,
+    "text": "MACHINE_ENGINE_FORGEADVANCED"
+  },
+  {
+    "value": 9798,
+    "text": "MACHINE_ENGINE_COMPACTOR"
+  },
+  {
+    "value": 9799,
+    "text": "MACHINE_ENGINE_COMPACTORADVANCED"
+  },
+  {
+    "value": 9800,
+    "text": "MACHINE_ENGINE_REFINERY"
+  },
+  {
+    "value": 9801,
+    "text": "MACHINE_ENGINE_REFINERYADVANCED"
+  },
+  {
+    "value": 9802,
+    "text": "MACHINE_ENGINE_EXTRACTOR"
+  },
+  {
+    "value": 9803,
+    "text": "MACHINE_ENGINE_EXTRACTORADVANCED"
+  },
+  {
+    "value": 9804,
+    "text": "MACHINE_ENGINE_MIXER"
+  },
+  {
+    "value": 9805,
+    "text": "MACHINE_ENGINE_MIXERADVANCED"
+  },
+  {
+    "value": 9806,
+    "text": "MACHINE_ENGINE_WORKBENCH"
+  },
+  {
+    "value": 9807,
+    "text": "MACHINE_ENGINE_WORKBENCHADVANCED"
+  },
+  {
+    "value": 9808,
+    "text": "MACHINE_EXTRACTOR_BASE"
+  },
+  {
+    "value": 9809,
+    "text": "MACHINE_COMPACTOR_BASE"
+  },
+  {
+    "value": 9810,
+    "text": "MACHINE_MIXER_BASE"
+  },
+  {
+    "value": 9811,
+    "text": "MACHINE_REFINERY_BASE"
+  },
+  {
+    "value": 9812,
+    "text": "MACHINE_FORGE_BASE"
+  },
+  {
+    "value": 9813,
+    "text": "MACHINE_POWERCORE_BASE"
+  },
+  {
+    "value": 9814,
+    "text": "MACHINE_PIPE_BASE"
+  },
+  {
+    "value": 9815,
+    "text": "DOOR_PLAIN_WOOD"
+  },
+  {
+    "value": 9817,
+    "text": "TRAP_PLAIN_WOOD"
+  },
+  {
+    "value": 9818,
+    "text": "CONTAINER_STORAGE_BASE"
+  },
+  {
+    "value": 9820,
+    "text": "LIGHT_TORCH_BASE"
+  },
+  {
+    "value": 9822,
+    "text": "FURNITURE_PLINTH_BASE"
+  },
+  {
+    "value": 9823,
+    "text": "FURNITURE_TABLE_BASE"
+  },
+  {
+    "value": 9824,
+    "text": "FURNITURE_CHAIR_BASE"
+  },
+  {
+    "value": 9827,
+    "text": "LOCK_DEFAULT_BASE"
+  },
+  {
+    "value": 9828,
+    "text": "LOCK_ADVANCED_BASE"
+  },
+  {
+    "value": 9829,
+    "text": "SHOP_PLINTH_BUYING"
+  },
+  {
+    "value": 9830,
+    "text": "SHOP_PLINTH_SELLING"
+  },
+  {
+    "value": 9831,
+    "text": "CONTROL_BEACON_BASE"
+  },
+  {
+    "value": 9838,
+    "text": "FLORA_FLOWER_1"
+  },
+  {
+    "value": 9839,
+    "text": "FLORA_FLOWER_2"
+  },
+  {
+    "value": 9840,
+    "text": "FLORA_FLOWER_3"
+  },
+  {
+    "value": 9841,
+    "text": "FLORA_FLOWER_4"
+  },
+  {
+    "value": 9843,
+    "text": "CONTAINER_STORAGE_SHELF"
+  },
+  {
+    "value": 9856,
+    "text": "MACHINE_CRAFTINGTABLE_BASE"
+  },
+  {
+    "value": 9857,
+    "text": "LIGHT_TORCH_IMPROVED"
+  },
+  {
+    "value": 9858,
+    "text": "LIGHT_TORCH_AMETHYST"
+  },
+  {
+    "value": 9859,
+    "text": "LIGHT_TORCH_DIAMOND"
+  },
+  {
+    "value": 9860,
+    "text": "LIGHT_TORCH_EMERALD"
+  },
+  {
+    "value": 9861,
+    "text": "LIGHT_TORCH_TOPAZ"
+  },
+  {
+    "value": 9862,
+    "text": "LIGHT_TORCH_RUBY"
+  },
+  {
+    "value": 9863,
+    "text": "LIGHT_TORCH_SAPPHIRE"
+  },
+  {
+    "value": 9864,
+    "text": "CRYSTAL_GLEAM_REFINED"
+  },
+  {
+    "value": 9872,
+    "text": "WARP_CONDUIT_BASE"
+  },
+  {
+    "value": 9882,
+    "text": "CONTROL_CAMPFIRE_BASE"
+  },
+  {
+    "value": 9901,
+    "text": "WOOD_ANCIENT_REFINED"
+  },
+  {
+    "value": 9905,
+    "text": "WOOD_TWISTED_REFINED"
+  },
+  {
+    "value": 9909,
+    "text": "WOOD_LUSTROUS_REFINED"
+  },
+  {
+    "value": 9913,
+    "text": "WOOD_ANCIENT_DECORATIVE"
+  },
+  {
+    "value": 9917,
+    "text": "WOOD_TWISTED_DECORATIVE"
+  },
+  {
+    "value": 9921,
+    "text": "WOOD_LUSTROUS_DECORATIVE"
+  },
+  {
+    "value": 10077,
+    "text": "SPECIAL_RIFT_REFINED"
+  },
+  {
+    "value": 10081,
+    "text": "SPECIAL_BLINK_REFINED"
+  },
+  {
+    "value": 10345,
+    "text": "SPECIAL_DARKMATTER_REFINED"
+  },
+  {
+    "value": 10349,
+    "text": "SPECIAL_OORTSTONE_REFINED"
+  },
+  {
+    "value": 10353,
+    "text": "PLAIN_WOOD_POLE"
+  },
+  {
+    "value": 10357,
+    "text": "PLAIN_METAL_POLE"
+  },
+  {
+    "value": 10361,
+    "text": "PLAIN_GLEAM_POLE"
+  },
+  {
+    "value": 10365,
+    "text": "STYLISH_STONE_POLE"
+  },
+  {
+    "value": 10369,
+    "text": "STYLISH_WOOD_POLE"
+  },
+  {
+    "value": 10373,
+    "text": "STYLISH_METAL_POLE"
+  },
+  {
+    "value": 10625,
+    "text": "SIGN_STONE_MODULAR"
+  },
+  {
+    "value": 10627,
+    "text": "SIGN_STONE_BASE"
+  },
+  {
+    "value": 10628,
+    "text": "SIGN_WOOD_MODULAR"
+  },
+  {
+    "value": 10630,
+    "text": "SIGN_WOOD_BASE"
+  },
+  {
+    "value": 10631,
+    "text": "SIGN_METAL_MODULAR"
+  },
+  {
+    "value": 10633,
+    "text": "SIGN_METAL_BASE"
+  },
+  {
+    "value": 10634,
+    "text": "SIGN_GLEAM_MODULAR"
+  },
+  {
+    "value": 10636,
+    "text": "SIGN_GLEAM_BASE"
+  },
+  {
+    "value": 10661,
+    "text": "STYLISH_GLEAM_POLE"
+  },
+  {
+    "value": 10665,
+    "text": "ORNATE_STONE_POLE"
+  },
+  {
+    "value": 10669,
+    "text": "ORNATE_WOOD_POLE"
+  },
+  {
+    "value": 10673,
+    "text": "ORNATE_METAL_POLE"
+  },
+  {
+    "value": 10677,
+    "text": "STYLISH_WOOD_BEAM"
+  },
+  {
+    "value": 10678,
+    "text": "STYLISH_METAL_BEAM"
+  },
+  {
+    "value": 10752,
+    "text": "DOOR_PLAIN_STONE"
+  },
+  {
+    "value": 10753,
+    "text": "DOOR_PLAIN_METAL"
+  },
+  {
+    "value": 10754,
+    "text": "DOOR_PLAIN_GLEAM"
+  },
+  {
+    "value": 10755,
+    "text": "DOOR_STYLISH_WOOD"
+  },
+  {
+    "value": 10756,
+    "text": "DOOR_STYLISH_STONE"
+  },
+  {
+    "value": 10757,
+    "text": "DOOR_STYLISH_METAL"
+  },
+  {
+    "value": 10758,
+    "text": "DOOR_STYLISH_GLEAM"
+  },
+  {
+    "value": 10759,
+    "text": "DOOR_ORNATE_WOOD"
+  },
+  {
+    "value": 10760,
+    "text": "DOOR_ORNATE_STONE"
+  },
+  {
+    "value": 10761,
+    "text": "DOOR_ORNATE_METAL"
+  },
+  {
+    "value": 10762,
+    "text": "DOOR_ORNATE_GLEAM"
+  },
+  {
+    "value": 10763,
+    "text": "TRAP_PLAIN_STONE"
+  },
+  {
+    "value": 10764,
+    "text": "TRAP_PLAIN_METAL"
+  },
+  {
+    "value": 10765,
+    "text": "TRAP_PLAIN_GLEAM"
+  },
+  {
+    "value": 10766,
+    "text": "TRAP_STYLISH_WOOD"
+  },
+  {
+    "value": 10767,
+    "text": "TRAP_STYLISH_STONE"
+  },
+  {
+    "value": 10768,
+    "text": "TRAP_STYLISH_METAL"
+  },
+  {
+    "value": 10769,
+    "text": "TRAP_STYLISH_GLEAM"
+  },
+  {
+    "value": 10770,
+    "text": "TRAP_ORNATE_WOOD"
+  },
+  {
+    "value": 10771,
+    "text": "TRAP_ORNATE_STONE"
+  },
+  {
+    "value": 10772,
+    "text": "TRAP_ORNATE_METAL"
+  },
+  {
+    "value": 10773,
+    "text": "TRAP_ORNATE_GLEAM"
+  },
+  {
+    "value": 10774,
+    "text": "FLORA_PLANT_INKY_DUGUP"
+  },
+  {
+    "value": 10775,
+    "text": "FLORA_PLANT_FIBROUS_DUGUP"
+  },
+  {
+    "value": 10776,
+    "text": "PLANT_LOTUS_DUGUP"
+  },
+  {
+    "value": 10777,
+    "text": "PLANT_YUCCA_DUGUP"
+  },
+  {
+    "value": 10778,
+    "text": "PLANT_CACTUS_DUGUP"
+  },
+  {
+    "value": 10779,
+    "text": "PLANT_ALOE_DUGUP"
+  },
+  {
+    "value": 10780,
+    "text": "PLANT_SNOWDROP_DUGUP"
+  },
+  {
+    "value": 10781,
+    "text": "PLANT_FIDDLEHEAD_DUGUP"
+  },
+  {
+    "value": 10782,
+    "text": "ROCK_BOULDER_DUGUP"
+  },
+  {
+    "value": 10783,
+    "text": "ROCK_TALL_DUGUP"
+  },
+  {
+    "value": 10784,
+    "text": "ROCK_STACK_DUGUP"
+  },
+  {
+    "value": 10785,
+    "text": "ROCK_RING_DUGUP"
+  },
+  {
+    "value": 10786,
+    "text": "ROCK_SHARD_DUGUP"
+  },
+  {
+    "value": 10787,
+    "text": "ROCK_STALAGMITE_DUGUP"
+  },
+  {
+    "value": 10788,
+    "text": "FUNGUS_AMANITA_DUGUP"
+  },
+  {
+    "value": 10789,
+    "text": "FUNGUS_BRACKET_DUGUP"
+  },
+  {
+    "value": 10790,
+    "text": "FUNGUS_CORAL_DUGUP"
+  },
+  {
+    "value": 10791,
+    "text": "FUNGUS_SCATTER_DUGUP"
+  },
+  {
+    "value": 10792,
+    "text": "FUNGUS_DRIPPING_DUGUP"
+  },
+  {
+    "value": 10793,
+    "text": "FUNGUS_GLOWING_DUGUP"
+  },
+  {
+    "value": 10794,
+    "text": "ROCK_METAMORPHIC_BASE_DUGUP"
+  },
+  {
+    "value": 10798,
+    "text": "ROCK_IGNEOUS_BASE_DUGUP"
+  },
+  {
+    "value": 10802,
+    "text": "ROCK_SEDIMENTARY_BASE_DUGUP"
+  },
+  {
+    "value": 10806,
+    "text": "ICE_GLACIER_BASE_DUGUP"
+  },
+  {
+    "value": 10810,
+    "text": "SAND_DEFAULT_BASE_DUGUP"
+  },
+  {
+    "value": 10814,
+    "text": "GRAVEL_DEFAULT_BASE_DUGUP"
+  },
+  {
+    "value": 10818,
+    "text": "WOOD_LUSH_LEAVES_DUGUP"
+  },
+  {
+    "value": 10822,
+    "text": "WOOD_EXOTIC_LEAVES_DUGUP"
+  },
+  {
+    "value": 10826,
+    "text": "WOOD_WAXY_LEAVES_DUGUP"
+  },
+  {
+    "value": 10830,
+    "text": "WOOD_ANCIENT_TRUNK_DUGUP"
+  },
+  {
+    "value": 10834,
+    "text": "WOOD_TWISTED_TRUNK_DUGUP"
+  },
+  {
+    "value": 10838,
+    "text": "WOOD_LUSTROUS_TRUNK_DUGUP"
+  },
+  {
+    "value": 10842,
+    "text": "ICE_DEFAULT_BASE_DUGUP"
+  },
+  {
+    "value": 10846,
+    "text": "MUD_DEFAULT_BASE_DUGUP"
+  },
+  {
+    "value": 10850,
+    "text": "ASH_DEFAULT_BASE_DUGUP"
+  },
+  {
+    "value": 10854,
+    "text": "SPONGE_DEFAULT_BASE_DUGUP"
+  },
+  {
+    "value": 10858,
+    "text": "TANGLE_DEFAULT_BASE_DUGUP"
+  },
+  {
+    "value": 10862,
+    "text": "THORNS_DEFAULT_BASE_DUGUP"
+  },
+  {
+    "value": 10866,
+    "text": "MOULD_DEFAULT_BASE_DUGUP"
+  },
+  {
+    "value": 10870,
+    "text": "GROWTH_DEFAULT_BASE_DUGUP"
+  },
+  {
+    "value": 10874,
+    "text": "CORRUPTION_ANCIENT_BASE_DUGUP"
+  },
+  {
+    "value": 11046,
+    "text": "SEASONAL_LANTERN_SKULL"
+  },
+  {
+    "value": 11047,
+    "text": "SEASONAL_LANTERN_PUMPKIN"
+  },
+  {
+    "value": 11048,
+    "text": "MACHINE_GUILD_BUFF_DEATH_INSURANCE"
+  },
+  {
+    "value": 11049,
+    "text": "MACHINE_GUILD_BUFF_HOME_HEALING"
+  },
+  {
+    "value": 11050,
+    "text": "MACHINE_GUILD_BUFF_BUILDING_SAFETY"
+  },
+  {
+    "value": 11051,
+    "text": "MACHINE_GUILD_BUFF_BUILDERS_BUFF"
+  },
+  {
+    "value": 11052,
+    "text": "MACHINE_GUILD_BUFF_BREW_EXTENSION"
+  },
+  {
+    "value": 11053,
+    "text": "MACHINE_GUILD_BUFF_AUGMENT_DURABILITY"
+  },
+  {
+    "value": 11054,
+    "text": "MACHINE_GUILD_BUFF_BONUS_CONSUMABLES"
+  },
+  {
+    "value": 11055,
+    "text": "MACHINE_GUILD_BUFF_SPARK_AND_WEAR"
+  },
+  {
+    "value": 11056,
+    "text": "MACHINE_GUILD_BUFF_GRAPPLE_AND_RUN"
+  },
+  {
+    "value": 11057,
+    "text": "MACHINE_GUILD_BUFF_CHEAPER_WARPS"
+  },
+  {
+    "value": 11058,
+    "text": "MACHINE_GUILD_BUFF_GATHERER_HEALING"
+  },
+  {
+    "value": 11059,
+    "text": "MACHINE_GUILD_BUFF_LAVA_PROTECTION"
+  },
+  {
+    "value": 11060,
+    "text": "MACHINE_GUILD_BUFF_HAMMER_VERSATILITY"
+  },
+  {
+    "value": 11061,
+    "text": "MACHINE_GUILD_BUFF_TAX_REDUCTION"
+  },
+  {
+    "value": 11062,
+    "text": "SEASONAL_SNOWCITIZEN_HAPPY_HEAD"
+  },
+  {
+    "value": 11063,
+    "text": "SEASONAL_SNOWCITIZEN_SAD_HEAD"
+  },
+  {
+    "value": 11064,
+    "text": "SEASONAL_SNOWCITIZEN_CUTE_HEAD"
+  },
+  {
+    "value": 11065,
+    "text": "SEASONAL_SNOWCITIZEN_BODY"
+  },
+  {
+    "value": 11066,
+    "text": "SEASONAL_PRESENT_RED"
+  },
+  {
+    "value": 11067,
+    "text": "SEASONAL_PRESENT_PINK"
+  },
+  {
+    "value": 11068,
+    "text": "SEASONAL_PRESENT_TEAL"
+  },
+  {
+    "value": 11069,
+    "text": "SEASONAL_PRESENT_GOLD"
+  },
+  {
+    "value": 11070,
+    "text": "SEASONAL_PRESENT_SILVER"
+  },
+  {
+    "value": 11071,
+    "text": "SEASONAL_CHRISTMAS_TREE_TOP"
+  },
+  {
+    "value": 11072,
+    "text": "SEASONAL_CHRISTMAS_TREE_BOTTOM"
+  },
+  {
+    "value": 11073,
+    "text": "SPECIAL_BLINK_LED0"
+  },
+  {
+    "value": 11077,
+    "text": "SPECIAL_BLINK_LED1"
+  },
+  {
+    "value": 11081,
+    "text": "SPECIAL_BLINK_LED2"
+  },
+  {
+    "value": 11085,
+    "text": "SPECIAL_BLINK_LED3"
+  },
+  {
+    "value": 11089,
+    "text": "SPECIAL_BLINK_LED4"
+  },
+  {
+    "value": 11093,
+    "text": "SPECIAL_BLINK_LED5"
+  },
+  {
+    "value": 11097,
+    "text": "SPECIAL_BLINK_LED6"
+  },
+  {
+    "value": 11101,
+    "text": "SPECIAL_BLINK_LED7"
+  },
+  {
+    "value": 11105,
+    "text": "SPECIAL_BLINK_LED8"
+  },
+  {
+    "value": 11109,
+    "text": "SPECIAL_BLINK_LED9"
+  },
+  {
+    "value": 11113,
+    "text": "SPECIAL_BLINK_LED10"
+  },
+  {
+    "value": 11117,
+    "text": "SPECIAL_BLINK_LED11"
+  },
+  {
+    "value": 11121,
+    "text": "SPECIAL_BLINK_LED12"
+  },
+  {
+    "value": 11125,
+    "text": "SPECIAL_BLINK_LED13"
+  },
+  {
+    "value": 11129,
+    "text": "SPECIAL_BLINK_LED14"
+  },
+  {
+    "value": 11133,
+    "text": "SPECIAL_BLINK_LED15"
+  },
+  {
+    "value": 11265,
+    "text": "ROCK_MARBLE_REFINED"
+  },
+  {
+    "value": 11277,
+    "text": "GRAVEL_DEFAULT_COMPACT"
+  },
+  {
+    "value": 11289,
+    "text": "WICKER"
+  },
+  {
+    "value": 11301,
+    "text": "GRAVEL_MOSAIC_DECORATIVE_WAVE"
+  },
+  {
+    "value": 11341,
+    "text": "SEASONAL_VALENTINES_VASE_FLOWERS"
+  },
+  {
+    "value": 11342,
+    "text": "SEASONAL_VALENTINES_HEART_BALLOONS"
+  },
+  {
+    "value": 11343,
+    "text": "SEASONAL_VALENTINES_DECORATIVE_COLUMN"
+  },
+  {
+    "value": 11347,
+    "text": "ORNATE_GLEAM_POLE"
+  },
+  {
+    "value": 11351,
+    "text": "STYLISH_GLEAM_BEAM"
+  },
+  {
+    "value": 11352,
+    "text": "ORNATE_STONE_BEAM"
+  },
+  {
+    "value": 11353,
+    "text": "ORNATE_WOOD_BEAM"
+  },
+  {
+    "value": 11354,
+    "text": "ORNATE_METAL_BEAM"
+  },
+  {
+    "value": 11355,
+    "text": "ORNATE_GLEAM_BEAM"
+  },
+  {
+    "value": 11584,
+    "text": "SOIL_SILTY_BASE_DUGUP"
+  },
+  {
+    "value": 11588,
+    "text": "SOIL_CLAY_BASE_DUGUP"
+  },
+  {
+    "value": 11592,
+    "text": "SOIL_PEATY_BASE_DUGUP"
+  },
+  {
+    "value": 11648,
+    "text": "CROPDROP_FUEL_COMPACT"
+  },
+  {
+    "value": 11652,
+    "text": "CROPDROP_FUEL_COALINFUSED"
+  },
+  {
+    "value": 11656,
+    "text": "CROPDROP_FUEL_ENRICHED"
+  },
+  {
+    "value": 11660,
+    "text": "COAL_SOFT_ENRICHED"
+  },
+  {
+    "value": 11664,
+    "text": "COAL_DEFAULT_ENRICHED"
+  },
+  {
+    "value": 11668,
+    "text": "COAL_HARD_ENRICHED"
+  },
+  {
+    "value": 11672,
+    "text": "SOIL_PEATY_ENRICHED"
+  },
+  {
+    "value": 11732,
+    "text": "MACHINE_DYE_PAINTER_BASE"
+  },
+  {
+    "value": 11733,
+    "text": "MACHINE_DYE_MAKER_BASE"
+  },
+  {
+    "value": 11734,
+    "text": "MACHINE_ENGINE_DYE_MAKER"
+  },
+  {
+    "value": 11735,
+    "text": "AMBER"
+  },
+  {
+    "value": 11739,
+    "text": "OIL_SOLID"
+  },
+  {
+    "value": 11761,
+    "text": "PANE_GLASS_PLAIN"
+  },
+  {
+    "value": 11762,
+    "text": "PANE_GLASS_STYLISH"
+  },
+  {
+    "value": 11763,
+    "text": "PANE_GLASS_ORNATE"
+  },
+  {
+    "value": 12988,
+    "text": "METAL_COPPER_MACHINED_CIRCUITBOARD"
+  },
+  {
+    "value": 12992,
+    "text": "METAL_IRON_MACHINED_CIRCUITBOARD"
+  },
+  {
+    "value": 12996,
+    "text": "METAL_SILVER_MACHINED_CIRCUITBOARD"
+  },
+  {
+    "value": 13000,
+    "text": "METAL_GOLD_MACHINED_CIRCUITBOARD"
+  },
+  {
+    "value": 13004,
+    "text": "METAL_TITANIUM_MACHINED_CIRCUITBOARD"
+  },
+  {
+    "value": 13088,
+    "text": "METAL_COPPER_DECORATIVE_FILIGREE"
+  },
+  {
+    "value": 13092,
+    "text": "METAL_IRON_DECORATIVE_FILIGREE"
+  },
+  {
+    "value": 13096,
+    "text": "METAL_SILVER_DECORATIVE_FILIGREE"
+  },
+  {
+    "value": 13100,
+    "text": "METAL_GOLD_DECORATIVE_FILIGREE"
+  },
+  {
+    "value": 13104,
+    "text": "METAL_TITANIUM_DECORATIVE_FILIGREE"
+  },
+  {
+    "value": 13188,
+    "text": "METAL_COPPER_MACHINED_GRID"
+  },
+  {
+    "value": 13192,
+    "text": "METAL_IRON_MACHINED_GRID"
+  },
+  {
+    "value": 13196,
+    "text": "METAL_SILVER_MACHINED_GRID"
+  },
+  {
+    "value": 13200,
+    "text": "METAL_GOLD_MACHINED_GRID"
+  },
+  {
+    "value": 13204,
+    "text": "METAL_TITANIUM_MACHINED_GRID"
+  },
+  {
+    "value": 13288,
+    "text": "CRYSTAL_GLEAM_DECORATIVE"
+  },
+  {
+    "value": 13308,
+    "text": "ICE_DEFAULT_DECORATIVE"
+  },
+  {
+    "value": 13328,
+    "text": "ROCK_MARBLE_DECORATIVE_BORDER"
+  },
+  {
+    "value": 13332,
+    "text": "ROCK_MARBLE_DECORATIVE_FRIEZE0"
+  },
+  {
+    "value": 13368,
+    "text": "GRAVEL_MOSAIC_REFINED"
+  },
+  {
+    "value": 13372,
+    "text": "GRAVEL_MOSAIC_DECORATIVE_FISHSCALE"
+  },
+  {
+    "value": 13408,
+    "text": "SAND_CONCRETE_REFINED"
+  },
+  {
+    "value": 13412,
+    "text": "SAND_CONCRETE_DECORATIVE"
+  },
+  {
+    "value": 13448,
+    "text": "WOOD_DEFAULT_TRELLIS"
+  },
+  {
+    "value": 13468,
+    "text": "WOOD_LUSH_TRELLIS"
+  },
+  {
+    "value": 13488,
+    "text": "WOOD_EXOTIC_TRELLIS"
+  },
+  {
+    "value": 13508,
+    "text": "WOOD_WAXY_TRELLIS"
+  },
+  {
+    "value": 13528,
+    "text": "WOOD_MOULD_TRELLIS"
+  },
+  {
+    "value": 13548,
+    "text": "STORAGE_WOOD_PLAIN"
+  },
+  {
+    "value": 13549,
+    "text": "STORAGE_WOOD_STYLISH"
+  },
+  {
+    "value": 13550,
+    "text": "STORAGE_WOOD_ORNATE"
+  },
+  {
+    "value": 13551,
+    "text": "STORAGE_STONE_PLAIN"
+  },
+  {
+    "value": 13552,
+    "text": "STORAGE_STONE_STYLISH"
+  },
+  {
+    "value": 13553,
+    "text": "STORAGE_STONE_ORNATE"
+  },
+  {
+    "value": 13554,
+    "text": "STORAGE_METAL_PLAIN"
+  },
+  {
+    "value": 13555,
+    "text": "STORAGE_METAL_STYLISH"
+  },
+  {
+    "value": 13556,
+    "text": "STORAGE_METAL_ORNATE"
+  },
+  {
+    "value": 13557,
+    "text": "STORAGE_GLEAM_PLAIN"
+  },
+  {
+    "value": 13558,
+    "text": "STORAGE_GLEAM_STYLISH"
+  },
+  {
+    "value": 13559,
+    "text": "STORAGE_GLEAM_ORNATE"
+  },
+  {
+    "value": 13560,
+    "text": "ROCK_MARBLE_DECORATIVE_FRIEZE1"
+  },
+  {
+    "value": 13580,
+    "text": "ROCK_MARBLE_DECORATIVE_FRIEZE2"
+  },
+  {
+    "value": 13600,
+    "text": "ROCK_MARBLE_DECORATIVE_FRIEZE3"
+  },
+  {
+    "value": 13620,
+    "text": "GEM_AMETHYST_SEAM_DUGUP"
+  },
+  {
+    "value": 13621,
+    "text": "GEM_AMETHYST_SEAM_DUGUP_ROCK_IGNEOUS_BASE"
+  },
+  {
+    "value": 13622,
+    "text": "GEM_AMETHYST_SEAM_DUGUP_ROCK_SEDIMENTARY_BASE"
+  },
+  {
+    "value": 13623,
+    "text": "GEM_AMETHYST_SEAM_DUGUP_ICE_GLACIER_BASE"
+  },
+  {
+    "value": 13624,
+    "text": "GEM_DIAMOND_SEAM_DUGUP"
+  },
+  {
+    "value": 13625,
+    "text": "GEM_DIAMOND_SEAM_DUGUP_ROCK_IGNEOUS_BASE"
+  },
+  {
+    "value": 13626,
+    "text": "GEM_DIAMOND_SEAM_DUGUP_ROCK_SEDIMENTARY_BASE"
+  },
+  {
+    "value": 13627,
+    "text": "GEM_DIAMOND_SEAM_DUGUP_ICE_GLACIER_BASE"
+  },
+  {
+    "value": 13628,
+    "text": "GEM_EMERALD_SEAM_DUGUP"
+  },
+  {
+    "value": 13629,
+    "text": "GEM_EMERALD_SEAM_DUGUP_ROCK_IGNEOUS_BASE"
+  },
+  {
+    "value": 13630,
+    "text": "GEM_EMERALD_SEAM_DUGUP_ROCK_SEDIMENTARY_BASE"
+  },
+  {
+    "value": 13631,
+    "text": "GEM_EMERALD_SEAM_DUGUP_ICE_GLACIER_BASE"
+  },
+  {
+    "value": 13632,
+    "text": "GEM_TOPAZ_SEAM_DUGUP"
+  },
+  {
+    "value": 13633,
+    "text": "GEM_TOPAZ_SEAM_DUGUP_ROCK_IGNEOUS_BASE"
+  },
+  {
+    "value": 13634,
+    "text": "GEM_TOPAZ_SEAM_DUGUP_ROCK_SEDIMENTARY_BASE"
+  },
+  {
+    "value": 13635,
+    "text": "GEM_TOPAZ_SEAM_DUGUP_ICE_GLACIER_BASE"
+  },
+  {
+    "value": 13636,
+    "text": "GEM_RUBY_SEAM_DUGUP"
+  },
+  {
+    "value": 13637,
+    "text": "GEM_RUBY_SEAM_DUGUP_ROCK_IGNEOUS_BASE"
+  },
+  {
+    "value": 13638,
+    "text": "GEM_RUBY_SEAM_DUGUP_ROCK_SEDIMENTARY_BASE"
+  },
+  {
+    "value": 13639,
+    "text": "GEM_RUBY_SEAM_DUGUP_ICE_GLACIER_BASE"
+  },
+  {
+    "value": 13640,
+    "text": "GEM_SAPPHIRE_SEAM_DUGUP"
+  },
+  {
+    "value": 13641,
+    "text": "GEM_SAPPHIRE_SEAM_DUGUP_ROCK_IGNEOUS_BASE"
+  },
+  {
+    "value": 13642,
+    "text": "GEM_SAPPHIRE_SEAM_DUGUP_ROCK_SEDIMENTARY_BASE"
+  },
+  {
+    "value": 13643,
+    "text": "GEM_SAPPHIRE_SEAM_DUGUP_ICE_GLACIER_BASE"
+  },
+  {
+    "value": 13644,
+    "text": "SPECIAL_RIFT_SEAM_DUGUP"
+  },
+  {
+    "value": 13645,
+    "text": "SPECIAL_RIFT_SEAM_DUGUP_ROCK_IGNEOUS_BASE"
+  },
+  {
+    "value": 13646,
+    "text": "SPECIAL_RIFT_SEAM_DUGUP_ROCK_SEDIMENTARY_BASE"
+  },
+  {
+    "value": 13647,
+    "text": "SPECIAL_RIFT_SEAM_DUGUP_ICE_GLACIER_BASE"
+  },
+  {
+    "value": 13648,
+    "text": "SPECIAL_BLINK_SEAM_DUGUP"
+  },
+  {
+    "value": 13649,
+    "text": "SPECIAL_BLINK_SEAM_DUGUP_ROCK_IGNEOUS_BASE"
+  },
+  {
+    "value": 13650,
+    "text": "SPECIAL_BLINK_SEAM_DUGUP_ROCK_SEDIMENTARY_BASE"
+  },
+  {
+    "value": 13651,
+    "text": "SPECIAL_BLINK_SEAM_DUGUP_ICE_GLACIER_BASE"
+  },
+  {
+    "value": 13652,
+    "text": "METAL_COPPER_SEAM_DUGUP"
+  },
+  {
+    "value": 13653,
+    "text": "METAL_COPPER_SEAM_DUGUP_ROCK_IGNEOUS_BASE"
+  },
+  {
+    "value": 13654,
+    "text": "METAL_COPPER_SEAM_DUGUP_ROCK_SEDIMENTARY_BASE"
+  },
+  {
+    "value": 13655,
+    "text": "METAL_COPPER_SEAM_DUGUP_ICE_GLACIER_BASE"
+  },
+  {
+    "value": 13656,
+    "text": "METAL_IRON_SEAM_DUGUP"
+  },
+  {
+    "value": 13657,
+    "text": "METAL_IRON_SEAM_DUGUP_ROCK_IGNEOUS_BASE"
+  },
+  {
+    "value": 13658,
+    "text": "METAL_IRON_SEAM_DUGUP_ROCK_SEDIMENTARY_BASE"
+  },
+  {
+    "value": 13659,
+    "text": "METAL_IRON_SEAM_DUGUP_ICE_GLACIER_BASE"
+  },
+  {
+    "value": 13660,
+    "text": "METAL_SILVER_SEAM_DUGUP"
+  },
+  {
+    "value": 13661,
+    "text": "METAL_SILVER_SEAM_DUGUP_ROCK_IGNEOUS_BASE"
+  },
+  {
+    "value": 13662,
+    "text": "METAL_SILVER_SEAM_DUGUP_ROCK_SEDIMENTARY_BASE"
+  },
+  {
+    "value": 13663,
+    "text": "METAL_SILVER_SEAM_DUGUP_ICE_GLACIER_BASE"
+  },
+  {
+    "value": 13664,
+    "text": "METAL_GOLD_SEAM_DUGUP"
+  },
+  {
+    "value": 13665,
+    "text": "METAL_GOLD_SEAM_DUGUP_ROCK_IGNEOUS_BASE"
+  },
+  {
+    "value": 13666,
+    "text": "METAL_GOLD_SEAM_DUGUP_ROCK_SEDIMENTARY_BASE"
+  },
+  {
+    "value": 13667,
+    "text": "METAL_GOLD_SEAM_DUGUP_ICE_GLACIER_BASE"
+  },
+  {
+    "value": 13668,
+    "text": "METAL_TITANIUM_SEAM_DUGUP"
+  },
+  {
+    "value": 13669,
+    "text": "METAL_TITANIUM_SEAM_DUGUP_ROCK_IGNEOUS_BASE"
+  },
+  {
+    "value": 13670,
+    "text": "METAL_TITANIUM_SEAM_DUGUP_ROCK_SEDIMENTARY_BASE"
+  },
+  {
+    "value": 13671,
+    "text": "METAL_TITANIUM_SEAM_DUGUP_ICE_GLACIER_BASE"
+  },
+  {
+    "value": 13672,
+    "text": "COAL_SOFT_SEAM_DUGUP"
+  },
+  {
+    "value": 13673,
+    "text": "COAL_SOFT_SEAM_DUGUP_ROCK_IGNEOUS_BASE"
+  },
+  {
+    "value": 13674,
+    "text": "COAL_SOFT_SEAM_DUGUP_ROCK_SEDIMENTARY_BASE"
+  },
+  {
+    "value": 13675,
+    "text": "COAL_SOFT_SEAM_DUGUP_ICE_GLACIER_BASE"
+  },
+  {
+    "value": 13676,
+    "text": "COAL_DEFAULT_SEAM_DUGUP"
+  },
+  {
+    "value": 13677,
+    "text": "COAL_DEFAULT_SEAM_DUGUP_ROCK_IGNEOUS_BASE"
+  },
+  {
+    "value": 13678,
+    "text": "COAL_DEFAULT_SEAM_DUGUP_ROCK_SEDIMENTARY_BASE"
+  },
+  {
+    "value": 13679,
+    "text": "COAL_DEFAULT_SEAM_DUGUP_ICE_GLACIER_BASE"
+  },
+  {
+    "value": 13680,
+    "text": "COAL_HARD_SEAM_DUGUP"
+  },
+  {
+    "value": 13681,
+    "text": "COAL_HARD_SEAM_DUGUP_ROCK_IGNEOUS_BASE"
+  },
+  {
+    "value": 13682,
+    "text": "COAL_HARD_SEAM_DUGUP_ROCK_SEDIMENTARY_BASE"
+  },
+  {
+    "value": 13683,
+    "text": "COAL_HARD_SEAM_DUGUP_ICE_GLACIER_BASE"
+  },
+  {
+    "value": 13684,
+    "text": "FOSSIL_SMALL_SEAM_DUGUP"
+  },
+  {
+    "value": 13685,
+    "text": "FOSSIL_SMALL_SEAM_DUGUP_ROCK_IGNEOUS_BASE"
+  },
+  {
+    "value": 13686,
+    "text": "FOSSIL_SMALL_SEAM_DUGUP_ROCK_SEDIMENTARY_BASE"
+  },
+  {
+    "value": 13687,
+    "text": "FOSSIL_SMALL_SEAM_DUGUP_ICE_GLACIER_BASE"
+  },
+  {
+    "value": 13688,
+    "text": "FOSSIL_MEDIUM_SEAM_DUGUP"
+  },
+  {
+    "value": 13689,
+    "text": "FOSSIL_MEDIUM_SEAM_DUGUP_ROCK_IGNEOUS_BASE"
+  },
+  {
+    "value": 13690,
+    "text": "FOSSIL_MEDIUM_SEAM_DUGUP_ROCK_SEDIMENTARY_BASE"
+  },
+  {
+    "value": 13691,
+    "text": "FOSSIL_MEDIUM_SEAM_DUGUP_ICE_GLACIER_BASE"
+  },
+  {
+    "value": 13692,
+    "text": "FOSSIL_LARGE_SEAM_DUGUP"
+  },
+  {
+    "value": 13693,
+    "text": "FOSSIL_LARGE_SEAM_DUGUP_ROCK_IGNEOUS_BASE"
+  },
+  {
+    "value": 13694,
+    "text": "FOSSIL_LARGE_SEAM_DUGUP_ROCK_SEDIMENTARY_BASE"
+  },
+  {
+    "value": 13695,
+    "text": "FOSSIL_LARGE_SEAM_DUGUP_ICE_GLACIER_BASE"
+  },
+  {
+    "value": 13696,
+    "text": "ANCIENTTECHNOLOGY_FRAGMENT_SEAM_DUGUP"
+  },
+  {
+    "value": 13697,
+    "text": "ANCIENTTECHNOLOGY_FRAGMENT_SEAM_DUGUP_ROCK_IGNEOUS_BASE"
+  },
+  {
+    "value": 13698,
+    "text": "ANCIENTTECHNOLOGY_FRAGMENT_SEAM_DUGUP_ROCK_SEDIMENTARY_BASE"
+  },
+  {
+    "value": 13699,
+    "text": "ANCIENTTECHNOLOGY_FRAGMENT_SEAM_DUGUP_ICE_GLACIER_BASE"
+  },
+  {
+    "value": 13700,
+    "text": "ANCIENTTECHNOLOGY_COMPONENT_SEAM_DUGUP"
+  },
+  {
+    "value": 13701,
+    "text": "ANCIENTTECHNOLOGY_COMPONENT_SEAM_DUGUP_ROCK_IGNEOUS_BASE"
+  },
+  {
+    "value": 13702,
+    "text": "ANCIENTTECHNOLOGY_COMPONENT_SEAM_DUGUP_ROCK_SEDIMENTARY_BASE"
+  },
+  {
+    "value": 13703,
+    "text": "ANCIENTTECHNOLOGY_COMPONENT_SEAM_DUGUP_ICE_GLACIER_BASE"
+  },
+  {
+    "value": 13704,
+    "text": "ANCIENTTECHNOLOGY_DEVICE_SEAM_DUGUP"
+  },
+  {
+    "value": 13705,
+    "text": "ANCIENTTECHNOLOGY_DEVICE_SEAM_DUGUP_ROCK_IGNEOUS_BASE"
+  },
+  {
+    "value": 13706,
+    "text": "ANCIENTTECHNOLOGY_DEVICE_SEAM_DUGUP_ROCK_SEDIMENTARY_BASE"
+  },
+  {
+    "value": 13707,
+    "text": "ANCIENTTECHNOLOGY_DEVICE_SEAM_DUGUP_ICE_GLACIER_BASE"
+  },
+  {
+    "value": 13708,
+    "text": "SPECIAL_DARKMATTER_SEAM_DUGUP"
+  },
+  {
+    "value": 13709,
+    "text": "SPECIAL_DARKMATTER_SEAM_DUGUP_ROCK_IGNEOUS_BASE"
+  },
+  {
+    "value": 13710,
+    "text": "SPECIAL_DARKMATTER_SEAM_DUGUP_ROCK_SEDIMENTARY_BASE"
+  },
+  {
+    "value": 13711,
+    "text": "SPECIAL_DARKMATTER_SEAM_DUGUP_ICE_GLACIER_BASE"
+  },
+  {
+    "value": 13712,
+    "text": "SPECIAL_OORTSTONE_SEAM_DUGUP"
+  },
+  {
+    "value": 13713,
+    "text": "SPECIAL_OORTSTONE_SEAM_DUGUP_ROCK_IGNEOUS_BASE"
+  },
+  {
+    "value": 13714,
+    "text": "SPECIAL_OORTSTONE_SEAM_DUGUP_ROCK_SEDIMENTARY_BASE"
+  },
+  {
+    "value": 13715,
+    "text": "SPECIAL_OORTSTONE_SEAM_DUGUP_ICE_GLACIER_BASE"
+  },
+  {
+    "value": 13716,
+    "text": "DECORATION_HALLOWEEN_DOLL"
+  },
+  {
+    "value": 13717,
+    "text": "DECORATION_HALLOWEEN_SPIDER"
+  },
+  {
+    "value": 13719,
+    "text": "STORAGE_FARMED_PLAIN"
+  },
+  {
+    "value": 13720,
+    "text": "STORAGE_FARMED_STYLISH"
+  },
+  {
+    "value": 13721,
+    "text": "STORAGE_FARMED_ORNATE"
+  },
+  {
+    "value": 13722,
+    "text": "GLASS_DEFAULT_PLAIN"
+  },
+  {
+    "value": 13758,
+    "text": "GLASS_DEFAULT_STYLISH"
+  },
+  {
+    "value": 13778,
+    "text": "GLASS_DEFAULT_ORNATE"
+  },
+  {
+    "value": 13810,
+    "text": "DECORATION_OORTMAS_DOLL"
+  },
+  {
+    "value": 13811,
+    "text": "DECORATION_CHRISTMAS_LIGHTS"
+  },
+  {
+    "value": 13813,
+    "text": "DECORATION_VALENTINES_DOLL"
+  },
+  {
+    "value": 32769,
+    "text": "PLACEABLE_LAVA"
+  },
+  {
+    "value": 32770,
+    "text": "PLACEABLE_WATER"
+  },
+  {
+    "value": 32777,
+    "text": "ITEM_COAL_BASE"
+  },
+  {
+    "value": 32778,
+    "text": "ITEM_COAL_HARD"
+  },
+  {
+    "value": 32779,
+    "text": "ITEM_COAL_SOFT"
+  },
+  {
+    "value": 32780,
+    "text": "ITEM_METAL_COPPER"
+  },
+  {
+    "value": 32781,
+    "text": "ITEM_METAL_GOLD"
+  },
+  {
+    "value": 32782,
+    "text": "ITEM_METAL_IRON"
+  },
+  {
+    "value": 32783,
+    "text": "ITEM_METAL_SILVER"
+  },
+  {
+    "value": 32784,
+    "text": "ITEM_METAL_TITANIUM"
+  },
+  {
+    "value": 32785,
+    "text": "ITEM_ORE_COPPER"
+  },
+  {
+    "value": 32786,
+    "text": "ITEM_ORE_GOLD"
+  },
+  {
+    "value": 32787,
+    "text": "ITEM_ORE_IRON"
+  },
+  {
+    "value": 32788,
+    "text": "ITEM_ORE_SILVER"
+  },
+  {
+    "value": 32789,
+    "text": "ITEM_ORE_TITANIUM"
+  },
+  {
+    "value": 32790,
+    "text": "ITEM_REFINED_AMETHYST"
+  },
+  {
+    "value": 32791,
+    "text": "ITEM_METEORITE_ICHOR"
+  },
+  {
+    "value": 32792,
+    "text": "ITEM_AMALGAM_OORTSTONE"
+  },
+  {
+    "value": 32793,
+    "text": "ITEM_REFINED_DIAMOND"
+  },
+  {
+    "value": 32794,
+    "text": "ITEM_REFINED_EMERALD"
+  },
+  {
+    "value": 32797,
+    "text": "ITEM_REFINED_RUBY"
+  },
+  {
+    "value": 32798,
+    "text": "ITEM_REFINED_SAPPHIRE"
+  },
+  {
+    "value": 32799,
+    "text": "ITEM_REFINED_TOPAZ"
+  },
+  {
+    "value": 32800,
+    "text": "ITEM_ROUGH_AMETHYST"
+  },
+  {
+    "value": 32801,
+    "text": "ITEM_ROUGH_BLINK"
+  },
+  {
+    "value": 32802,
+    "text": "ITEM_ROUGH_DARKMATTER"
+  },
+  {
+    "value": 32803,
+    "text": "ITEM_ROUGH_DIAMOND"
+  },
+  {
+    "value": 32804,
+    "text": "ITEM_ROUGH_EMERALD"
+  },
+  {
+    "value": 32805,
+    "text": "ITEM_ROUGH_OORTSTONE"
+  },
+  {
+    "value": 32806,
+    "text": "ITEM_ROUGH_RIFT"
+  },
+  {
+    "value": 32807,
+    "text": "ITEM_ROUGH_RUBY"
+  },
+  {
+    "value": 32808,
+    "text": "ITEM_ROUGH_SAPPHIRE"
+  },
+  {
+    "value": 32809,
+    "text": "ITEM_ROUGH_TOPAZ"
+  },
+  {
+    "value": 32810,
+    "text": "TOOL_AXE_COPPER"
+  },
+  {
+    "value": 32811,
+    "text": "TOOL_AXE_GOLD"
+  },
+  {
+    "value": 32812,
+    "text": "TOOL_AXE_IRON"
+  },
+  {
+    "value": 32813,
+    "text": "TOOL_AXE_SILVER"
+  },
+  {
+    "value": 32814,
+    "text": "TOOL_AXE_STONE"
+  },
+  {
+    "value": 32815,
+    "text": "TOOL_AXE_TITANIUM"
+  },
+  {
+    "value": 32816,
+    "text": "TOOL_AXE_WOOD"
+  },
+  {
+    "value": 32817,
+    "text": "TOOL_CHISEL_COPPER"
+  },
+  {
+    "value": 32818,
+    "text": "TOOL_CHISEL_GOLD"
+  },
+  {
+    "value": 32819,
+    "text": "TOOL_CHISEL_IRON"
+  },
+  {
+    "value": 32820,
+    "text": "TOOL_CHISEL_SILVER"
+  },
+  {
+    "value": 32821,
+    "text": "TOOL_CHISEL_TITANIUM"
+  },
+  {
+    "value": 32822,
+    "text": "TOOL_GRAPPLE_COPPER"
+  },
+  {
+    "value": 32823,
+    "text": "TOOL_GRAPPLE_GOLD"
+  },
+  {
+    "value": 32824,
+    "text": "TOOL_GRAPPLE_IRON"
+  },
+  {
+    "value": 32825,
+    "text": "TOOL_GRAPPLE_SILVER"
+  },
+  {
+    "value": 32826,
+    "text": "TOOL_GRAPPLE_TITANIUM"
+  },
+  {
+    "value": 32827,
+    "text": "TOOL_HAMMER_COPPER"
+  },
+  {
+    "value": 32828,
+    "text": "TOOL_HAMMER_GOLD"
+  },
+  {
+    "value": 32829,
+    "text": "TOOL_HAMMER_IRON"
+  },
+  {
+    "value": 32830,
+    "text": "TOOL_HAMMER_SILVER"
+  },
+  {
+    "value": 32831,
+    "text": "TOOL_HAMMER_STONE"
+  },
+  {
+    "value": 32832,
+    "text": "TOOL_HAMMER_TITANIUM"
+  },
+  {
+    "value": 32833,
+    "text": "TOOL_HAMMER_WOOD"
+  },
+  {
+    "value": 32839,
+    "text": "TOOL_SHOVEL_COPPER"
+  },
+  {
+    "value": 32840,
+    "text": "TOOL_SHOVEL_GOLD"
+  },
+  {
+    "value": 32841,
+    "text": "TOOL_SHOVEL_IRON"
+  },
+  {
+    "value": 32842,
+    "text": "TOOL_SHOVEL_SILVER"
+  },
+  {
+    "value": 32843,
+    "text": "TOOL_SHOVEL_STONE"
+  },
+  {
+    "value": 32844,
+    "text": "TOOL_SHOVEL_TITANIUM"
+  },
+  {
+    "value": 32845,
+    "text": "TOOL_SHOVEL_WOOD"
+  },
+  {
+    "value": 32846,
+    "text": "TOOL_SLINGBOW_COPPER"
+  },
+  {
+    "value": 32847,
+    "text": "TOOL_SLINGBOW_GOLD"
+  },
+  {
+    "value": 32848,
+    "text": "TOOL_SLINGBOW_IRON"
+  },
+  {
+    "value": 32849,
+    "text": "TOOL_SLINGBOW_SILVER"
+  },
+  {
+    "value": 32850,
+    "text": "TOOL_SLINGBOW_TITANIUM"
+  },
+  {
+    "value": 32851,
+    "text": "TOOL_SPANNER_COPPER"
+  },
+  {
+    "value": 32852,
+    "text": "TOOL_SPANNER_GOLD"
+  },
+  {
+    "value": 32853,
+    "text": "TOOL_SPANNER_IRON"
+  },
+  {
+    "value": 32854,
+    "text": "TOOL_SPANNER_SILVER"
+  },
+  {
+    "value": 32855,
+    "text": "TOOL_SPANNER_TITANIUM"
+  },
+  {
+    "value": 32856,
+    "text": "CHEAT_PICKAXE"
+  },
+  {
+    "value": 32857,
+    "text": "TOOL_BEACON_PLOT_ADD"
+  },
+  {
+    "value": 32858,
+    "text": "TOOL_BEACON_PLOT_REMOVE"
+  },
+  {
+    "value": 32859,
+    "text": "ITEM_SEED_GNARLEDGRASS"
+  },
+  {
+    "value": 32860,
+    "text": "ITEM_SEED_BARBEDGRASS"
+  },
+  {
+    "value": 32861,
+    "text": "ITEM_SEED_VERDANTGRASS"
+  },
+  {
+    "value": 32862,
+    "text": "ITEM_MIXTURE_BRICKIGNEOUS"
+  },
+  {
+    "value": 32863,
+    "text": "ITEM_MIXTURE_BRICKMETAMORPHIC"
+  },
+  {
+    "value": 32864,
+    "text": "ITEM_MIXTURE_BRICKSEDIMENTARY"
+  },
+  {
+    "value": 32865,
+    "text": "ESSENCE_VITAL_FRESH"
+  },
+  {
+    "value": 32866,
+    "text": "ITEM_CLOTH_SACK"
+  },
+  {
+    "value": 32867,
+    "text": "ITEM_INK_BASE"
+  },
+  {
+    "value": 32868,
+    "text": "ITEM_LEAF_FIBROUS"
+  },
+  {
+    "value": 32869,
+    "text": "ITEM_LEAF_INKY"
+  },
+  {
+    "value": 32870,
+    "text": "FOOD_MEAT_BASE_COOKED"
+  },
+  {
+    "value": 32871,
+    "text": "FOOD_MEAT_BASE_RAW"
+  },
+  {
+    "value": 32872,
+    "text": "ITEM_BEAN_SPICY"
+  },
+  {
+    "value": 32873,
+    "text": "ITEM_BEAN_SWEET"
+  },
+  {
+    "value": 32874,
+    "text": "ITEM_BEAN_BITTER"
+  },
+  {
+    "value": 32875,
+    "text": "ITEM_BONE_BASE"
+  },
+  {
+    "value": 32876,
+    "text": "ITEM_CLOTH_COTTON"
+  },
+  {
+    "value": 32877,
+    "text": "ITEM_COG_BASE"
+  },
+  {
+    "value": 32880,
+    "text": "ITEM_NAIL_BASE"
+  },
+  {
+    "value": 32881,
+    "text": "ITEM_STICK_BASE"
+  },
+  {
+    "value": 32882,
+    "text": "ITEM_TALLOW_BASE"
+  },
+  {
+    "value": 32883,
+    "text": "ITEM_LEAF_FLESHY"
+  },
+  {
+    "value": 32884,
+    "text": "ITEM_SHARD_OORT"
+  },
+  {
+    "value": 32885,
+    "text": "ITEM_BLOOD_VOLATILE"
+  },
+  {
+    "value": 32886,
+    "text": "ITEM_PETAL_BASE"
+  },
+  {
+    "value": 32887,
+    "text": "ITEM_BARK_BASE"
+  },
+  {
+    "value": 32888,
+    "text": "ITEM_ROCKDROP_FLINT"
+  },
+  {
+    "value": 32889,
+    "text": "ITEM_ROCKDROP_ROCKSALT"
+  },
+  {
+    "value": 32890,
+    "text": "ITEM_ROCKDROP_OPAL"
+  },
+  {
+    "value": 32891,
+    "text": "ITEM_FRAGMENT_SULFUR"
+  },
+  {
+    "value": 32892,
+    "text": "ITEM_FRAGMENT_SALTPETER"
+  },
+  {
+    "value": 32893,
+    "text": "ITEM_FRAGMENT_OLIVINE"
+  },
+  {
+    "value": 32894,
+    "text": "ITEM_FRAGMENT_COBALT"
+  },
+  {
+    "value": 32895,
+    "text": "ITEM_LAMELLA_EDIBLE"
+  },
+  {
+    "value": 32896,
+    "text": "ITEM_LAMELLA_REACTIVE"
+  },
+  {
+    "value": 32897,
+    "text": "ITEM_LAMELLA_GLOWING"
+  },
+  {
+    "value": 32898,
+    "text": "ITEM_ORB_PULSATING"
+  },
+  {
+    "value": 32899,
+    "text": "ITEM_ORB_VITAL"
+  },
+  {
+    "value": 32900,
+    "text": "ITEM_ORB_SHIMMERING"
+  },
+  {
+    "value": 32901,
+    "text": "ITEM_ORB_SHADOW"
+  },
+  {
+    "value": 32902,
+    "text": "ITEM_SHARD_CORROSION"
+  },
+  {
+    "value": 32903,
+    "text": "ITEM_SHARD_TOXIN"
+  },
+  {
+    "value": 32904,
+    "text": "ITEM_SHARD_BLAST"
+  },
+  {
+    "value": 32905,
+    "text": "ITEM_SHARD_BURN"
+  },
+  {
+    "value": 32906,
+    "text": "ITEM_SHARD_SHOCK"
+  },
+  {
+    "value": 32907,
+    "text": "ITEM_SHARD_CHILL"
+  },
+  {
+    "value": 32908,
+    "text": "ITEM_HIDE_BASE"
+  },
+  {
+    "value": 32909,
+    "text": "ITEM_MANTLE_CREATURE"
+  },
+  {
+    "value": 32910,
+    "text": "ITEM_GLAND_MILK"
+  },
+  {
+    "value": 32911,
+    "text": "ITEM_GLAND_ADRENAL"
+  },
+  {
+    "value": 32912,
+    "text": "ITEM_GLAND_THERMALSAC"
+  },
+  {
+    "value": 32913,
+    "text": "ITEM_GLAND_FLOATATIONSAC"
+  },
+  {
+    "value": 32914,
+    "text": "ITEM_GLAND_SPARKSAC"
+  },
+  {
+    "value": 32915,
+    "text": "ITEM_EYE_WILDSTOCK"
+  },
+  {
+    "value": 32916,
+    "text": "ITEM_EYE_ROADRUNNER"
+  },
+  {
+    "value": 32917,
+    "text": "ITEM_EYE_HOPPER"
+  },
+  {
+    "value": 32918,
+    "text": "ITEM_EYE_SPITTER"
+  },
+  {
+    "value": 32919,
+    "text": "ITEM_TROPHY_WILDSTOCK"
+  },
+  {
+    "value": 32920,
+    "text": "ITEM_TROPHY_ROADRUNNER"
+  },
+  {
+    "value": 32921,
+    "text": "ITEM_TROPHY_HOPPER"
+  },
+  {
+    "value": 32922,
+    "text": "ITEM_TROPHY_CUTTLETRUNK"
+  },
+  {
+    "value": 32923,
+    "text": "ITEM_TROPHY_SPITTER"
+  },
+  {
+    "value": 32924,
+    "text": "ITEM_TROPHY_HUNTER"
+  },
+  {
+    "value": 32925,
+    "text": "ITEM_BREW_CONTAINER1"
+  },
+  {
+    "value": 32926,
+    "text": "ITEM_BREW_CONTAINER2"
+  },
+  {
+    "value": 32927,
+    "text": "ITEM_BREW_CONTAINER3"
+  },
+  {
+    "value": 32928,
+    "text": "ITEM_BREW_CONTAINER4"
+  },
+  {
+    "value": 32929,
+    "text": "ITEM_BREW_CONTAINER5"
+  },
+  {
+    "value": 32930,
+    "text": "BUCKET_EMPTY_BASE"
+  },
+  {
+    "value": 32931,
+    "text": "BUCKET_WATER_BASE"
+  },
+  {
+    "value": 32932,
+    "text": "BUCKET_WATER_PURIFIED"
+  },
+  {
+    "value": 32933,
+    "text": "BUCKET_WATER_FORTIFIED"
+  },
+  {
+    "value": 32934,
+    "text": "BUCKET_MILK_BASE"
+  },
+  {
+    "value": 32935,
+    "text": "BUCKET_MILK_PURIFIED"
+  },
+  {
+    "value": 32936,
+    "text": "BUCKET_MILK_FORTIFIED"
+  },
+  {
+    "value": 32937,
+    "text": "ITEM_CHARCOAL_BASE"
+  },
+  {
+    "value": 32938,
+    "text": "ITEM_SYRUP_BASE"
+  },
+  {
+    "value": 32939,
+    "text": "ITEM_BAG_SUGAR"
+  },
+  {
+    "value": 32940,
+    "text": "ITEM_BAG_RICE"
+  },
+  {
+    "value": 32941,
+    "text": "ITEM_BAG_FLOUR"
+  },
+  {
+    "value": 32942,
+    "text": "ITEM_BAG_OATS"
+  },
+  {
+    "value": 32943,
+    "text": "ITEM_BAG_BAKINGPOWDER"
+  },
+  {
+    "value": 32944,
+    "text": "ITEM_BUTTER_BASE"
+  },
+  {
+    "value": 32945,
+    "text": "ITEM_BUTTER_PURIFIED"
+  },
+  {
+    "value": 32946,
+    "text": "ITEM_BUTTER_FORTIFIED"
+  },
+  {
+    "value": 32947,
+    "text": "ITEM_LEATHER_BASE"
+  },
+  {
+    "value": 32948,
+    "text": "ITEM_LEATHER_HARD"
+  },
+  {
+    "value": 32949,
+    "text": "ITEM_OIL_RESTORATIVE"
+  },
+  {
+    "value": 32950,
+    "text": "ITEM_OIL_BOOST"
+  },
+  {
+    "value": 32951,
+    "text": "ITEM_OIL_REDUCTION"
+  },
+  {
+    "value": 32952,
+    "text": "ITEM_OIL_CHANELLING"
+  },
+  {
+    "value": 32953,
+    "text": "ITEM_BONDINGAGENT_BASE"
+  },
+  {
+    "value": 32954,
+    "text": "ITEM_BONDINGAGENT_ENRICHED"
+  },
+  {
+    "value": 32955,
+    "text": "ITEM_BONDINGAGENT_SUPERENRICHED"
+  },
+  {
+    "value": 32956,
+    "text": "ITEM_AMALGAM_CORROSION"
+  },
+  {
+    "value": 32957,
+    "text": "ITEM_AMALGAM_TOXIN"
+  },
+  {
+    "value": 32958,
+    "text": "ITEM_AMALGAM_BLAST"
+  },
+  {
+    "value": 32959,
+    "text": "ITEM_AMALGAM_BURN"
+  },
+  {
+    "value": 32960,
+    "text": "ITEM_AMALGAM_SHOCK"
+  },
+  {
+    "value": 32961,
+    "text": "ITEM_AMALGAM_CHILL"
+  },
+  {
+    "value": 32962,
+    "text": "ITEM_FUSION_ELEMENTAL"
+  },
+  {
+    "value": 32963,
+    "text": "ITEM_BEACONFUEL_MINOR"
+  },
+  {
+    "value": 32965,
+    "text": "ITEM_BEACONFUEL_BASIC"
+  },
+  {
+    "value": 32967,
+    "text": "ITEM_BEACONFUEL_GREATER"
+  },
+  {
+    "value": 32968,
+    "text": "ITEM_SEED_RICE"
+  },
+  {
+    "value": 32969,
+    "text": "ITEM_SEED_WHEAT"
+  },
+  {
+    "value": 32970,
+    "text": "ITEM_SEED_OATS"
+  },
+  {
+    "value": 32971,
+    "text": "ITEM_SEED_TUBER"
+  },
+  {
+    "value": 32972,
+    "text": "ITEM_SEED_TUBER_WAXY"
+  },
+  {
+    "value": 32973,
+    "text": "ITEM_SEED_TUBER_EXOTIC"
+  },
+  {
+    "value": 32974,
+    "text": "ITEM_SEED_ORNAMENTAL_1"
+  },
+  {
+    "value": 32975,
+    "text": "ITEM_SEED_ORNAMENTAL_2"
+  },
+  {
+    "value": 32976,
+    "text": "ITEM_SEED_ORNAMENTAL_3"
+  },
+  {
+    "value": 32977,
+    "text": "ITEM_SEED_NUTS"
+  },
+  {
+    "value": 32978,
+    "text": "ITEM_SEED_BERRY"
+  },
+  {
+    "value": 32979,
+    "text": "ITEM_SEED_BERRY_GLOSSY"
+  },
+  {
+    "value": 32980,
+    "text": "ITEM_SEED_BERRY_JUICY"
+  },
+  {
+    "value": 32981,
+    "text": "ITEM_SEED_FUEL"
+  },
+  {
+    "value": 32982,
+    "text": "ITEM_SEED_FUEL_ENRICHER"
+  },
+  {
+    "value": 32983,
+    "text": "ITEM_SEED_DRIPSTONE"
+  },
+  {
+    "value": 32984,
+    "text": "TOOL_HOE_METAL"
+  },
+  {
+    "value": 32985,
+    "text": "TOOL_FERTILIZER_ORGANIC"
+  },
+  {
+    "value": 32986,
+    "text": "TOOL_FERTILIZER_INORGANIC"
+  },
+  {
+    "value": 32987,
+    "text": "ITEM_CROPDROP_RICE"
+  },
+  {
+    "value": 32988,
+    "text": "ITEM_CROPDROP_WHEAT"
+  },
+  {
+    "value": 32989,
+    "text": "ITEM_CROPDROP_OATS"
+  },
+  {
+    "value": 32990,
+    "text": "ITEM_CROPDROP_NUTS"
+  },
+  {
+    "value": 32991,
+    "text": "ITEM_CROPDROP_FUEL"
+  },
+  {
+    "value": 32992,
+    "text": "ITEM_CROPDROP_FUEL_ENRICHER"
+  },
+  {
+    "value": 32993,
+    "text": "ITEM_CROPDROP_DRIPSTONE"
+  },
+  {
+    "value": 32994,
+    "text": "ITEM_METAL_SILVERALLOY"
+  },
+  {
+    "value": 32995,
+    "text": "ITEM_METAL_GOLDALLOY"
+  },
+  {
+    "value": 32996,
+    "text": "ITEM_METAL_TITANIUMALLOY"
+  },
+  {
+    "value": 32997,
+    "text": "ITEM_GLUE_BASE"
+  },
+  {
+    "value": 32998,
+    "text": "TOOL_SLINGBOW_STONE"
+  },
+  {
+    "value": 33000,
+    "text": "TOOL_HAMMER_AMETHYST"
+  },
+  {
+    "value": 33001,
+    "text": "TOOL_SHOVEL_AMETHYST"
+  },
+  {
+    "value": 33002,
+    "text": "TOOL_AXE_AMETHYST"
+  },
+  {
+    "value": 33003,
+    "text": "TOOL_SLINGBOW_AMETHYST"
+  },
+  {
+    "value": 33005,
+    "text": "TOOL_CHISEL_AMETHYST"
+  },
+  {
+    "value": 33006,
+    "text": "TOOL_GRAPPLE_AMETHYST"
+  },
+  {
+    "value": 33007,
+    "text": "TOOL_HAMMER_DIAMOND"
+  },
+  {
+    "value": 33008,
+    "text": "TOOL_SHOVEL_DIAMOND"
+  },
+  {
+    "value": 33009,
+    "text": "TOOL_AXE_DIAMOND"
+  },
+  {
+    "value": 33010,
+    "text": "TOOL_SLINGBOW_DIAMOND"
+  },
+  {
+    "value": 33012,
+    "text": "TOOL_CHISEL_DIAMOND"
+  },
+  {
+    "value": 33013,
+    "text": "TOOL_GRAPPLE_DIAMOND"
+  },
+  {
+    "value": 33014,
+    "text": "TOOL_SPANNER_DIAMOND"
+  },
+  {
+    "value": 33015,
+    "text": "TOOL_HAMMER_EMERALD"
+  },
+  {
+    "value": 33016,
+    "text": "TOOL_SHOVEL_EMERALD"
+  },
+  {
+    "value": 33017,
+    "text": "TOOL_AXE_EMERALD"
+  },
+  {
+    "value": 33018,
+    "text": "TOOL_SLINGBOW_EMERALD"
+  },
+  {
+    "value": 33020,
+    "text": "TOOL_CHISEL_EMERALD"
+  },
+  {
+    "value": 33021,
+    "text": "TOOL_GRAPPLE_EMERALD"
+  },
+  {
+    "value": 33022,
+    "text": "TOOL_SPANNER_EMERALD"
+  },
+  {
+    "value": 33023,
+    "text": "TOOL_HAMMER_TOPAZ"
+  },
+  {
+    "value": 33024,
+    "text": "TOOL_SHOVEL_TOPAZ"
+  },
+  {
+    "value": 33025,
+    "text": "TOOL_AXE_TOPAZ"
+  },
+  {
+    "value": 33026,
+    "text": "TOOL_SLINGBOW_TOPAZ"
+  },
+  {
+    "value": 33028,
+    "text": "TOOL_CHISEL_TOPAZ"
+  },
+  {
+    "value": 33029,
+    "text": "TOOL_GRAPPLE_TOPAZ"
+  },
+  {
+    "value": 33030,
+    "text": "TOOL_SPANNER_TOPAZ"
+  },
+  {
+    "value": 33031,
+    "text": "TOOL_HAMMER_RUBY"
+  },
+  {
+    "value": 33032,
+    "text": "TOOL_SHOVEL_RUBY"
+  },
+  {
+    "value": 33033,
+    "text": "TOOL_AXE_RUBY"
+  },
+  {
+    "value": 33034,
+    "text": "TOOL_SLINGBOW_RUBY"
+  },
+  {
+    "value": 33036,
+    "text": "TOOL_CHISEL_RUBY"
+  },
+  {
+    "value": 33037,
+    "text": "TOOL_GRAPPLE_RUBY"
+  },
+  {
+    "value": 33038,
+    "text": "TOOL_SPANNER_RUBY"
+  },
+  {
+    "value": 33039,
+    "text": "TOOL_HAMMER_SAPPHIRE"
+  },
+  {
+    "value": 33040,
+    "text": "TOOL_SHOVEL_SAPPHIRE"
+  },
+  {
+    "value": 33041,
+    "text": "TOOL_AXE_SAPPHIRE"
+  },
+  {
+    "value": 33042,
+    "text": "TOOL_SLINGBOW_SAPPHIRE"
+  },
+  {
+    "value": 33044,
+    "text": "TOOL_CHISEL_SAPPHIRE"
+  },
+  {
+    "value": 33045,
+    "text": "TOOL_GRAPPLE_SAPPHIRE"
+  },
+  {
+    "value": 33046,
+    "text": "TOOL_SPANNER_SAPPHIRE"
+  },
+  {
+    "value": 33047,
+    "text": "TOOL_HAMMER_RIFT"
+  },
+  {
+    "value": 33048,
+    "text": "TOOL_SHOVEL_RIFT"
+  },
+  {
+    "value": 33049,
+    "text": "TOOL_AXE_RIFT"
+  },
+  {
+    "value": 33050,
+    "text": "TOOL_SLINGBOW_RIFT"
+  },
+  {
+    "value": 33052,
+    "text": "TOOL_CHISEL_RIFT"
+  },
+  {
+    "value": 33053,
+    "text": "TOOL_GRAPPLE_RIFT"
+  },
+  {
+    "value": 33054,
+    "text": "TOOL_HAMMER_DARK_MATTER"
+  },
+  {
+    "value": 33055,
+    "text": "TOOL_SHOVEL_DARK_MATTER"
+  },
+  {
+    "value": 33056,
+    "text": "TOOL_AXE_DARK_MATTER"
+  },
+  {
+    "value": 33057,
+    "text": "TOOL_SLINGBOW_DARK_MATTER"
+  },
+  {
+    "value": 33059,
+    "text": "TOOL_CHISEL_DARK_MATTER"
+  },
+  {
+    "value": 33060,
+    "text": "TOOL_GRAPPLE_DARK_MATTER"
+  },
+  {
+    "value": 33061,
+    "text": "TOOL_HAMMER_BLINK"
+  },
+  {
+    "value": 33062,
+    "text": "TOOL_SHOVEL_BLINK"
+  },
+  {
+    "value": 33063,
+    "text": "TOOL_AXE_BLINK"
+  },
+  {
+    "value": 33064,
+    "text": "TOOL_SLINGBOW_BLINK"
+  },
+  {
+    "value": 33066,
+    "text": "TOOL_CHISEL_BLINK"
+  },
+  {
+    "value": 33067,
+    "text": "TOOL_GRAPPLE_BLINK"
+  },
+  {
+    "value": 33068,
+    "text": "TOOL_HAMMER_OORT_STONE"
+  },
+  {
+    "value": 33069,
+    "text": "TOOL_SHOVEL_OORT_STONE"
+  },
+  {
+    "value": 33070,
+    "text": "TOOL_AXE_OORT_STONE"
+  },
+  {
+    "value": 33071,
+    "text": "TOOL_SLINGBOW_OORT_STONE"
+  },
+  {
+    "value": 33073,
+    "text": "TOOL_CHISEL_OORT_STONE"
+  },
+  {
+    "value": 33074,
+    "text": "TOOL_GRAPPLE_OORT_STONE"
+  },
+  {
+    "value": 33075,
+    "text": "ITEM_BLOOD_VISCOUS"
+  },
+  {
+    "value": 33076,
+    "text": "ITEM_BLOOD_FRESH"
+  },
+  {
+    "value": 33077,
+    "text": "ITEM_SAP_BASE"
+  },
+  {
+    "value": 33078,
+    "text": "ITEM_ANCIENTTECHNOLOGY_COMPONENT"
+  },
+  {
+    "value": 33079,
+    "text": "ITEM_ANCIENTTECHNOLOGY_DEVICE"
+  },
+  {
+    "value": 33080,
+    "text": "ITEM_ANCIENTTECHNOLOGY_FRAGMENT"
+  },
+  {
+    "value": 33081,
+    "text": "ITEM_FOSSIL_SMALL"
+  },
+  {
+    "value": 33082,
+    "text": "ITEM_FOSSIL_MEDIUM"
+  },
+  {
+    "value": 33083,
+    "text": "ITEM_FOSSIL_LARGE"
+  },
+  {
+    "value": 33084,
+    "text": "ITEM_EYE_HUNTER"
+  },
+  {
+    "value": 33085,
+    "text": "ITEM_GLAND_HUNTER"
+  },
+  {
+    "value": 33086,
+    "text": "ITEM_SEASONAL_CANDY_CANE_RED"
+  },
+  {
+    "value": 33087,
+    "text": "TOOL_SEASONAL_BAGOFSNOWBALLS"
+  },
+  {
+    "value": 33089,
+    "text": "ITEM_SEASONAL_CANDY_CANE_GREEN"
+  },
+  {
+    "value": 33090,
+    "text": "ITEM_SEASONAL_VALENTINES_GIFT_BOUQUET"
+  },
+  {
+    "value": 33091,
+    "text": "ITEM_SEASONAL_VALENTINES_REWARD_HEART"
+  },
+  {
+    "value": 33092,
+    "text": "ITEM_DYE"
+  },
+  {
+    "value": 33093,
+    "text": "TOOL_TOTEM"
+  },
+  {
+    "value": 33095,
+    "text": "TOOL_SPANNER_AMETHYST"
+  },
+  {
+    "value": 33096,
+    "text": "ESSENCE_VITAL_ANCIENT"
+  },
+  {
+    "value": 33097,
+    "text": "TOOL_SPANNER_STONE"
+  },
+  {
+    "value": 33098,
+    "text": "TOOL_CHISEL_STONE"
+  },
+  {
+    "value": 33099,
+    "text": "TOOL_TOTEM_FOUNDERS"
+  },
+  {
+    "value": 33100,
+    "text": "ITEM_BOMBCHARGE_BASE"
+  },
+  {
+    "value": 33101,
+    "text": "LOCATION_TOKEN"
+  },
+  {
+    "value": 33104,
+    "text": "TOTEM_AMMO"
+  },
+  {
+    "value": 33121,
+    "text": "AUGMENT_SLINGBOW_DAMAGE1"
+  },
+  {
+    "value": 33122,
+    "text": "AUGMENT_SLINGBOW_DAMAGE2"
+  },
+  {
+    "value": 33123,
+    "text": "AUGMENT_SLINGBOW_DAMAGE3"
+  },
+  {
+    "value": 33124,
+    "text": "AUGMENT_SLINGBOW_ACTIONSPEED1"
+  },
+  {
+    "value": 33125,
+    "text": "AUGMENT_SLINGBOW_ACTIONSPEED2"
+  },
+  {
+    "value": 33126,
+    "text": "AUGMENT_SLINGBOW_ACTIONSPEED3"
+  },
+  {
+    "value": 33127,
+    "text": "AUGMENT_SLINGBOW_CRITICALEFFECT1"
+  },
+  {
+    "value": 33128,
+    "text": "AUGMENT_SLINGBOW_CRITICALEFFECT2"
+  },
+  {
+    "value": 33129,
+    "text": "AUGMENT_SLINGBOW_CRITICALEFFECT3"
+  },
+  {
+    "value": 33130,
+    "text": "AUGMENT_SLINGBOW_MAXLENGTH1"
+  },
+  {
+    "value": 33131,
+    "text": "AUGMENT_SLINGBOW_MAXLENGTH2"
+  },
+  {
+    "value": 33132,
+    "text": "AUGMENT_SLINGBOW_MAXLENGTH3"
+  },
+  {
+    "value": 33133,
+    "text": "AUGMENT_SLINGBOW_PROJECTILESPEED1"
+  },
+  {
+    "value": 33134,
+    "text": "AUGMENT_SLINGBOW_PROJECTILESPEED2"
+  },
+  {
+    "value": 33135,
+    "text": "AUGMENT_SLINGBOW_PROJECTILESPEED3"
+  },
+  {
+    "value": 33136,
+    "text": "TOOL_MAP_GLOBE"
+  },
+  {
+    "value": 33150,
+    "text": "FOOD_STARBERRY_RAW"
+  },
+  {
+    "value": 33151,
+    "text": "FOOD_STARBERRY_COOKED"
+  },
+  {
+    "value": 33152,
+    "text": "BREW_HEALING_GREATER_INSTANT"
+  },
+  {
+    "value": 33153,
+    "text": "CHEAT_CHISEL"
+  },
+  {
+    "value": 33154,
+    "text": "PORTAL_TOKEN"
+  },
+  {
+    "value": 33162,
+    "text": "CHEAT_UNDO_CHISEL"
+  },
+  {
+    "value": 33163,
+    "text": "TOOL_BAGOFBOMBS_COPPER"
+  },
+  {
+    "value": 33164,
+    "text": "TOOL_BAGOFBOMBS_IRON"
+  },
+  {
+    "value": 33165,
+    "text": "TOOL_BAGOFBOMBS_SILVER"
+  },
+  {
+    "value": 33166,
+    "text": "TOOL_BAGOFBOMBS_GOLD"
+  },
+  {
+    "value": 33167,
+    "text": "TOOL_BAGOFBOMBS_TITANIUM"
+  },
+  {
+    "value": 33168,
+    "text": "TOOL_BAGOFBOMBS_AMETHYST"
+  },
+  {
+    "value": 33169,
+    "text": "TOOL_BAGOFBOMBS_DIAMOND"
+  },
+  {
+    "value": 33170,
+    "text": "TOOL_BAGOFBOMBS_EMERALD"
+  },
+  {
+    "value": 33171,
+    "text": "TOOL_BAGOFBOMBS_TOPAZ"
+  },
+  {
+    "value": 33172,
+    "text": "TOOL_BAGOFBOMBS_RUBY"
+  },
+  {
+    "value": 33173,
+    "text": "TOOL_BAGOFBOMBS_SAPPHIRE"
+  },
+  {
+    "value": 33174,
+    "text": "TOOL_BAGOFBOMBS_RIFT"
+  },
+  {
+    "value": 33175,
+    "text": "TOOL_BAGOFBOMBS_DARK_MATTER"
+  },
+  {
+    "value": 33176,
+    "text": "TOOL_BAGOFBOMBS_BLINK"
+  },
+  {
+    "value": 33177,
+    "text": "TOOL_BAGOFBOMBS_OORT_STONE"
+  },
+  {
+    "value": 33178,
+    "text": "ITEM_SEASONAL_SPOOKY_ORB"
+  },
+  {
+    "value": 33210,
+    "text": "CHEAT_SQCHISEL"
+  },
+  {
+    "value": 33211,
+    "text": "CHEAT_BEVELCHISEL"
+  },
+  {
+    "value": 33212,
+    "text": "BREW_REVIVAL_BASE"
+  },
+  {
+    "value": 33213,
+    "text": "FOOD_STARBERRY_GLOSSY_RAW"
+  },
+  {
+    "value": 33214,
+    "text": "FOOD_STARBERRY_GLOSSY_COOKED"
+  },
+  {
+    "value": 33215,
+    "text": "TOTEM_AMMO_RESURRECTION"
+  },
+  {
+    "value": 33217,
+    "text": "ITEM_BREW_RAGE"
+  },
+  {
+    "value": 33218,
+    "text": "ITEM_BREW_FOCUS"
+  },
+  {
+    "value": 33252,
+    "text": "BREW_HEALING_MINOR_INSTANT"
+  },
+  {
+    "value": 33253,
+    "text": "BREW_HEALING_IMPROVED_INSTANT"
+  },
+  {
+    "value": 33254,
+    "text": "BREW_HEALING_SUPER_INSTANT"
+  },
+  {
+    "value": 33255,
+    "text": "BREW_HEALING_MEGA_INSTANT"
+  },
+  {
+    "value": 33256,
+    "text": "BREW_HEALING_MINOR"
+  },
+  {
+    "value": 33257,
+    "text": "BREW_HEALING_IMPROVED"
+  },
+  {
+    "value": 33258,
+    "text": "BREW_HEALING_GREATER"
+  },
+  {
+    "value": 33259,
+    "text": "BREW_HEALING_SUPER"
+  },
+  {
+    "value": 33260,
+    "text": "BREW_HEALING_MEGA"
+  },
+  {
+    "value": 33261,
+    "text": "BREW_RECOVERY_MINOR_INSTANT"
+  },
+  {
+    "value": 33262,
+    "text": "BREW_RECOVERY_IMPROVED_INSTANT"
+  },
+  {
+    "value": 33263,
+    "text": "BREW_RECOVERY_GREATER_INSTANT"
+  },
+  {
+    "value": 33264,
+    "text": "BREW_RECOVERY_SUPER_INSTANT"
+  },
+  {
+    "value": 33265,
+    "text": "BREW_RECOVERY_MEGA_INSTANT"
+  },
+  {
+    "value": 33266,
+    "text": "BREW_RECOVERY_MINOR"
+  },
+  {
+    "value": 33267,
+    "text": "BREW_RECOVERY_IMPROVED"
+  },
+  {
+    "value": 33268,
+    "text": "BREW_RECOVERY_GREATER"
+  },
+  {
+    "value": 33269,
+    "text": "BREW_RECOVERY_SUPER"
+  },
+  {
+    "value": 33270,
+    "text": "BREW_RECOVERY_MEGA"
+  },
+  {
+    "value": 33271,
+    "text": "BREW_STICKY_BASE"
+  },
+  {
+    "value": 33272,
+    "text": "BREW_FAST_MINOR"
+  },
+  {
+    "value": 33273,
+    "text": "BREW_FAST_IMPROVED"
+  },
+  {
+    "value": 33274,
+    "text": "BREW_FAST_GREATER"
+  },
+  {
+    "value": 33275,
+    "text": "BREW_FAST_SUPER"
+  },
+  {
+    "value": 33276,
+    "text": "BREW_FAST_MEGA"
+  },
+  {
+    "value": 33277,
+    "text": "BREW_STRENGTH_MINOR"
+  },
+  {
+    "value": 33278,
+    "text": "BREW_STRENGTH_IMPROVED"
+  },
+  {
+    "value": 33279,
+    "text": "BREW_STRENGTH_GREATER"
+  },
+  {
+    "value": 33280,
+    "text": "BREW_STRENGTH_SUPER"
+  },
+  {
+    "value": 33281,
+    "text": "BREW_STRENGTH_MEGA"
+  },
+  {
+    "value": 33282,
+    "text": "BREW_CLEANSING_MINOR"
+  },
+  {
+    "value": 33283,
+    "text": "BREW_CLEANSING_IMPROVED"
+  },
+  {
+    "value": 33284,
+    "text": "BREW_CLEANSING_GREATER"
+  },
+  {
+    "value": 33285,
+    "text": "BREW_CLEANSING_SUPER"
+  },
+  {
+    "value": 33286,
+    "text": "BREW_CLEANSING_MEGA"
+  },
+  {
+    "value": 33287,
+    "text": "BREW_INNOCUOUS_MINOR"
+  },
+  {
+    "value": 33288,
+    "text": "BREW_INNOCUOUS_GREATER"
+  },
+  {
+    "value": 33289,
+    "text": "BREW_INNOCUOUS_MEGA"
+  },
+  {
+    "value": 33290,
+    "text": "BREW_LUMINOUS_MINOR"
+  },
+  {
+    "value": 33291,
+    "text": "BREW_LUMINOUS_GREATER"
+  },
+  {
+    "value": 33292,
+    "text": "BREW_LUMINOUS_MEGA"
+  },
+  {
+    "value": 33293,
+    "text": "BREW_CALMING_MEGA"
+  },
+  {
+    "value": 33294,
+    "text": "BREW_AGGRAVATING_MEGA"
+  },
+  {
+    "value": 33295,
+    "text": "FOOD_STARBERRY_JUICY_RAW"
+  },
+  {
+    "value": 33296,
+    "text": "FOOD_STARBERRY_JUICY_COOKED"
+  },
+  {
+    "value": 33297,
+    "text": "FOOD_EARTHYAM_BASE_RAW"
+  },
+  {
+    "value": 33298,
+    "text": "FOOD_EARTHYAM_BASE_COOKED"
+  },
+  {
+    "value": 33299,
+    "text": "FOOD_EARTHYAM_WAXY_RAW"
+  },
+  {
+    "value": 33300,
+    "text": "FOOD_EARTHYAM_WAXY_COOKED"
+  },
+  {
+    "value": 33301,
+    "text": "FOOD_EARTHYAM_EXOTIC_RAW"
+  },
+  {
+    "value": 33302,
+    "text": "FOOD_EARTHYAM_EXOTIC_COOKED"
+  },
+  {
+    "value": 33303,
+    "text": "FOOD_MEAT_LEAN_RAW"
+  },
+  {
+    "value": 33304,
+    "text": "FOOD_MEAT_LEAN_COOKED"
+  },
+  {
+    "value": 33305,
+    "text": "FOOD_MEAT_PRIME_RAW"
+  },
+  {
+    "value": 33306,
+    "text": "FOOD_MEAT_PRIME_COOKED"
+  },
+  {
+    "value": 33307,
+    "text": "FOOD_STARBERRY_SOUP"
+  },
+  {
+    "value": 33308,
+    "text": "FOOD_STARBERRY_STEWED"
+  },
+  {
+    "value": 33309,
+    "text": "FOOD_STARBERRY_PORRIDGE_RAW"
+  },
+  {
+    "value": 33310,
+    "text": "FOOD_STARBERRY_PORRIDGE_COOKED"
+  },
+  {
+    "value": 33311,
+    "text": "FOOD_STARBERRY_BREAD_RAW"
+  },
+  {
+    "value": 33312,
+    "text": "FOOD_STARBERRY_BREAD_COOKED"
+  },
+  {
+    "value": 33313,
+    "text": "FOOD_STARBERRY_PIE_RAW"
+  },
+  {
+    "value": 33314,
+    "text": "FOOD_STARBERRY_PIE_COOKED"
+  },
+  {
+    "value": 33315,
+    "text": "FOOD_EARTHYAM_SOUP"
+  },
+  {
+    "value": 33316,
+    "text": "FOOD_EARTHYAM_STEW"
+  },
+  {
+    "value": 33317,
+    "text": "FOOD_EARTHYAM_RISOTTO_RAW"
+  },
+  {
+    "value": 33318,
+    "text": "FOOD_EARTHYAM_RISOTTO_COOKED"
+  },
+  {
+    "value": 33319,
+    "text": "FOOD_EARTHYAM_LOAF_RAW"
+  },
+  {
+    "value": 33320,
+    "text": "FOOD_EARTHYAM_LOAF_COOKED"
+  },
+  {
+    "value": 33321,
+    "text": "FOOD_EARTHYAM_PIE_RAW"
+  },
+  {
+    "value": 33322,
+    "text": "FOOD_EARTHYAM_PIE_COOKED"
+  },
+  {
+    "value": 33323,
+    "text": "FOOD_MEATY_BROTH"
+  },
+  {
+    "value": 33324,
+    "text": "FOOD_MEATY_CASSEROLE"
+  },
+  {
+    "value": 33325,
+    "text": "FOOD_MEATY_RISOTTO_RAW"
+  },
+  {
+    "value": 33326,
+    "text": "FOOD_MEATY_RISOTTO_COOKED"
+  },
+  {
+    "value": 33327,
+    "text": "FOOD_MEATLOAF_RAW"
+  },
+  {
+    "value": 33328,
+    "text": "FOOD_MEATLOAF_COOKED"
+  },
+  {
+    "value": 33329,
+    "text": "FOOD_MEAT_PIE_RAW"
+  },
+  {
+    "value": 33330,
+    "text": "FOOD_MEAT_PIE_COOKED"
+  },
+  {
+    "value": 33331,
+    "text": "FOOD_INVIGORATING_SOUP"
+  },
+  {
+    "value": 33332,
+    "text": "FOOD_INVIGORATING_STEW"
+  },
+  {
+    "value": 33333,
+    "text": "FOOD_INVIGORATING_PORRIDGE_RAW"
+  },
+  {
+    "value": 33334,
+    "text": "FOOD_INVIGORATING_PORRIDGE_COOKED"
+  },
+  {
+    "value": 33335,
+    "text": "FOOD_INVIGORATING_BREAD_RAW"
+  },
+  {
+    "value": 33336,
+    "text": "FOOD_INVIGORATING_BREAD_COOKED"
+  },
+  {
+    "value": 33337,
+    "text": "FOOD_INVIGORATING_PIE_RAW"
+  },
+  {
+    "value": 33338,
+    "text": "FOOD_INVIGORATING_PIE_COOKED"
+  },
+  {
+    "value": 33339,
+    "text": "FOOD_ENERGISING_SOUP"
+  },
+  {
+    "value": 33340,
+    "text": "FOOD_ENERGISING_STEW"
+  },
+  {
+    "value": 33341,
+    "text": "FOOD_ENERGISING_RISOTTO_RAW"
+  },
+  {
+    "value": 33342,
+    "text": "FOOD_ENERGISING_RISOTTO_COOKED"
+  },
+  {
+    "value": 33343,
+    "text": "FOOD_ENERGISING_LOAF_RAW"
+  },
+  {
+    "value": 33344,
+    "text": "FOOD_ENERGISING_LOAF_COOKED"
+  },
+  {
+    "value": 33345,
+    "text": "FOOD_ENERGISING_PIE_RAW"
+  },
+  {
+    "value": 33346,
+    "text": "FOOD_ENERGISING_PIE_COOKED"
+  },
+  {
+    "value": 33347,
+    "text": "FOOD_SHIELDING_BROTH"
+  },
+  {
+    "value": 33348,
+    "text": "FOOD_SHIELDING_CASSEROLE"
+  },
+  {
+    "value": 33349,
+    "text": "FOOD_SHIELDING_RISOTTO_RAW"
+  },
+  {
+    "value": 33350,
+    "text": "FOOD_SHIELDING_RISOTTO_COOKED"
+  },
+  {
+    "value": 33351,
+    "text": "FOOD_SHIELDING_LOAF_RAW"
+  },
+  {
+    "value": 33352,
+    "text": "FOOD_SHIELDING_LOAF_COOKED"
+  },
+  {
+    "value": 33353,
+    "text": "FOOD_SHIELDING_PIE_RAW"
+  },
+  {
+    "value": 33354,
+    "text": "FOOD_SHIELDING_PIE_COOKED"
+  },
+  {
+    "value": 33355,
+    "text": "FOOD_SHIELDING_BROTH_BURN"
+  },
+  {
+    "value": 33356,
+    "text": "FOOD_SHIELDING_CASSEROLE_BURN"
+  },
+  {
+    "value": 33357,
+    "text": "FOOD_SHIELDING_RISOTTO_BURN_RAW"
+  },
+  {
+    "value": 33358,
+    "text": "FOOD_SHIELDING_RISOTTO_BURN_COOKED"
+  },
+  {
+    "value": 33359,
+    "text": "FOOD_SHIELDING_LOAF_BURN_RAW"
+  },
+  {
+    "value": 33360,
+    "text": "FOOD_SHIELDING_LOAF_BURN_COOKED"
+  },
+  {
+    "value": 33361,
+    "text": "FOOD_SHIELDING_PIE_BURN_RAW"
+  },
+  {
+    "value": 33362,
+    "text": "FOOD_SHIELDING_PIE_BURN_COOKED"
+  },
+  {
+    "value": 33363,
+    "text": "FOOD_SHIELDING_BROTH_CHILL"
+  },
+  {
+    "value": 33364,
+    "text": "FOOD_SHIELDING_CASSEROLE_CHILL"
+  },
+  {
+    "value": 33365,
+    "text": "FOOD_SHIELDING_RISOTTO_CHILL_RAW"
+  },
+  {
+    "value": 33366,
+    "text": "FOOD_SHIELDING_RISOTTO_CHILL_COOKED"
+  },
+  {
+    "value": 33367,
+    "text": "FOOD_SHIELDING_LOAF_CHILL_RAW"
+  },
+  {
+    "value": 33368,
+    "text": "FOOD_SHIELDING_LOAF_CHILL_COOKED"
+  },
+  {
+    "value": 33369,
+    "text": "FOOD_SHIELDING_PIE_CHILL_RAW"
+  },
+  {
+    "value": 33370,
+    "text": "FOOD_SHIELDING_PIE_CHILL_COOKED"
+  },
+  {
+    "value": 33371,
+    "text": "FOOD_SHIELDING_BROTH_TOXIN"
+  },
+  {
+    "value": 33372,
+    "text": "FOOD_SHIELDING_CASSEROLE_TOXIN"
+  },
+  {
+    "value": 33373,
+    "text": "FOOD_SHIELDING_RISOTTO_TOXIN_RAW"
+  },
+  {
+    "value": 33374,
+    "text": "FOOD_SHIELDING_RISOTTO_TOXIN_COOKED"
+  },
+  {
+    "value": 33375,
+    "text": "FOOD_SHIELDING_LOAF_TOXIN_RAW"
+  },
+  {
+    "value": 33376,
+    "text": "FOOD_SHIELDING_LOAF_TOXIN_COOKED"
+  },
+  {
+    "value": 33377,
+    "text": "FOOD_SHIELDING_PIE_TOXIN_RAW"
+  },
+  {
+    "value": 33378,
+    "text": "FOOD_SHIELDING_PIE_TOXIN_COOKED"
+  },
+  {
+    "value": 33379,
+    "text": "FOOD_SHIELDING_BROTH_CORROSION"
+  },
+  {
+    "value": 33380,
+    "text": "FOOD_SHIELDING_CASSEROLE_CORROSION"
+  },
+  {
+    "value": 33381,
+    "text": "FOOD_SHIELDING_RISOTTO_CORROSION_RAW"
+  },
+  {
+    "value": 33382,
+    "text": "FOOD_SHIELDING_RISOTTO_CORROSION_COOKED"
+  },
+  {
+    "value": 33383,
+    "text": "FOOD_SHIELDING_LOAF_CORROSION_RAW"
+  },
+  {
+    "value": 33384,
+    "text": "FOOD_SHIELDING_LOAF_CORROSION_COOKED"
+  },
+  {
+    "value": 33385,
+    "text": "FOOD_SHIELDING_PIE_CORROSION_RAW"
+  },
+  {
+    "value": 33386,
+    "text": "FOOD_SHIELDING_PIE_CORROSION_COOKED"
+  },
+  {
+    "value": 33387,
+    "text": "FOOD_SHIELDING_BROTH_BLAST"
+  },
+  {
+    "value": 33388,
+    "text": "FOOD_SHIELDING_CASSEROLE_BLAST"
+  },
+  {
+    "value": 33389,
+    "text": "FOOD_SHIELDING_RISOTTO_BLAST_RAW"
+  },
+  {
+    "value": 33390,
+    "text": "FOOD_SHIELDING_RISOTTO_BLAST_COOKED"
+  },
+  {
+    "value": 33391,
+    "text": "FOOD_SHIELDING_LOAF_BLAST_RAW"
+  },
+  {
+    "value": 33392,
+    "text": "FOOD_SHIELDING_LOAF_BLAST_COOKED"
+  },
+  {
+    "value": 33393,
+    "text": "FOOD_SHIELDING_PIE_BLAST_RAW"
+  },
+  {
+    "value": 33394,
+    "text": "FOOD_SHIELDING_PIE_BLAST_COOKED"
+  },
+  {
+    "value": 33395,
+    "text": "FOOD_SHIELDING_BROTH_SHOCK"
+  },
+  {
+    "value": 33396,
+    "text": "FOOD_SHIELDING_CASSEROLE_SHOCK"
+  },
+  {
+    "value": 33397,
+    "text": "FOOD_SHIELDING_RISOTTO_SHOCK_RAW"
+  },
+  {
+    "value": 33398,
+    "text": "FOOD_SHIELDING_RISOTTO_SHOCK_COOKED"
+  },
+  {
+    "value": 33399,
+    "text": "FOOD_SHIELDING_LOAF_SHOCK_RAW"
+  },
+  {
+    "value": 33400,
+    "text": "FOOD_SHIELDING_LOAF_SHOCK_COOKED"
+  },
+  {
+    "value": 33401,
+    "text": "FOOD_SHIELDING_PIE_SHOCK_RAW"
+  },
+  {
+    "value": 33402,
+    "text": "FOOD_SHIELDING_PIE_SHOCK_COOKED"
+  },
+  {
+    "value": 33403,
+    "text": "FOOD_FLOATING_BROTH"
+  },
+  {
+    "value": 33404,
+    "text": "FOOD_FLOATING_STEW"
+  },
+  {
+    "value": 33405,
+    "text": "FOOD_FLOATING_PORRIDGE_RAW"
+  },
+  {
+    "value": 33406,
+    "text": "FOOD_FLOATING_PORRIDGE_COOKED"
+  },
+  {
+    "value": 33407,
+    "text": "FOOD_FLOATING_BREAD_RAW"
+  },
+  {
+    "value": 33408,
+    "text": "FOOD_FLOATING_BREAD_COOKED"
+  },
+  {
+    "value": 33409,
+    "text": "FOOD_FLOATING_PIE_RAW"
+  },
+  {
+    "value": 33410,
+    "text": "FOOD_FLOATING_PIE_COOKED"
+  },
+  {
+    "value": 33411,
+    "text": "FOOD_PROTECTING_CHILLI_VOLATILE_RAW"
+  },
+  {
+    "value": 33412,
+    "text": "FOOD_PROTECTING_CHILLI_VOLATILE_COOKED"
+  },
+  {
+    "value": 33413,
+    "text": "FOOD_PROTECTING_BIRYANI_VOLATILE_RAW"
+  },
+  {
+    "value": 33414,
+    "text": "FOOD_PROTECTING_BIRYANI_VOLATILE_COOKED"
+  },
+  {
+    "value": 33415,
+    "text": "FOOD_PROTECTING_PIE_VOLATILE_RAW"
+  },
+  {
+    "value": 33416,
+    "text": "FOOD_PROTECTING_PIE_VOLATILE_COOKED"
+  },
+  {
+    "value": 33417,
+    "text": "FOOD_PROTECTING_CHILLI_POTENT_RAW"
+  },
+  {
+    "value": 33418,
+    "text": "FOOD_PROTECTING_CHILLI_POTENT_COOKED"
+  },
+  {
+    "value": 33419,
+    "text": "FOOD_PROTECTING_BIRYANI_POTENT_RAW"
+  },
+  {
+    "value": 33420,
+    "text": "FOOD_PROTECTING_BIRYANI_POTENT_COOKED"
+  },
+  {
+    "value": 33421,
+    "text": "FOOD_PROTECTING_PIE_POTENT_RAW"
+  },
+  {
+    "value": 33422,
+    "text": "FOOD_PROTECTING_PIE_POTENT_COOKED"
+  },
+  {
+    "value": 33423,
+    "text": "FOOD_PROTECTING_CHILLI_CAUSTIC_RAW"
+  },
+  {
+    "value": 33424,
+    "text": "FOOD_PROTECTING_CHILLI_CAUSTIC_COOKED"
+  },
+  {
+    "value": 33425,
+    "text": "FOOD_PROTECTING_BIRYANI_CAUSTIC_RAW"
+  },
+  {
+    "value": 33426,
+    "text": "FOOD_PROTECTING_BIRYANI_CAUSTIC_COOKED"
+  },
+  {
+    "value": 33427,
+    "text": "FOOD_PROTECTING_PIE_CAUSTIC_RAW"
+  },
+  {
+    "value": 33428,
+    "text": "FOOD_PROTECTING_PIE_CAUSTIC_COOKED"
+  },
+  {
+    "value": 33429,
+    "text": "FOOD_TEACHING_PORRIDGE_RAW"
+  },
+  {
+    "value": 33430,
+    "text": "FOOD_TEACHING_PORRIDGE_COOKED"
+  },
+  {
+    "value": 33431,
+    "text": "FOOD_TEACHING_PUDDING_RAW"
+  },
+  {
+    "value": 33432,
+    "text": "FOOD_TEACHING_PUDDING_COOKED"
+  },
+  {
+    "value": 33433,
+    "text": "FOOD_TEACHING_BREAD_RAW"
+  },
+  {
+    "value": 33434,
+    "text": "FOOD_TEACHING_BREAD_COOKED"
+  },
+  {
+    "value": 33435,
+    "text": "FOOD_TEACHING_PIE_RAW"
+  },
+  {
+    "value": 33436,
+    "text": "FOOD_TEACHING_PIE_COOKED"
+  },
+  {
+    "value": 33437,
+    "text": "FOOD_CRITICALING_SOUP"
+  },
+  {
+    "value": 33438,
+    "text": "FOOD_CRITICALING_CASSEROLE"
+  },
+  {
+    "value": 33439,
+    "text": "FOOD_CRITICALING_RISOTTO_RAW"
+  },
+  {
+    "value": 33440,
+    "text": "FOOD_CRITICALING_RISOTTO_COOKED"
+  },
+  {
+    "value": 33441,
+    "text": "FOOD_CRITICALING_LOAF_RAW"
+  },
+  {
+    "value": 33442,
+    "text": "FOOD_CRITICALING_LOAF_COOKED"
+  },
+  {
+    "value": 33443,
+    "text": "FOOD_CRITICALING_PIE_RAW"
+  },
+  {
+    "value": 33444,
+    "text": "FOOD_CRITICALING_PIE_COOKED"
+  },
+  {
+    "value": 33445,
+    "text": "FOOD_PERSISTING_SOUP"
+  },
+  {
+    "value": 33446,
+    "text": "FOOD_PERSISTING_STEW"
+  },
+  {
+    "value": 33447,
+    "text": "FOOD_PERSISTING_RISOTTO_RAW"
+  },
+  {
+    "value": 33448,
+    "text": "FOOD_PERSISTING_RISOTTO_COOKED"
+  },
+  {
+    "value": 33449,
+    "text": "FOOD_PERSISTING_LOAF_RAW"
+  },
+  {
+    "value": 33450,
+    "text": "FOOD_PERSISTING_LOAF_COOKED"
+  },
+  {
+    "value": 33451,
+    "text": "FOOD_PERSISTING_PIE_RAW"
+  },
+  {
+    "value": 33452,
+    "text": "FOOD_PERSISTING_PIE_COOKED"
+  },
+  {
+    "value": 33453,
+    "text": "AUGMENT_BOMB_DAMAGE1"
+  },
+  {
+    "value": 33454,
+    "text": "AUGMENT_BOMB_DAMAGE2"
+  },
+  {
+    "value": 33455,
+    "text": "AUGMENT_BOMB_DAMAGE3"
+  },
+  {
+    "value": 33456,
+    "text": "AUGMENT_BOMB_ACTIONSPEED1"
+  },
+  {
+    "value": 33457,
+    "text": "AUGMENT_BOMB_ACTIONSPEED2"
+  },
+  {
+    "value": 33458,
+    "text": "AUGMENT_BOMB_ACTIONSPEED3"
+  },
+  {
+    "value": 33459,
+    "text": "AUGMENT_BOMB_CRITICALEFFECT1"
+  },
+  {
+    "value": 33460,
+    "text": "AUGMENT_BOMB_CRITICALEFFECT2"
+  },
+  {
+    "value": 33461,
+    "text": "AUGMENT_BOMB_CRITICALEFFECT3"
+  },
+  {
+    "value": 33462,
+    "text": "AUGMENT_BOMB_PROJECTILESPEED1"
+  },
+  {
+    "value": 33463,
+    "text": "AUGMENT_BOMB_PROJECTILESPEED2"
+  },
+  {
+    "value": 33464,
+    "text": "AUGMENT_BOMB_PROJECTILESPEED3"
+  },
+  {
+    "value": 33465,
+    "text": "AUGMENT_BOMB_AREAOFEFFECT1"
+  },
+  {
+    "value": 33466,
+    "text": "AUGMENT_BOMB_AREAOFEFFECT2"
+  },
+  {
+    "value": 33467,
+    "text": "AUGMENT_BOMB_AREAOFEFFECT3"
+  },
+  {
+    "value": 33468,
+    "text": "FORGE_BASE_COMPOUND"
+  },
+  {
+    "value": 33469,
+    "text": "FORGE_BASE_PASTE"
+  },
+  {
+    "value": 33470,
+    "text": "FORGE_BASE_GUM"
+  },
+  {
+    "value": 33471,
+    "text": "FORGE_BASE_CATALYST"
+  },
+  {
+    "value": 33472,
+    "text": "FORGE_BASE_SOLVENT"
+  },
+  {
+    "value": 33473,
+    "text": "FORGE_BASE_RESIN"
+  },
+  {
+    "value": 33474,
+    "text": "FORGE_COMPOUND_BOON_PURE1"
+  },
+  {
+    "value": 33475,
+    "text": "FORGE_COMPOUND_BOON_PURE2"
+  },
+  {
+    "value": 33476,
+    "text": "FORGE_COMPOUND_BOON_PURE3"
+  },
+  {
+    "value": 33477,
+    "text": "FORGE_COMPOUND_BOON_IMPERFECT1"
+  },
+  {
+    "value": 33478,
+    "text": "FORGE_COMPOUND_BOON_IMPERFECT2"
+  },
+  {
+    "value": 33479,
+    "text": "FORGE_COMPOUND_BOON_IMPERFECT3"
+  },
+  {
+    "value": 33480,
+    "text": "FORGE_COMPOUND_BOON_UNSTABLE1"
+  },
+  {
+    "value": 33481,
+    "text": "FORGE_COMPOUND_BOON_UNSTABLE2"
+  },
+  {
+    "value": 33482,
+    "text": "FORGE_COMPOUND_BOON_UNSTABLE3"
+  },
+  {
+    "value": 33483,
+    "text": "FORGE_COMPOUND_BOON_DRAINING1"
+  },
+  {
+    "value": 33484,
+    "text": "FORGE_COMPOUND_BOON_DRAINING2"
+  },
+  {
+    "value": 33485,
+    "text": "FORGE_COMPOUND_BOON_CORRUPTED1"
+  },
+  {
+    "value": 33486,
+    "text": "FORGE_COMPOUND_BOON_CORRUPTED2"
+  },
+  {
+    "value": 33487,
+    "text": "FORGE_COMPOUND_REDUCTION_DEFECT1"
+  },
+  {
+    "value": 33488,
+    "text": "FORGE_COMPOUND_REDUCTION_DEFECT2"
+  },
+  {
+    "value": 33489,
+    "text": "FORGE_COMPOUND_REDUCTION_DEFECT_UNSTABLE1"
+  },
+  {
+    "value": 33490,
+    "text": "FORGE_COMPOUND_REDUCTION_DEFECT_UNSTABLE2"
+  },
+  {
+    "value": 33491,
+    "text": "FORGE_COMPOUND_REDUCTION_QUIRK1"
+  },
+  {
+    "value": 33492,
+    "text": "FORGE_COMPOUND_REDUCTION_QUIRK2"
+  },
+  {
+    "value": 33493,
+    "text": "FORGE_COMPOUND_REDUCTION_QUIRK_IMPERFECT1"
+  },
+  {
+    "value": 33494,
+    "text": "FORGE_COMPOUND_REDUCTION_QUIRK_IMPERFECT2"
+  },
+  {
+    "value": 33495,
+    "text": "FORGE_PASTE_PROTECTION1"
+  },
+  {
+    "value": 33496,
+    "text": "FORGE_PASTE_PROTECTION2"
+  },
+  {
+    "value": 33497,
+    "text": "FORGE_PASTE_BOOST_BOON1"
+  },
+  {
+    "value": 33498,
+    "text": "FORGE_PASTE_BOOST_BOON2"
+  },
+  {
+    "value": 33499,
+    "text": "FORGE_PASTE_GUARD_DEFECT1"
+  },
+  {
+    "value": 33500,
+    "text": "FORGE_PASTE_GUARD_DEFECT2"
+  },
+  {
+    "value": 33501,
+    "text": "FORGE_PASTE_GUARD_QUIRK1"
+  },
+  {
+    "value": 33502,
+    "text": "FORGE_PASTE_GUARD_QUIRK2"
+  },
+  {
+    "value": 33503,
+    "text": "FORGE_PASTE_ENVIGORATION1"
+  },
+  {
+    "value": 33504,
+    "text": "FORGE_PASTE_ENVIGORATION2"
+  },
+  {
+    "value": 33505,
+    "text": "FORGE_PASTE_STABILISATION1"
+  },
+  {
+    "value": 33506,
+    "text": "FORGE_PASTE_STABILISATION2"
+  },
+  {
+    "value": 33507,
+    "text": "FORGE_PASTE_FATE1"
+  },
+  {
+    "value": 33508,
+    "text": "FORGE_PASTE_FATE2"
+  },
+  {
+    "value": 33509,
+    "text": "FORGE_PASTE_REVERSAL_FATE"
+  },
+  {
+    "value": 33510,
+    "text": "FORGE_PASTE_GAMBLING1"
+  },
+  {
+    "value": 33511,
+    "text": "FORGE_PASTE_GAMBLING2"
+  },
+  {
+    "value": 33512,
+    "text": "FORGE_GUM_EASE"
+  },
+  {
+    "value": 33513,
+    "text": "FORGE_GUM_LIGHTNESS"
+  },
+  {
+    "value": 33514,
+    "text": "FORGE_GUM_SPECIAL"
+  },
+  {
+    "value": 33515,
+    "text": "FORGE_GUM_EFFECT"
+  },
+  {
+    "value": 33516,
+    "text": "FORGE_GUM_LONGEVITY"
+  },
+  {
+    "value": 33517,
+    "text": "FORGE_GUM_GLOW"
+  },
+  {
+    "value": 33518,
+    "text": "FORGE_GUM_REDUCTION_TRAIT"
+  },
+  {
+    "value": 33519,
+    "text": "FORGE_GUM_EXPANSION_TRAIT"
+  },
+  {
+    "value": 33520,
+    "text": "FORGE_CATALYST_REVERSAL_DEFECT"
+  },
+  {
+    "value": 33521,
+    "text": "FORGE_CATALYST_VIGOUR1"
+  },
+  {
+    "value": 33522,
+    "text": "FORGE_CATALYST_VIGOUR2"
+  },
+  {
+    "value": 33523,
+    "text": "FORGE_CATALYST_BOOST_BOON"
+  },
+  {
+    "value": 33524,
+    "text": "FORGE_CATALYST_POINTS_BOON1"
+  },
+  {
+    "value": 33525,
+    "text": "FORGE_CATALYST_POINTS_BOON2"
+  },
+  {
+    "value": 33526,
+    "text": "FORGE_SOLVENT_REMOVAL_BOON1"
+  },
+  {
+    "value": 33527,
+    "text": "FORGE_SOLVENT_REMOVAL_BOON2"
+  },
+  {
+    "value": 33528,
+    "text": "FORGE_SOLVENT_REMOVAL_DEFECT1"
+  },
+  {
+    "value": 33529,
+    "text": "FORGE_SOLVENT_REMOVAL_DEFECT2"
+  },
+  {
+    "value": 33530,
+    "text": "FORGE_SOLVENT_REMOVAL_QUIRK1"
+  },
+  {
+    "value": 33531,
+    "text": "FORGE_SOLVENT_REMOVAL_QUIRK2"
+  },
+  {
+    "value": 33532,
+    "text": "FORGE_SOLVENT_TRANSMUTE_BOON"
+  },
+  {
+    "value": 33533,
+    "text": "FORGE_SOLVENT_TRANSMUTE_DEFECT"
+  },
+  {
+    "value": 33534,
+    "text": "FORGE_SOLVENT_TRANSMUTE_QUIRK"
+  },
+  {
+    "value": 33535,
+    "text": "FORGE_RESIN_SETTING"
+  },
+  {
+    "value": 33536,
+    "text": "FORGE_RESIN_DECONSTRUCTION1"
+  },
+  {
+    "value": 33537,
+    "text": "FORGE_RESIN_DECONSTRUCTION2"
+  },
+  {
+    "value": 33538,
+    "text": "FORGE_RESIN_DECONSTRUCTION3"
+  },
+  {
+    "value": 33539,
+    "text": "FOOD_SKILLRESET_LOAF_COOKED"
+  },
+  {
+    "value": 33543,
+    "text": "TOOL_FIST_IRON"
+  },
+  {
+    "value": 33544,
+    "text": "TOOL_FIST_GOLD"
+  },
+  {
+    "value": 33546,
+    "text": "BREW_INNOCUOUS_IMPROVED"
+  },
+  {
+    "value": 33547,
+    "text": "BREW_INNOCUOUS_SUPER"
+  },
+  {
+    "value": 33548,
+    "text": "BREW_LUMINOUS_IMPROVED"
+  },
+  {
+    "value": 33549,
+    "text": "BREW_LUMINOUS_SUPER"
+  },
+  {
+    "value": 33550,
+    "text": "ITEM_WAX_BASE"
+  },
+  {
+    "value": 33551,
+    "text": "FOOD_CHEAT_SKILL_LOAF_COOKED"
+  },
+  {
+    "value": 33554,
+    "text": "TOOL_SEASONAL_TOTEM_RAINBOW"
+  },
+  {
+    "value": 33555,
+    "text": "FORGE_GUM_VENERABLE"
+  },
+  {
+    "value": 33556,
+    "text": "BREW_SMOOTHIE_HEALING_MINOR"
+  },
+  {
+    "value": 33557,
+    "text": "BREW_SMOOTHIE_HEALING_IMPROVED"
+  },
+  {
+    "value": 33558,
+    "text": "BREW_SMOOTHIE_HEALING_GREATER"
+  },
+  {
+    "value": 33559,
+    "text": "BREW_SMOOTHIE_HEALING_SUPER"
+  },
+  {
+    "value": 33560,
+    "text": "BREW_SMOOTHIE_HEALING_MEGA"
+  },
+  {
+    "value": 33561,
+    "text": "PLACEABLE_OIL"
+  },
+  {
+    "value": 33562,
+    "text": "PLACEABLE_RESIN"
+  },
+  {
+    "value": 33563,
+    "text": "CHEAT_LIQUID_BREAKER"
+  },
+  {
+    "value": 33564,
+    "text": "TOOL_HOE_WOOD"
+  },
+  {
+    "value": 33565,
+    "text": "ITEM_SEED_ORNAMENTAL_4"
+  },
+  {
+    "value": 33566,
+    "text": "ITEM_SEED_ORNAMENTAL_5"
+  },
+  {
+    "value": 33567,
+    "text": "CHEAT_SIZE_CHISEL"
+  },
+  {
+    "value": 33568,
+    "text": "ITEM_SEASONAL_SPOOKY_SEED"
+  },
+  {
+    "value": 33569,
+    "text": "ITEM_SEASONAL_CANDY_SEED"
+  },
+  {
+    "value": 33570,
+    "text": "TOOL_SEASONAL_TOTEM_CANDY"
+  }
+]
