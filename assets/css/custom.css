@@ -21,7 +21,8 @@ video#bgVideo {
 }
 
 #main article {
-  width: 70%;
+  width: 70rem;
+  padding-top: 2.5rem;
 }
 
 section img {
@@ -130,26 +131,49 @@ section img {
   line-height: 28px;
 }
 
-.planet-data section.table-wrapper {
+.planet-data section.table-wrapper,
+#shopping section.table-wrapper {
   height: 425px;
 }
 
-.planet-data section.table-wrapper::-webkit-scrollbar-track
+.planet-data section.table-wrapper::-webkit-scrollbar-track,
+#shopping section.table-wrapper::-webkit-scrollbar-track
 {
   -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
   background-color: #F5F5F5;
 }
 
-.planet-data section.table-wrapper::-webkit-scrollbar
+.planet-data section.table-wrapper::-webkit-scrollbar,
+#shopping section.table-wrapper::-webkit-scrollbar
 {
   width: 12px;
   background-color: #F5F5F5;
 }
 
-.planet-data section.table-wrapper::-webkit-scrollbar-thumb
+.planet-data section.table-wrapper::-webkit-scrollbar-thumb,
+#shopping section.table-wrapper::-webkit-scrollbar-thumb
 {
   -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
   background-color: #555;
+}
+
+.ui-menu.ui-autocomplete {
+  background-color: rgba(27, 27, 27, 0.95);
+  border: 1px solid #FFF;
+  border-radius: 4px;
+}
+
+#shopping table td {
+  padding: 0 0.75em;
+}
+
+#shopping .search-item {
+  text-align: right;
+  font-style: italic;
+}
+
+#color-search {
+  margin-top: 10px;
 }
 
 @media screen and (max-width: 736px) {

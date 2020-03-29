@@ -7,16 +7,21 @@
     'usefulLinkList': [],
     'planets': [],
     'items': [],
-  },  blocks,
+    }, items,
       colorMappings,
       colors,
       regions,
       planetSwiper,
       orders = [];
 
-  fetch('assets/js/data/blocks.json')
+  fetch('assets/js/data/items.json')
     .then(res => res.json())
-    .then(data => { blocks = data })
+    .then(data => {
+      items = data
+    })
+    .then(function () {
+      initShopping();
+    })
     .catch(err => console.error(err));
 
   fetch('assets/js/data/color-mappings.json')
@@ -33,6 +38,30 @@
     .then(res => res.json())
     .then(data => { regions = data })
     .catch(err => console.error(err));
+
+  function initShopping() {
+    $("#shop").autocomplete({
+      source: items,
+      focus: function (event, ui) {
+        $("shop").val(ui.item.text);
+        return false;
+      },
+      select: function (event, ui) {
+        $("shop").val(ui.item.text);
+        $("item-id").val(ui.item.value);
+      }
+    }).autocomplete("instance")._renderItem = function (ul, item) {
+      debugger;
+      return $("<li>")
+        .append("<div>" + item.text + "</div>")
+        .appendTo(ul);
+    };
+
+    $(".ui-autocomplete").on('click', function (event) {
+      event.stopPropagation();
+
+    });
+  }
 
   function initPlanetExplorer() {
     planetSwiper = new Swiper ('.swiper-container', {
@@ -51,12 +80,42 @@
       watchSlidesProgress: true,
       watchSlidesVisibility: true
     });
-  }
 
-  function initShopping() {
-    model.items =
-    $("#shop").autocomplete({
-      source: model.items
+    $("#color-search").bind('input', function () {
+      let searchTerm = this.value;
+      let searchType = $("#color-search-type").val();
+      if (searchTerm.length > 2) {
+        $(".planet-type-match").each(function () {
+          let visible = false,
+            secondTdsPerSlide;
+
+          if (searchType === 'all') {
+            secondTdsPerSlide = $(this).find("td:nth-of-type(2)");
+          } else if (searchType === 'gleam') {
+            secondTdsPerSlide = $(this).find("tr:nth-of-type(1) td:nth-of-type(2)");
+          } else if (searchType === 'rocks') {
+            secondTdsPerSlide = $(this).find("tr:nth-of-type(2) td:nth-of-type(2), tr:nth-of-type(3) td:nth-of-type(2), tr:nth-of-type(4) td:nth-of-type(2)");
+          } else if (searchType === 'trunks') {
+            secondTdsPerSlide = $(this).find("tr:nth-of-type(7) td:nth-of-type(2), tr:nth-of-type(8) td:nth-of-type(2), tr:nth-of-type(9) td:nth-of-type(2)");
+          }
+
+          $(secondTdsPerSlide).each(function () {
+            if ($(this).text().toLowerCase().indexOf(searchTerm.toLowerCase()) >= 0) {
+              visible = true;
+              return false;
+            }
+          });
+
+          if (visible) {
+            $(this).removeClass('non-swiper-slide').addClass('swiper-slide').show();
+          } else {
+            $(this).removeClass('swiper-slide').addClass('non-swiper-slide').hide();
+          }
+        });
+
+        planetSwiper.update();
+        planetSwiper.slideTo(0);
+      }
     });
   }
 
@@ -221,31 +280,35 @@
   }
 
   $(".filters #planet-type").on("change", function(event) {
-    var filter = event.target.value;
+    let filter = event.target.value;
 
+    $("#color-search-type").val("all");
+    $("#color-search").val("");
     if(filter === "All"){
-      $('.planet-slide').removeClass("non-swiper-slide").addClass("swiper-slide").show();
+      $('.planet-slide').removeClass("non-swiper-slide").addClass("swiper-slide").addClass("planet-type-match").show();
     } else if(filter === 'Homeworld' || filter === 'Exoworld') {
-      $('.planet-slide').not("[data-planet-type='" + filter + "']").addClass("non-swiper-slide").removeClass("swiper-slide").hide();
-      $("[data-planet-type='" + filter + "']").removeClass("non-swiper-slide").addClass("swiper-slide").attr("style", null).show();
+      $('.planet-slide').not("[data-planet-type='" + filter + "']").addClass("non-swiper-slide").removeClass("planet-type-match").removeClass("swiper-slide").hide();
+      $("[data-planet-type='" + filter + "']").removeClass("non-swiper-slide").addClass("swiper-slide").addClass("planet-type-match").attr("style", null).show();
     } else if(filter === 'Active') {
-      var $exos = $(".swiper-wrapper div[data-planet-type='Exoworld']");
-      var $homeworlds = $(".swiper-wrapper div[data-planet-type='Homeworld']");
-      var $other = $(".swiper-wrapper div:not([data-death]), .swiper-wrapper div[data-death='']");
+      let $exos = $(".swiper-wrapper div[data-planet-type='Exoworld']");
+      let $homeworlds = $(".swiper-wrapper div[data-planet-type='Homeworld']");
+      let $other = $(".swiper-wrapper div:not([data-death]), .swiper-wrapper div[data-death='']");
 
-      $other.removeClass('swiper-slide').addClass('non-swiper-slide').hide();
-      $exos.removeClass('non-swiper-slide').addClass('swiper-slide').show();
-      $homeworlds.removeClass('swiper-slide').addClass('non-swiper-slide').hide();
+      $other.removeClass('swiper-slide').removeClass("planet-type-match").addClass('non-swiper-slide').hide();
+      $exos.removeClass('non-swiper-slide').addClass('swiper-slide').addClass("planet-type-match").show();
+      $homeworlds.removeClass('swiper-slide').remove("planet-type-match").addClass('non-swiper-slide').hide();
       $exos.each(function(index, planet) {
         const now = new Date();
         const secondsSinceEpoch = Math.round(now.getTime() / 1000);
 
-        var planetTime = planet.getAttribute('data-death').split(',')[1];
+        let planetTime = planet.getAttribute('data-death').split(',')[1];
 
         if(planetTime <= secondsSinceEpoch) {
           $(planet).removeClass('swiper-slide').addClass('non-swiper-slide').hide();
+          $(planet).removeClass('planet-type-match');
         } else {
           $(planet).removeClass('non-swiper-slide').addClass('swiper-slide').show();
+          $(planet).addClass('planet-type-match');
         }
       });
     }

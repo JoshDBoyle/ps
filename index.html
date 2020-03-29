@@ -56,8 +56,6 @@
             </div>
 					</header>
 
-
-
 				<!-- Main -->
 					<div id="main">
 
@@ -91,7 +89,7 @@
                 </section>
 							</article>
 
-						<!-- Elements -->
+            <!-- Farms -->
 							<article id="farms">
 								<h2 class="major">Farms</h2>
 
@@ -103,10 +101,134 @@
 
             <article id="shopping">
               <h2 class="major">Shopping</h2>
-              <input id="shop" type="text"/>
-              <span class="image main"><img src="images/pic01.jpg" alt="" /></span>
-              <p>Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin aliquam facilisis ante interdum congue. Integer mollis, nisl amet convallis, porttitor magna ullamcorper, amet egestas mauris. Ut magna finibus nisi nec lacinia. Nam maximus erat id euismod egestas. By the way, check out my <a href="#work">awesome work</a>.</p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
+              <form>
+
+                <div class="fields">
+                  <div class="field">
+                    <input id="shop" placeholder="Search..." type="text"/>
+                    <input id="item-id" type="hidden"/>
+                    <div class="search-item">Rough Oortstone</div>
+                  </div>
+                  <div class="field half">
+                    <h4>Shop Stands</h4>
+                    <section class="table-wrapper">
+                      <table id="shop-stands">
+                        <thead>
+                        <tr>
+                          <th>Location</th>
+                          <th>Stock</th>
+                          <th>Unit Price</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                          <td>Kevin Beacon</td>
+                          <td>4000</td>
+                          <td>249</td>
+                        </tr>
+                        <tr>
+                          <td>Beacon Lettuce and Tomato</td>
+                          <td>4000</td>
+                          <td>249</td>
+                        </tr>
+                        <tr>
+                          <td>Beacon Bits</td>
+                          <td>4000</td>
+                          <td>249</td>
+                        </tr>
+                        <tr>
+                          <td>Beacon-wrapped Shrimp</td>
+                          <td>4000</td>
+                          <td>249</td>
+                        </tr>
+                        <tr>
+                          <td>Cheddar Beacon Bites</td>
+                          <td>4000</td>
+                          <td>249</td>
+                        </tr>
+                        <tr>
+                          <td>Kevin Beacon</td>
+                          <td>4000</td>
+                          <td>249</td>
+                        </tr>
+                        <tr>
+                          <td>Beacon Lettuce and Tomato</td>
+                          <td>4000</td>
+                          <td>249</td>
+                        </tr>
+                        <tr>
+                          <td>Beacon Bits</td>
+                          <td>4000</td>
+                          <td>249</td>
+                        </tr>
+                        <tr>
+                          <td>Beacon-wrapped Shrimp</td>
+                          <td>4000</td>
+                          <td>249</td>
+                        </tr>
+                        <tr>
+                          <td>Cheddar Beacon Bites</td>
+                          <td>4000</td>
+                          <td>249</td>
+                        </tr>
+                        <tr>
+                          <td>Kevin Beacon</td>
+                          <td>4000</td>
+                          <td>249</td>
+                        </tr>
+                        <tr>
+                          <td>Beacon Lettuce and Tomato</td>
+                          <td>4000</td>
+                          <td>249</td>
+                        </tr>
+                        <tr>
+                          <td>Beacon Bits</td>
+                          <td>4000</td>
+                          <td>249</td>
+                        </tr>
+                        <tr>
+                          <td>Beacon-wrapped Shrimp</td>
+                          <td>4000</td>
+                          <td>249</td>
+                        </tr>
+                        <tr>
+                          <td>Cheddar Beacon Bites</td>
+                          <td>4000</td>
+                          <td>249</td>
+                        </tr>
+                        </tbody>
+                      </table>
+                    </section>
+                  </div>
+                  <div class="field half">
+                    <h4>Request Baskets</h4>
+                    <section class="table-wrapper">
+                      <table id="request-baskets">
+                        <thead>
+                        <tr>
+                          <th>Location</th>
+                          <th>Can Buy</th>
+                          <th>Asking Price</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                          <td>Beacon and Eggs</td>
+                          <td>4000</td>
+                          <td>249</td>
+                        </tr>
+                        <tr>
+                          <td>Out of beacon jokes</td>
+                          <td>4000</td>
+                          <td>249</td>
+                        </tr>
+                        </tbody>
+                      </table>
+                    </section>
+                  </div>
+                </div>
+              </form>
+
             </article>
 
             <article id="explorer">
@@ -121,6 +243,16 @@
                       <option value="Active">Active Exo</option>
                     </select>
                   </div>
+                  <div class="field half">
+                    <label for="color-search-type">Color Search</label>
+                    <select id="color-search-type">
+                      <option value="all">All</option>
+                      <option value="gleam">Gleam</option>
+                      <option value="rocks">Rocks</option>
+                      <option value="trunks">Trunks</option>
+                    </select>
+                    <input id="color-search" placeholder="Search..." type="text"/>
+                  </div>
                 </div>
               </form>
               <!-- Slider main container -->
@@ -128,7 +260,8 @@
                 <!-- Additional required wrapper -->
                 <div class="swiper-wrapper" data-bind="foreach: planets">
                   <!-- Slides -->
-                  <div class="planet-slide swiper-slide" data-bind="attr: { 'data-metamorphic': $root.getColorName($data[41]), 'data-igneous': $root.getColorName($data[40]), 'data-sedimentary': $root.getColorName($data[42]), 'data-gleam': $root.getColorName($data[12]), 'data-planet-type': $data[2], 'data-death': $data[3] }">
+                  <div class="planet-slide planet-type-match swiper-slide"
+                       data-bind="attr: { 'data-metamorphic': $root.getColorName($data[41]), 'data-igneous': $root.getColorName($data[40]), 'data-sedimentary': $root.getColorName($data[42]), 'data-gleam': $root.getColorName($data[12]), 'data-planet-type': $data[2], 'data-death': $data[3] }">
                     <section class="planet-header">
                       <section class="planet-header-left">
                         <a data-bind="attr: { href: $data[56] }" target="_blank"><h2 data-bind="text: $data[1]"></h2></a>
