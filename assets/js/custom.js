@@ -41,62 +41,116 @@
 
   function initShopping() {
     $("#shop").autocomplete({
+      minLength: 3,
       source: items,
       focus: function (event, ui) {
-        $("shop").val(ui.item.text);
+        $("shop").val(ui.item.label);
         return false;
       },
       select: function (event, ui) {
-        $("shop").val(ui.item.text);
-        $("item-id").val(ui.item.value);
+        $("#shop").text(ui.item.label);
       }
     }).autocomplete("instance")._renderItem = function (ul, item) {
-      debugger;
       return $("<li>")
-        .append("<div>" + item.text + "</div>")
+        .append("<div>" + item.label + "</div>")
         .appendTo(ul);
     };
-
-    $(".ui-autocomplete").on('click', function (event) {
-      event.stopPropagation();
-
-    });
   }
 
   function initPlanetExplorer() {
     planetSwiper = new Swiper ('.swiper-container', {
-      // Optional parameters
       direction: 'horizontal',
       loop: false,
       observer: true,
       observeParents: true,
-      cache: false,
+      cache: true,
       navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
       },
-      grabCursor: true,
+      simulateTouch: false,
       freeModeSticky: true,
       watchSlidesProgress: true,
       watchSlidesVisibility: true
     });
 
-    $("#color-search").bind('input', function () {
-      let searchTerm = this.value;
-      let searchType = $("#color-search-type").val();
-      if (searchTerm.length > 2) {
-        $(".planet-type-match").each(function () {
+    function filterOnPlanetType() {
+      // Get planet type to filter on
+      let planetType = $('#planet-type').val();
+
+      if (planetType === "all") {
+        $('.planet-slide').removeClass("non-swiper-slide").addClass("swiper-slide filter-match").show();
+      } else if (planetType === 'homeworld' || planetType === 'exoworld') {
+        $('.planet-slide').not("[data-planet-type='" + planetType + "']").addClass("non-swiper-slide").removeClass("filter-match swiper-slide").hide();
+        $("[data-planet-type='" + planetType + "']").removeClass("non-swiper-slide").addClass("swiper-slide filter-match").attr("style", null).show();
+      } else if (planetType === 'active') {
+        let $all = $('.planet-slide');
+        let $exos = $(".swiper-wrapper div[data-planet-type='exoworld']");
+
+        $all.removeClass("swiper-slide filter-match").addClass('non-swiper-slide').hide();
+        $exos.removeClass('non-swiper-slide').addClass("swiper-slide filter-match").show();
+
+        $exos.each(function(index, planet) {
+          const now = new Date();
+          const secondsSinceEpoch = Math.round(now.getTime() / 1000);
+
+          let planetTime = planet.getAttribute('data-death').split(',')[1];
+
+          if (planetTime <= secondsSinceEpoch) {
+            $(planet).removeClass('swiper-slide filter-match').addClass('non-swiper-slide').hide();
+          } else {
+            $(planet).removeClass('non-swiper-slide ').addClass('swiper-slide filter-match').show();
+          }
+        });
+      }
+    }
+
+    function filterOnPlanetName() {
+      let searchTerm = $('#planet-search').val();
+
+      if (searchTerm && searchTerm.length > 0) {
+        $('.filter-match').each(function () {
+          let visible = false,
+            namesPerSlide = $(this).find(".planet-header-left h2");
+
+          $(namesPerSlide).each(function () {
+            if ($(this).text().toLowerCase().indexOf(searchTerm.toLowerCase()) >= 0) {
+              visible = true;
+              return false;
+            }
+          });
+
+          if (visible) {
+            $(this).removeClass('non-swiper-slide').addClass('swiper-slide filter-match').show();
+          } else {
+            $(this).removeClass('swiper-slide filter-match').addClass('non-swiper-slide').hide();
+          }
+        });
+      }
+    }
+
+    function filterOnColor() {
+      let searchTerm = $('#color-search').val(),
+          searchType = $('#color-search-type').val();
+
+      $('.planet-slide tbody').each(function(index, tbody) {
+        $(tbody).find('tr').css('display', 'none');
+        if (searchType === 'all') {
+          $(tbody).find('tr').css('display', 'table-row');
+        } else {
+          $(tbody).find('tr.' + searchType).css('display', 'table-row');
+        }
+      });
+
+      if (searchTerm && searchTerm.length > 0) {
+        $('.filter-match').each(function () {
           let visible = false,
             secondTdsPerSlide;
 
-          if (searchType === 'all') {
+          if (searchType === 'all' || searchType === '') {
             secondTdsPerSlide = $(this).find("td:nth-of-type(2)");
-          } else if (searchType === 'gleam') {
-            secondTdsPerSlide = $(this).find("tr:nth-of-type(1) td:nth-of-type(2)");
-          } else if (searchType === 'rocks') {
-            secondTdsPerSlide = $(this).find("tr:nth-of-type(2) td:nth-of-type(2), tr:nth-of-type(3) td:nth-of-type(2), tr:nth-of-type(4) td:nth-of-type(2)");
-          } else if (searchType === 'trunks') {
-            secondTdsPerSlide = $(this).find("tr:nth-of-type(7) td:nth-of-type(2), tr:nth-of-type(8) td:nth-of-type(2), tr:nth-of-type(9) td:nth-of-type(2)");
+          } else {
+            secondTdsPerSlide = $(this).find("tr[data-block-type='" + searchType + "'] td:nth-of-type(2)");
           }
 
           $(secondTdsPerSlide).each(function () {
@@ -107,87 +161,39 @@
           });
 
           if (visible) {
-            $(this).removeClass('non-swiper-slide').addClass('swiper-slide').show();
+            $(this).removeClass('non-swiper-slide').addClass('swiper-slide filter-match').show();
           } else {
-            $(this).removeClass('swiper-slide').addClass('non-swiper-slide').hide();
+            $(this).removeClass('swiper-slide filter-match').addClass('non-swiper-slide').hide();
           }
         });
+      }
+    }
+
+    // Planet type filter
+    $(".filters #planet-type, .filters #color-search-type").on("change", function() {
+      filterOnPlanetType();
+      filterOnPlanetName();
+      filterOnColor();
+
+      planetSwiper.update();
+      planetSwiper.slideTo(0);
+    });
+
+    // Color search filter
+    $(".filters #color-search, .filters #planet-search").on('keyup', function (e) {
+      if (e.keyCode === 13) {
+        e.preventDefault();
+
+        filterOnPlanetType();
+        filterOnPlanetName();
+        filterOnColor();
 
         planetSwiper.update();
         planetSwiper.slideTo(0);
+
+        return false;
       }
     });
-  }
-
-  /**
-   * Given the url to call, makes the api call and returns the shopping data as json
-   *
-   * @param url The shopping url to call
-   */
-  function makeApiCall(url) {
-    let request = new XMLHttpRequest();
-
-    request.open("GET", url, true);
-    request.responseType = "arraybuffer";
-
-    request.onload = function () {
-      let arrayBuffer = request.response;
-      if (arrayBuffer) {
-        let byteArray = new Uint8Array(arrayBuffer);
-        orders = parseShoppingApiResponse(byteArray);
-      }
-    };
-
-    request.send(null);
-  }
-
-  /*
-    [
-      u8    : size of beacon-name string
-      u8    : size of guild-tag string
-      char[]: beacon-name string (not null terminated)
-      char[]: guild-tag string (not null terminated)
-      u32   : item count
-      u32   : shop activity
-      i64   : price
-      i16   : location-x
-      i16   : location-z
-      u8    : location-y
-    ] for each result until end of response [ implicit count ]
-    testingssss
-  */
-  function parseShoppingApiResponse(byteArray) {
-    let results = [];
-    let byteOffset = 0;
-    let dataView = new DataView(byteArray.buffer);
-    while(byteOffset < byteArray.byteLength) {
-      let beaconNameLength = dataView.getUint8(byteOffset);
-      let guildNameLength = dataView.getUint8(byteOffset + 1);
-      let order = {};
-      order.beaconName = '';
-      for(let i = 0; i < beaconNameLength; i++) {
-        let nameCharInt = dataView.getUint8(byteOffset + 2 + i);
-        order.beaconName += String.fromCharCode(nameCharInt);
-      }
-      order.guildName = '';
-      for(let i = 0; i < guildNameLength; i++) {
-        let nameCharInt = dataView.getUint8(byteOffset + 2 + guildNameLength + i);
-        order.guildName += String.fromCharCode(nameCharInt);
-      }
-      order.qty = dataView.getUint32(byteOffset + 2 + beaconNameLength + guildNameLength, true);
-      order.patrons = dataView.getUint32(byteOffset + 2 + beaconNameLength + guildNameLength + 4, true);
-      order.price = dataView.getBigInt64(byteOffset + 2 + beaconNameLength + guildNameLength + 8, true);
-      order.coordinates = {
-        x : dataView.getInt16(byteOffset + 2 + beaconNameLength + guildNameLength + 16, true),
-        z : dataView.getInt16(byteOffset + 2 + beaconNameLength + guildNameLength + 18, true),
-        y : dataView.getUint8(byteOffset + 2 + beaconNameLength + guildNameLength + 20)
-      };
-
-      order.price = Number(order.price) / 100;
-      results.push(order);
-      byteOffset += 23 + beaconNameLength + guildNameLength;
-    }
-    return results;
   }
 
   /**
@@ -229,7 +235,7 @@
         model.getColorName = function(value) {
           if (value) {
             var arr = value.split(',');
-            return colors['' + arr[0]];
+            return colors['' + arr[0]] + ' (' + arr[0] + ')';
           } else {
             return '';
           }
@@ -254,10 +260,19 @@
 
         model.getVerified = function(value) {
           if (value) {
-            var arr = value.split(',');
+            let arr = value.split(',');
             return arr[1] === 'True' ? '<i style=\"color: green; font-size: 28px;\" class=\"fa fa-check\"></i>' : '<i style=\"color: lightgrey; font-size: 28px;\" class=\"fa fa-question\"></i>';
           } else {
             return '<i style=\"color: lightgrey; font-size: 28px;\" class=\"fa fa-question\"></i>';
+          }
+        };
+
+        model.getNew = function(value) {
+          if (value) {
+            let arr = value.split(',');
+            return arr.length >= 3 && arr[2] === 'True' ? '<i style=\"color: green; font-size: 28px;\" class=\"fa fa-search-plus\"></i>' : '';
+          } else {
+            return '';
           }
         };
 
@@ -279,48 +294,12 @@
     });
   }
 
-  $(".filters #planet-type").on("change", function(event) {
-    let filter = event.target.value;
-
-    $("#color-search-type").val("all");
-    $("#color-search").val("");
-    if(filter === "All"){
-      $('.planet-slide').removeClass("non-swiper-slide").addClass("swiper-slide").addClass("planet-type-match").show();
-    } else if(filter === 'Homeworld' || filter === 'Exoworld') {
-      $('.planet-slide').not("[data-planet-type='" + filter + "']").addClass("non-swiper-slide").removeClass("planet-type-match").removeClass("swiper-slide").hide();
-      $("[data-planet-type='" + filter + "']").removeClass("non-swiper-slide").addClass("swiper-slide").addClass("planet-type-match").attr("style", null).show();
-    } else if(filter === 'Active') {
-      let $exos = $(".swiper-wrapper div[data-planet-type='Exoworld']");
-      let $homeworlds = $(".swiper-wrapper div[data-planet-type='Homeworld']");
-      let $other = $(".swiper-wrapper div:not([data-death]), .swiper-wrapper div[data-death='']");
-
-      $other.removeClass('swiper-slide').removeClass("planet-type-match").addClass('non-swiper-slide').hide();
-      $exos.removeClass('non-swiper-slide').addClass('swiper-slide').addClass("planet-type-match").show();
-      $homeworlds.removeClass('swiper-slide').remove("planet-type-match").addClass('non-swiper-slide').hide();
-      $exos.each(function(index, planet) {
-        const now = new Date();
-        const secondsSinceEpoch = Math.round(now.getTime() / 1000);
-
-        let planetTime = planet.getAttribute('data-death').split(',')[1];
-
-        if(planetTime <= secondsSinceEpoch) {
-          $(planet).removeClass('swiper-slide').addClass('non-swiper-slide').hide();
-          $(planet).removeClass('planet-type-match');
-        } else {
-          $(planet).removeClass('non-swiper-slide').addClass('swiper-slide').show();
-          $(planet).addClass('planet-type-match');
-        }
-      });
-    }
-
-    planetSwiper.update();
-    planetSwiper.slideTo(0);
-  });
-
   initPlanetExplorer();
   //makeApiCall('http://192.168.1.16:8983/api/shopping/S/32805');
 
   // Loads the JavaScript client library and invokes `start` afterwards.
-  gapi.load('client', initializeGapi);
+  setTimeout(function() {
+    gapi.load('client', initializeGapi);
+  }, 1200);
 
 })(jQuery);
