@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Portal Seekers</title>
+		<meta charset="utf-8" />
+		<meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport" />
+		<link href="assets/css/main.css" rel="stylesheet" />
+    <link href="assets/css/custom.css" rel="stylesheet" />
+    <link href="assets/css/vendor/swiper.min.css" rel="stylesheet">
+    <link href="assets/css/vendor/jquery.background-video.css" rel="stylesheet">
+    <link href="assets/css/vendor/jquery-ui.min.css" rel="stylesheet">
+    <link href="assets/css/vendor/jquery-ui.structure.min.css" rel="stylesheet">
+		<noscript><link href="assets/css/noscript.css" rel="stylesheet" /></noscript>
+	</head>
+	<body>
+
+    <div class="filter-section">
+      <form class="filters" onkeydown="return event.key !== 'Enter';">
+        <div class="fields">
+          <div class="field half">
+            <label for="planet-type">Filter By Planet</label>
+            <select id="planet-type">
+              <option value="all">All</option>
+              <option value="home">Home</option>
+              <option value="exo">Exo</option>
+              <option value="sovereign">Sovereign</option>
+              <option value="creative">Creative</option>
+            </select>
+          </div>
+          <div class="field half">
+            <label for="color-search">Search Colors</label>
+            <input id="color-search" placeholder="Search for colors..." type="text"/>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <section class="data-bar">
+      <div class="count">Please wait while we pull the latest data...</div>
+    </section>
+
+    <section class="planet-grid" data-bind="foreach: { data: planets, as: 'planet' }">
+      <div class="planet" data-bind="attr: {'data-planet-id': planet.id}">
+        <i class="resource-btn fas fa-cubes fa-lg"></i>
+        <h3 class="planet-name" data-bind="text: planet.display_name"></h3>
+        <h4 class="planet-type" data-bind="text: $root.getPlanetType(planet.id)"></h4>
+        <h4 class="planet-tier" data-bind="text: $root.getPlanetTier(planet.id)"></h4>
+        <h4 class="planet-atmosphere" data-bind="text: $root.getPlanetAtmosphere(planet.id)"></h4>
+        <div class="colors" data-bind="foreach: planet.colors">
+          <div class="color-row">
+            <div class="block" data-bind="text: item.title"></div>
+            <div class="color" data-bind="text: color.color_name"></div>
+            <div class="color-square" data-bind="text: color.color_hex, style: { 'background-color': color.color_hex }"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="planet-resources">
+
+    </section>
+
+		<!-- Scripts -->
+    <script src="assets/js/vendor/jquery.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/vendor/jquery.background-video.js"></script>
+    <script src="assets/js/vendor/jquery-ui.min.js"></script>
+    <script src="assets/js/vendor/knockout.js"></script>
+    <script type="text/javascript" src="assets/js/vendor/jquery.ajax-cross-origin.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <script src="https://kit.fontawesome.com/49f7ee01e1.js" crossorigin="anonymous"></script>
+
+	</body>
+</html>

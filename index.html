@@ -13,21 +13,21 @@
 
 		<title>Portal Seekers</title>
 		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-    <link rel="stylesheet" href="assets/css/custom.css" />
-    <link rel="stylesheet" href="assets/css/vendor/swiper.min.css">
-    <link rel="stylesheet" href="assets/css/vendor/jquery.background-video.css">
-    <link rel="stylesheet" href="assets/css/vendor/jquery-ui.min.css">
-    <link rel="stylesheet" href="assets/css/vendor/jquery-ui.structure.min.css">
+		<meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport" />
+		<link href="assets/css/main.css" rel="stylesheet" />
+    <link href="assets/css/custom.css" rel="stylesheet" />
+    <link href="assets/css/vendor/swiper.min.css" rel="stylesheet">
+    <link href="assets/css/vendor/jquery.background-video.css" rel="stylesheet">
+    <link href="assets/css/vendor/jquery-ui.min.css" rel="stylesheet">
+    <link href="assets/css/vendor/jquery-ui.structure.min.css" rel="stylesheet">
     <script src="assets/js/vendor/sortable.js"></script>
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<noscript><link href="assets/css/noscript.css" rel="stylesheet" /></noscript>
 	</head>
 	<body class="is-preload">
 
   <!-- Background video -->
       <div id="bg">
-        <video id="bgVideo" autoplay muted loop playsinline>
+        <video autoplay id="bgVideo" loop muted playsinline>
           <!-- Video is embedded in the WEBM format -->
           <source src="images/bg.webm" type="video/webm"/>
         </video>
@@ -60,8 +60,7 @@
 
             <div class="links">
               <ul>
-                <li class="shopping"><a href="#shopping">Shopping</a></li>
-                <li class="explorer"><a href="#explorer">Planet Explorer</a></li>
+                <li class="explorer"><a href="/explorer.html">Planet Explorer</a></li>
               </ul>
             </div>
 					</header>
@@ -74,442 +73,39 @@
               <h2 class="major" data-bind="text: who_we_are.title.value"></h2>
               <span class="image main"><img alt=""
                                             data-bind="attr: { src: who_we_are_image.image.value[0].url }"/></span>
-              <p data-bind="html: who_we_are.body.value"></p>
-							</article>
+              <p data-bind="html: who_we_are.body.value"></p></article>
 
 						<!-- Work -->
-							<article id="guidelines">
-                <h2 class="major" data-bind="text: guidelines.title.value"></h2>
-                <span class="image main"><img alt=""
-                                              data-bind="attr: { src: guidelines_image.image.value[0].url }"/></span>
-                <p data-bind="html: guidelines.body.value"></p>
-							</article>
-
-						<!-- About -->
-							<article id="maps">
-                <section>
-                  <h2 data-bind="text: network_map_section_1.title.value"></h2>
-                  <p data-bind="text: network_map_section_1.body.value"></p>
-                  <img alt="" data-bind="attr: { src: network_map.image.value[0].url }"/>
-                </section>
-                <hr/>
-                <section>
-                  <h2 data-bind="text: network_map_section_2.title.value"></h2>
-                  <p data-bind="text: network_map_section_2.body.value"></p>
-                  <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTcpLyvNf9qUFQOOUXuVzGyqpzXiSYhM2E7Qz2sNZUTRQcS0LjZIE1EDn0h_YX4MryTKQ9dBmPTxzOW/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
-                </section>
-							</article>
-
-            <!-- Farms -->
-							<article id="farms">
-								<h2 class="major">Farms</h2>
-
-                <section data-bind="html: farms.body.value">
-
-								</section>
-
-							</article>
-
-            <article id="shopping">
-              <h2 class="major">Shopping</h2>
-              <form>
-
-                <div class="fields">
-                  <div class="field">
-                    <div class="search-bar">
-                      <input id="shop" placeholder="Search..." type="text"/>
-                      <button id="shop-search">Search</button>
-                    </div>
-                    <div class="search-item">Rough Oortstone</div>
-                  </div>
-                  <div class="field half">
-                    <h4>Shop Stands</h4>
-                    <section class="table-wrapper">
-                      <table id="shop-stands" class="sortable">
-                        <thead>
-                          <tr>
-                            <th>Location</th>
-                            <th>Stock</th>
-                            <th>Unit Price</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                          <td>Kevin Beacon</td>
-                          <td>4000</td>
-                          <td>249</td>
-                        </tr>
-                        <tr>
-                          <td>Beacon Lettuce and Tomato</td>
-                          <td>4000</td>
-                          <td>249</td>
-                        </tr>
-                        <tr>
-                          <td>Beacon Bits</td>
-                          <td>2000</td>
-                          <td>249</td>
-                        </tr>
-                        <tr>
-                          <td>Beacon-wrapped Shrimp</td>
-                          <td>200</td>
-                          <td>249</td>
-                        </tr>
-                        <tr>
-                          <td>Cheddar Beacon Bites</td>
-                          <td>611</td>
-                          <td>111</td>
-                        </tr>
-                        <tr>
-                          <td>Kevin Beacon</td>
-                          <td>215</td>
-                          <td>611</td>
-                        </tr>
-                        <tr>
-                          <td>Beacon Lettuce and Tomato</td>
-                          <td>126</td>
-                          <td>49</td>
-                        </tr>
-                        <tr>
-                          <td>Beacon Bits</td>
-                          <td>4000</td>
-                          <td>249</td>
-                        </tr>
-                        <tr>
-                          <td>Beacon-wrapped Shrimp</td>
-                          <td>4000</td>
-                          <td>249</td>
-                        </tr>
-                        <tr>
-                          <td>Cheddar Beacon Bites</td>
-                          <td>4000</td>
-                          <td>249</td>
-                        </tr>
-                        <tr>
-                          <td>Kevin Beacon</td>
-                          <td>4000</td>
-                          <td>249</td>
-                        </tr>
-                        <tr>
-                          <td>Beacon Lettuce and Tomato</td>
-                          <td>4000</td>
-                          <td>249</td>
-                        </tr>
-                        <tr>
-                          <td>Beacon Bits</td>
-                          <td>4000</td>
-                          <td>249</td>
-                        </tr>
-                        <tr>
-                          <td>Beacon-wrapped Shrimp</td>
-                          <td>4000</td>
-                          <td>249</td>
-                        </tr>
-                        <tr>
-                          <td>Cheddar Beacon Bites</td>
-                          <td>4000</td>
-                          <td>249</td>
-                        </tr>
-                        </tbody>
-                      </table>
-                    </section>
-                  </div>
-                  <div class="field half">
-                    <h4>Request Baskets</h4>
-                    <section class="table-wrapper">
-                      <table id="request-baskets" class="sortable">
-                        <thead>
-                        <tr>
-                          <th>Location</th>
-                          <th>Can Buy</th>
-                          <th>Asking Price</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                          <td>Beacon and Eggs</td>
-                          <td>4000</td>
-                          <td>249</td>
-                        </tr>
-                        <tr>
-                          <td>Out of beacon jokes</td>
-                          <td>4000</td>
-                          <td>249</td>
-                        </tr>
-                        </tbody>
-                      </table>
-                    </section>
-                  </div>
-                </div>
-              </form>
-
+            <article id="guidelines">
+              <h2 class="major" data-bind="text: guidelines.title.value"></h2>
+              <span class="image main"><img alt=""
+                                            data-bind="attr: { src: guidelines_image.image.value[0].url }"/></span>
+              <p data-bind="html: guidelines.body.value"></p>
             </article>
 
-            <article id="explorer">
-              <form class="filters" onkeydown="return event.key !== 'Enter';">
-                <div class="fields">
-                  <div class="field half">
-                    <label for="planet-type">Filter By Planet</label>
-                    <select id="planet-type">
-                      <option value="all">All</option>
-                      <option value="homeworld">Home</option>
-                      <option value="exoworld">Exo</option>
-                      <option value="active">Active Exo</option>
-                    </select>
-                    <input id="planet-search" placeholder="Search and hit [Enter]..." type="text"/>
-                  </div>
-                  <div class="field half">
-                    <label for="color-search-type">Filter by Color</label>
-                    <select id="color-search-type">
-                      <option value="all">All</option>
-                      <option value="flowers">Flowers</option>
-                      <option value="foliage">Foliage</option>
-                      <option value="gleam">Gleam</option>
-                      <option value="grass">Grass</option>
-                      <option value="rocks">Rocks</option>
-                      <option value="soils">Soils</option>
-                      <option value="trunks">Trunks</option>
-                    </select>
-                    <input id="color-search" placeholder="Search and hit [Enter]..." type="text"/>
-                  </div>
-                </div>
-              </form>
+						<!-- About -->
+            <article id="maps">
+              <section>
+                <h2 data-bind="text: network_map_section_1.title.value"></h2>
+                <p data-bind="text: network_map_section_1.body.value"></p>
+                <img alt="" data-bind="attr: { src: network_map.image.value[0].url }"/>
+              </section>
+              <hr/>
+              <section>
+                <h2 data-bind="text: network_map_section_2.title.value"></h2>
+                <p data-bind="text: network_map_section_2.body.value"></p>
+                <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTcpLyvNf9qUFQOOUXuVzGyqpzXiSYhM2E7Qz2sNZUTRQcS0LjZIE1EDn0h_YX4MryTKQ9dBmPTxzOW/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+              </section>
+            </article>
 
-              <div class="swiper-container">
-                <div class="swiper-wrapper" data-bind="foreach: planets">
+            <!-- Farms -->
+            <article id="farms">
+              <h2 class="major">Farms</h2>
 
-                  <!-- Planet Slide -->
-                  <div class="planet-slide planet-type-match swiper-slide"
-                       data-bind="attr: { 'data-metamorphic': $root.getColorName($data[41]), 'data-igneous': $root.getColorName($data[40]), 'data-sedimentary': $root.getColorName($data[42]), 'data-gleam': $root.getColorName($data[12]), 'data-planet-type': ($data[2] + '').toLowerCase(), 'data-death': $data[3] }">
-                    <section class="planet-header">
-                      <section class="planet-header-left">
-                        <a data-bind="attr: { href: $data[56] }" target="_blank"><h2 data-bind="text: $data[1]"></h2></a>
-                      </section>
-                      <section class="planet-header-right">
-                        <h3 data-bind="text: $data[2]"></h3>
-                        <h3 data-bind="text: $root.getRegion($data[4])"></h3>
-                        <h3 data-bind="text: 'Tier ' + $data[7]"></h3>
-                        <h3 data-bind="text: $data[8]"></h3>
-                      </section>
-                    </section>
-                    <section class="planet-data">
-                      <section class="planet-data-left">
-                        <section class="table-wrapper">
-                          <table>
-                            <tbody>
-                              <tr class="gleam" data-block-type="gleam">
-                                <td>Gleam</td>
-                                <td data-bind="text: $root.getColorName($data[12])"></td>
-                                <td data-bind="style: {backgroundColor: $root.getColorHex($data[12]) }"></td>
-                                <td data-bind="html: $root.getVerified($data[12])"></td>
-                                <td data-bind="html: $root.getNew($data[12])"></td>
-                              </tr>
-                              <tr class="rocks" data-block-type="rocks">
-                                <td>Igneous Rock</td>
-                                <td data-bind="text: $root.getColorName($data[40])"></td>
-                                <td data-bind="style: {backgroundColor: $root.getColorHex($data[40]) }"></td>
-                                <td data-bind="html: $root.getVerified($data[40])"></td>
-                                <td data-bind="html: $root.getNew($data[40])"></td>
-                              </tr>
-                              <tr class="rocks" data-block-type="rocks">
-                                <td>Metamorphic Rock</td>
-                                <td data-bind="text: $root.getColorName($data[41])"></td>
-                                <td data-bind="style: {backgroundColor: $root.getColorHex($data[41]) }"></td>
-                                <td data-bind="html: $root.getVerified($data[41])"></td>
-                                <td data-bind="html: $root.getNew($data[41])"></td>
-                              </tr>
-                              <tr class="rocks" data-block-type="rocks">
-                                <td>Sedimentary Rock</td>
-                                <td data-bind="text: $root.getColorName($data[42])"></td>
-                                <td data-bind="style: {backgroundColor: $root.getColorHex($data[42]) }"></td>
-                                <td data-bind="html: $root.getVerified($data[42])"></td>
-                                <td data-bind="html: $root.getNew($data[42])"></td>
-                              </tr>
-                              <tr>
-                                <td>Sand</td>
-                                <td data-bind="text: $root.getColorName($data[43])"></td>
-                                <td data-bind="style: {backgroundColor: $root.getColorHex($data[43]) }"></td>
-                                <td data-bind="html: $root.getVerified($data[43])"></td>
-                                <td data-bind="html: $root.getNew($data[43])"></td>
-                              </tr>
-                              <tr>
-                                <td>Gravel</td>
-                                <td data-bind="text: $root.getColorName($data[28])"></td>
-                                <td data-bind="style: {backgroundColor: $root.getColorHex($data[28]) }"></td>
-                                <td data-bind="html: $root.getVerified($data[28])"></td>
-                                <td data-bind="html: $root.getNew($data[28])"></td>
-                              </tr>
-                              <tr class="trunks" data-block-type="trunks">
-                                <td>Lustrous Trunk</td>
-                                <td data-bind="text: $root.getColorName($data[53])"></td>
-                                <td data-bind="style: {backgroundColor: $root.getColorHex($data[53]) }"></td>
-                                <td data-bind="html: $root.getVerified($data[53])"></td>
-                                <td data-bind="html: $root.getNew($data[53])"></td>
-                              </tr>
-                              <tr class="trunks" data-block-type="trunks">
-                                <td>Twisted Trunk</td>
-                                <td data-bind="text: $root.getColorName($data[54])"></td>
-                                <td data-bind="style: {backgroundColor: $root.getColorHex($data[54]) }"></td>
-                                <td data-bind="html: $root.getVerified($data[54])"></td>
-                                <td data-bind="html: $root.getNew($data[54])"></td>
-                              </tr>
-                              <tr class="trunks" data-block-type="trunks">
-                                <td>Ancient Trunk</td>
-                                <td data-bind="text: $root.getColorName($data[50])"></td>
-                                <td data-bind="style: {backgroundColor: $root.getColorHex($data[50]) }"></td>
-                                <td data-bind="html: $root.getVerified($data[50])"></td>
-                                <td data-bind="html: $root.getNew($data[50])"></td>
-                              </tr>
-                              <tr>
-                                <td>Ash</td>
-                                <td data-bind="text: $root.getColorName($data[11])"></td>
-                                <td data-bind="style: {backgroundColor: $root.getColorHex($data[11]) }"></td>
-                                <td data-bind="html: $root.getVerified($data[11])"></td>
-                                <td data-bind="html: $root.getNew($data[11])"></td>
-                              </tr>
-                              <tr class="foliage">
-                                <td>Exotic Foliage</td>
-                                <td data-bind="text: $root.getColorName($data[51])"></td>
-                                <td data-bind="style: {backgroundColor: $root.getColorHex($data[51]) }"></td>
-                                <td data-bind="html: $root.getVerified($data[51])"></td>
-                                <td data-bind="html: $root.getNew($data[51])"></td>
-                              </tr>
-                              <tr class="foliage">
-                                <td>Lush Foliage</td>
-                                <td data-bind="text: $root.getColorName($data[52])"></td>
-                                <td data-bind="style: {backgroundColor: $root.getColorHex($data[52]) }"></td>
-                                <td data-bind="html: $root.getVerified($data[52])"></td>
-                                <td data-bind="html: $root.getNew($data[52])"></td>
-                              </tr>
-                              <tr class="foliage">
-                                <td>Waxy Foliage</td>
-                                <td data-bind="text: $root.getColorName($data[55])"></td>
-                                <td data-bind="style: {backgroundColor: $root.getColorHex($data[55]) }"></td>
-                                <td data-bind="html: $root.getVerified($data[55])"></td>
-                                <td data-bind="html: $root.getNew($data[55])"></td>
-                              </tr>
-                              <tr class="frozen">
-                                <td>Ice</td>
-                                <td data-bind="text: $root.getColorName($data[30])"></td>
-                                <td data-bind="style: {backgroundColor: $root.getColorHex($data[30]) }"></td>
-                                <td data-bind="html: $root.getVerified($data[30])"></td>
-                                <td data-bind="html: $root.getNew($data[30])"></td>
-                              </tr>
-                              <tr class="frozen">
-                                <td>Glacier</td>
-                                <td data-bind="text: $root.getColorName($data[31])"></td>
-                                <td data-bind="style: {backgroundColor: $root.getColorHex($data[31]) }"></td>
-                                <td data-bind="html: $root.getVerified($data[31])"></td>
-                                <td data-bind="html: $root.getNew($data[31])"></td>
-                              </tr>
-                              <tr class="gross">
-                                <td>Growth</td>
-                                <td data-bind="text: $root.getColorName($data[30])"></td>
-                                <td data-bind="style: {backgroundColor: $root.getColorHex($data[30]) }"></td>
-                                <td data-bind="html: $root.getVerified($data[30])"></td>
-                                <td data-bind="html: $root.getNew($data[30])"></td>
-                              </tr>
-                              <tr class="gross">
-                                <td>Mould</td>
-                                <td data-bind="text: $root.getColorName($data[32])"></td>
-                                <td data-bind="style: {backgroundColor: $root.getColorHex($data[32]) }"></td>
-                                <td data-bind="html: $root.getVerified($data[32])"></td>
-                                <td data-bind="html: $root.getNew($data[32])"></td>
-                              </tr>
-                              <tr class="gross">
-                                <td>Mud</td>
-                                <td data-bind="text: $root.getColorName($data[33])"></td>
-                                <td data-bind="style: {backgroundColor: $root.getColorHex($data[33]) }"></td>
-                                <td data-bind="html: $root.getVerified($data[33])"></td>
-                                <td data-bind="html: $root.getNew($data[33])"></td>
-                              </tr>
-                              <tr class="soils" data-block-type="soils">
-                                <td>Clay Soil</td>
-                                <td data-bind="text: $root.getColorName($data[44])"></td>
-                                <td data-bind="style: {backgroundColor: $root.getColorHex($data[44]) }"></td>
-                                <td data-bind="html: $root.getVerified($data[44])"></td>
-                                <td data-bind="html: $root.getNew($data[44])"></td>
-                              </tr>
-                              <tr class="soils" data-block-type="soils">
-                                <td>Peaty Soil</td>
-                                <td data-bind="text: $root.getColorName($data[45])"></td>
-                                <td data-bind="style: {backgroundColor: $root.getColorHex($data[45]) }"></td>
-                                <td data-bind="html: $root.getVerified($data[45])"></td>
-                                <td data-bind="html: $root.getNew($data[45])"></td>
-                              </tr>
-                              <tr class="soils" data-block-type="soils">
-                                <td>Silty Soil</td>
-                                <td data-bind="text: $root.getColorName($data[46])"></td>
-                                <td data-bind="style: {backgroundColor: $root.getColorHex($data[46]) }"></td>
-                                <td data-bind="html: $root.getVerified($data[46])"></td>
-                                <td data-bind="html: $root.getNew($data[46])"></td>
-                              </tr>
-                              <tr class="grass" data-block-type="grass">
-                                <td>Verdant Grass</td>
-                                <td data-bind="text: $root.getColorName($data[27])"></td>
-                                <td data-bind="style: {backgroundColor: $root.getColorHex($data[27]) }"></td>
-                                <td data-bind="html: $root.getVerified($data[27])"></td>
-                                <td data-bind="html: $root.getNew($data[27])"></td>
-                              </tr>
-                              <tr class="grass" data-block-type="grass">
-                                <td>Barbed Grass</td>
-                                <td data-bind="text: $root.getColorName($data[25])"></td>
-                                <td data-bind="style: {backgroundColor: $root.getColorHex($data[25]) }"></td>
-                                <td data-bind="html: $root.getVerified($data[25])"></td>
-                                <td data-bind="html: $root.getNew($data[25])"></td>
-                              </tr>
-                              <tr class="grass" data-block-type="grass">
-                                <td>Gnarled Grass</td>
-                                <td data-bind="text: $root.getColorName($data[26])"></td>
-                                <td data-bind="style: {backgroundColor: $root.getColorHex($data[26]) }"></td>
-                                <td data-bind="html: $root.getVerified($data[26])"></td>
-                                <td data-bind="html: $root.getNew($data[26])"></td>
-                              </tr>
-                              <tr class="flowers" data-block-type="flowers">
-                                <td>Cloneflower</td>
-                                <td data-bind="text: $root.getColorName($data[14])"></td>
-                                <td data-bind="style: {backgroundColor: $root.getColorHex($data[14]) }"></td>
-                                <td data-bind="html: $root.getVerified($data[14])"></td>
-                                <td data-bind="html: $root.getNew($data[14])"></td>
-                              </tr>
-                              <tr class="flowers" data-block-type="flowers">
-                                <td>Gladeflower</td>
-                                <td data-bind="text: $root.getColorName($data[13])"></td>
-                                <td data-bind="style: {backgroundColor: $root.getColorHex($data[13]) }"></td>
-                                <td data-bind="html: $root.getVerified($data[13])"></td>
-                                <td data-bind="html: $root.getNew($data[13])"></td>
-                              </tr>
-                              <tr class="flowers" data-block-type="flowers">
-                                <td>Ghostflower</td>
-                                <td data-bind="text: $root.getColorName($data[16])"></td>
-                                <td data-bind="style: {backgroundColor: $root.getColorHex($data[16]) }"></td>
-                                <td data-bind="html: $root.getVerified($data[16])"></td>
-                                <td data-bind="html: $root.getNew($data[16])"></td>
-                              </tr>
-                              <tr class="flowers" data-block-type="flowers">
-                                <td>Spineflower</td>
-                                <td data-bind="text: $root.getColorName($data[15])"></td>
-                                <td data-bind="style: {backgroundColor: $root.getColorHex($data[15]) }"></td>
-                                <td data-bind="html: $root.getVerified($data[15])"></td>
-                                <td data-bind="html: $root.getNew($data[15])"></td>
-                              </tr>
-                            </tbody>
-                          </table>
-                        </section>
-                      </section>
-                    </section>
-                  </div>
-                </div>
+              <section data-bind="html: farms.body.value">
 
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
+              </section>
 
-              </div>
-
-              <div class="legend">
-                <div><i style="color: green; font-size: 16px;" class="fa fa-check"></i> : Verified</div>
-                <div><i style="color: lightgrey; font-size: 16px;" class="fa fa-question"></i> : Not Verified</div>
-                <div><i style="color: green; font-size: 16px;" class="fa fa-search-plus"></i> : First Appearance</div>
-              </div>
             </article>
 
 					</div>

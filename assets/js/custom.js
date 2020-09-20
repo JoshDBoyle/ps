@@ -1,305 +1,279 @@
-;(function($) {
-  var model = {
-    'tutorialList': [],
-    'discordList': [],
-    'streamList': [],
-    'youtubeChannelList': [],
-    'usefulLinkList': [],
-    'planets': [],
-    'items': [],
-    }, items,
-      colorMappings,
-      colors,
-      regions,
-      planetSwiper,
-      orders = [];
+;(function ($) {
+  let model = {
+      'tutorialList': [],
+      'discordList': [],
+      'streamList': [],
+      'youtubeChannelList': [],
+      'usefulLinkList': [],
+      'planets': [],
+      'items': []
+    },
+    items,
+    colorMappings,
+    colors;
 
-  fetch('assets/js/data/items.json')
-    .then(res => res.json())
-    .then(data => {
-      items = data
-    })
-    .then(function () {
-      initShopping();
-    })
-    .catch(err => console.error(err));
-
-  fetch('assets/js/data/color-mappings.json')
-    .then(res => res.json())
-    .then(data => { colorMappings = data })
-    .catch(err => console.error(err));
-
-  fetch('assets/js/data/colors.json')
-    .then(res => res.json())
-    .then(data => { colors = data })
-    .catch(err => console.error(err));
-
-  fetch('assets/js/data/regions.json')
-    .then(res => res.json())
-    .then(data => { regions = data })
-    .catch(err => console.error(err));
-
-  function initShopping() {
-    $("#shop").autocomplete({
-      minLength: 3,
-      source: items,
-      focus: function (event, ui) {
-        $("shop").val(ui.item.label);
+  function getItemTitle(gameId) {
+    let title = '';
+    $.each(items.results, function(index, item) {
+      if (item.game_id === gameId) {
+        title = item.localization[0].name;
         return false;
-      },
-      select: function (event, ui) {
-        $("#shop").text(ui.item.label);
       }
-    }).autocomplete("instance")._renderItem = function (ul, item) {
-      return $("<li>")
-        .append("<div>" + item.label + "</div>")
-        .appendTo(ul);
-    };
+    });
+
+    return title;
   }
 
-  function initPlanetExplorer() {
-    planetSwiper = new Swiper ('.swiper-container', {
-      direction: 'horizontal',
-      loop: false,
-      observer: true,
-      observeParents: true,
-      cache: true,
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-      simulateTouch: false,
-      freeModeSticky: true,
-      watchSlidesProgress: true,
-      watchSlidesVisibility: true
-    });
-
-    function filterOnPlanetType() {
-      // Get planet type to filter on
-      let planetType = $('#planet-type').val();
-
-      if (planetType === "all") {
-        $('.planet-slide').removeClass("non-swiper-slide").addClass("swiper-slide filter-match").show();
-      } else if (planetType === 'homeworld' || planetType === 'exoworld') {
-        $('.planet-slide').not("[data-planet-type='" + planetType + "']").addClass("non-swiper-slide").removeClass("filter-match swiper-slide").hide();
-        $("[data-planet-type='" + planetType + "']").removeClass("non-swiper-slide").addClass("swiper-slide filter-match").attr("style", null).show();
-      } else if (planetType === 'active') {
-        let $all = $('.planet-slide');
-        let $exos = $(".swiper-wrapper div[data-planet-type='exoworld']");
-
-        $all.removeClass("swiper-slide filter-match").addClass('non-swiper-slide').hide();
-        $exos.removeClass('non-swiper-slide').addClass("swiper-slide filter-match").show();
-
-        $exos.each(function(index, planet) {
-          const now = new Date();
-          const secondsSinceEpoch = Math.round(now.getTime() / 1000);
-
-          let planetTime = planet.getAttribute('data-death').split(',')[1];
-
-          if (planetTime <= secondsSinceEpoch) {
-            $(planet).removeClass('swiper-slide filter-match').addClass('non-swiper-slide').hide();
-          } else {
-            $(planet).removeClass('non-swiper-slide ').addClass('swiper-slide filter-match').show();
-          }
-        });
-      }
+  function handleFetchErrors(response) {
+    if (!response.ok) {
+      throw Error(response.statusText);
     }
 
-    function filterOnPlanetName() {
-      let searchTerm = $('#planet-search').val();
+    return response;
+  }
 
-      if (searchTerm && searchTerm.length > 0) {
-        $('.filter-match').each(function () {
-          let visible = false,
-            namesPerSlide = $(this).find(".planet-header-left h2");
+  function cachedFetch(url, options) {
+    let cacheKey = url;
 
-          $(namesPerSlide).each(function () {
-            if ($(this).text().toLowerCase().indexOf(searchTerm.toLowerCase()) >= 0) {
-              visible = true;
-              return false;
-            }
-          });
-
-          if (visible) {
-            $(this).removeClass('non-swiper-slide').addClass('swiper-slide filter-match').show();
-          } else {
-            $(this).removeClass('swiper-slide filter-match').addClass('non-swiper-slide').hide();
-          }
-        });
-      }
+    let cached = localStorage.getItem(cacheKey)
+    if (cached !== null) {
+      let response = new Response(new Blob([cached]))
+      return Promise.resolve(response);
     }
 
-    function filterOnColor() {
-      let searchTerm = $('#color-search').val(),
-          searchType = $('#color-search-type').val();
-
-      $('.planet-slide tbody').each(function(index, tbody) {
-        $(tbody).find('tr').css('display', 'none');
-        if (searchType === 'all') {
-          $(tbody).find('tr').css('display', 'table-row');
-        } else {
-          $(tbody).find('tr.' + searchType).css('display', 'table-row');
+    return fetch(url, options)
+      .then(handleFetchErrors)
+      .then(response => {
+        if (response.status === 200) {
+          let ct = response.headers.get('Content-Type')
+          if (ct && (ct.match(/application\/json/i) || ct.match(/text\//i))) {
+            response.clone().text().then(content => {
+              localStorage.setItem(cacheKey, content)
+            })
+          }
         }
-      });
 
-      if (searchTerm && searchTerm.length > 0) {
-        $('.filter-match').each(function () {
-          let visible = false,
-            secondTdsPerSlide;
-
-          if (searchType === 'all' || searchType === '') {
-            secondTdsPerSlide = $(this).find("td:nth-of-type(2)");
-          } else {
-            secondTdsPerSlide = $(this).find("tr[data-block-type='" + searchType + "'] td:nth-of-type(2)");
-          }
-
-          $(secondTdsPerSlide).each(function () {
-            if ($(this).text().toLowerCase().indexOf(searchTerm.toLowerCase()) >= 0) {
-              visible = true;
-              return false;
-            }
-          });
-
-          if (visible) {
-            $(this).removeClass('non-swiper-slide').addClass('swiper-slide filter-match').show();
-          } else {
-            $(this).removeClass('swiper-slide filter-match').addClass('non-swiper-slide').hide();
-          }
-        });
-      }
-    }
-
-    // Planet type filter
-    $(".filters #planet-type, .filters #color-search-type").on("change", function() {
-      filterOnPlanetType();
-      filterOnPlanetName();
-      filterOnColor();
-
-      planetSwiper.update();
-      planetSwiper.slideTo(0);
-    });
-
-    // Color search filter
-    $(".filters #color-search, .filters #planet-search").on('keyup', function (e) {
-      if (e.keyCode === 13) {
-        e.preventDefault();
-
-        filterOnPlanetType();
-        filterOnPlanetName();
-        filterOnColor();
-
-        planetSwiper.update();
-        planetSwiper.slideTo(0);
-
-        return false;
-      }
-    });
+        return Promise.resolve(response);
+      })
   }
 
   /**
-   * Initializes the gapi.client and calls sheets for the planetModel
+   * Initializes content from Kentico Kontent
    */
-  function initializeGapi() {
-    // Initializes the client with the API key and the Translate API.
-    gapi.client.init({
-      'apiKey': 'AIzaSyD8U-s4VcgBHNfvR4aztOwWaVjHaFe9Q3o',
-      'discoveryDocs': ['https://sheets.googleapis.com/$discovery/rest?version=v4'],
-    }).then(function() {
-      return gapi.client.sheets.spreadsheets.values.get({
-        spreadsheetId: '1yT1Fqepw5YjiO5O_5SzruRrSQFBzO2PsY5rwzTaXRBc',
-        range: 'buwecDBcore!A:BH',
+  function initializeContent() {
+    $.get("https://deliver.kontent.ai/a4f95819-8594-0090-4d5a-9046d8d19c69/items", function (data) {
+      $.each(data.items, function (index, item) {
+        let name = item.system.codename;
+        if (name.includes('tutorial_')) {
+          model.tutorialList.push(item.elements);
+        } else if (name.includes('stream_')) {
+          model.streamList.push(item.elements);
+        } else if (name.includes('useful_link_')) {
+          model.usefulLinkList.push(item.elements);
+        } else if (name.includes('youtube_channel_')) {
+          model.youtubeChannelList.push(item.elements);
+        } else {
+          model[name] = item.elements;
+        }
       });
-    }).then(function(response) {
-      model.planets = response.result.values;
-      model.planets.splice(0, 1);
-    }, function(reason) {
-      console.log('Error: ' + reason);
-    }).then(function () {
-      // gapi is initialized so let's get our content now
-      $.get("https://deliver.kontent.ai/a4f95819-8594-0090-4d5a-9046d8d19c69/items", function(data) {
-        $.each(data.items, function(index, item) {
-          var name = item.system.codename;
-          if (name.includes('tutorial_')) {
-            model.tutorialList.push(item.elements);
-          } else if (name.includes('stream_')) {
-            model.streamList.push(item.elements);
-          } else if (name.includes('useful_link_')) {
-            model.usefulLinkList.push(item.elements);
-          } else if (name.includes('youtube_channel_')) {
-            model.youtubeChannelList.push(item.elements);
-          } else {
-            model[name] = item.elements;
+    });
+
+    model.getPlanetType = function (id) {
+      if (id) {
+        let planet = {};
+        for (let i = 0; i < model.planets.length; i++) {
+          if (model.planets[i].id === id) {
+            planet = model.planets[i];
+            break;
           }
+        }
+
+        let creative = planet.is_creative,
+            sovereign = planet.is_sovereign,
+            exo = planet.is_exo;
+
+        if (creative) {
+          return 'Creative';
+        } else if (sovereign) {
+          return 'Sovereign';
+        } else if (exo) {
+          return 'Exo'
+        } else {
+          return 'Home';
+        }
+
+      } else {
+        return '';
+      }
+    };
+
+    model.getPlanetTier = function (id) {
+      if (id) {
+        let planet = {};
+        for (let i = 0; i < model.planets.length; i++) {
+          if (model.planets[i].id === id) {
+            planet = model.planets[i];
+            break;
+          }
+        }
+
+        return 'T' + (planet.tier + 1);
+      } else {
+        return '';
+      }
+    };
+
+    model.getPlanetAtmosphere = function (id) {
+      if (id) {
+        let planet = {};
+        for (let i = 0; i < model.planets.length; i++) {
+          if (model.planets[i].id === id) {
+            planet = model.planets[i];
+            break;
+          }
+        }
+
+        return planet.world_type;
+      } else {
+        return '';
+      }
+    };
+  }
+
+  function initializeExplorer() {
+    fetch('assets/js/data/color-mappings.json')
+      .then(res => res.json())
+      .then(data => {
+        colorMappings = data;
+        fetch('assets/js/data/colors.json')
+          .then(res => res.json())
+          .then(data => {
+            colors = data;
+            fetch('assets/js/data/items.json')
+              .then(res => res.json())
+              .then(data => {
+                items = data;
+                $(document).trigger('mappings-ready');
+              })
+              .catch(err => console.error(err));
+          })
+          .catch(err => console.error(err));
+      })
+      .catch(err => console.error(err));
+
+    $(document).on('mappings-ready', function () {
+      $.getJSON('https://api.boundlexx.app/api/v1/worlds/?limit=10000', function(worldResponse) {
+        let count = 0;
+        $.each(worldResponse.results, function (worldIndex, world) {
+          model.planets.push(world);
+          cachedFetch('https://api.boundlexx.app/api/v1/worlds/' + world.id + '/block-colors/')
+            .then(r => r.json())
+            .then(colorsResponse => {
+              model.planets[worldIndex].colors = colorsResponse.block_colors;
+              $.each(model.planets[worldIndex].colors, function (blockIndex, block) {
+                block.color.color_name = colors[block.color.game_id];
+                block.color.color_hex = colorMappings[block.color.game_id];
+                for (let i = 0; i < items.count; i++) {
+                  if (items.results[i].game_id === block.item.game_id) {
+                    block.item.title = items.results[i].localization[0].name;
+                    break;
+                  }
+                }
+              });
+
+              if (++count === worldResponse.results.length) {
+                ko.applyBindings(model);
+
+                $('.resource-btn').click(function(event) {
+                  let planet = $(event.currentTarget).closest('.planet'),
+                    planetId = $(planet).data('planet-id');
+
+                  event.preventDefault();
+                  $.getJSON('https://api.boundlexx.app/api/v1/worlds/' + planetId + '/polls/latest/resources/', function(resourcesResponse) {
+                    let $planetResources = $('.planet-resources');
+                    $planetResources.empty();
+                    $planetResources.append('<h5>' + $(event.currentTarget).closest(".planet").find(".planet-name").text() + ' resources</h5>');
+                    $.each(resourcesResponse.resources.resources, function(index, resource) {
+                      $planetResources.append('<div class="resource-row">' +
+                                              '  <div class="resource-name">' + getItemTitle(resource.item.game_id) + '</div>' +
+                                              '  <div class="resource-percent">' + resource.percentage + '%' + '</div>' +
+                                              '  <div class="resource-count">' + resource.count + '</div>' +
+                                              '</div>');
+                    });
+
+                    $planetResources.fadeIn(500);
+                  });
+                });
+
+                $('.data-bar .count').text($('.planet:visible').length + ' planets found...');
+              }
+            });
         });
-      }).done(function () {
-        model.getColorName = function(value) {
-          if (value) {
-            var arr = value.split(',');
-            return colors['' + arr[0]] + ' (' + arr[0] + ')';
-          } else {
-            return '';
-          }
-        };
-
-        model.getColorHex = function(value) {
-          if (value) {
-            var arr = value.split(',');
-            return colorMappings['' + arr[0]];
-          } else {
-            return '';
-          }
-        };
-
-        model.getRegion = function(value) {
-          if (value) {
-            return regions['' + value];
-          } else {
-            return '';
-          }
-        };
-
-        model.getVerified = function(value) {
-          if (value) {
-            let arr = value.split(',');
-            return arr[1] === 'True' ? '<i style=\"color: green; font-size: 28px;\" class=\"fa fa-check\"></i>' : '<i style=\"color: lightgrey; font-size: 28px;\" class=\"fa fa-question\"></i>';
-          } else {
-            return '<i style=\"color: lightgrey; font-size: 28px;\" class=\"fa fa-question\"></i>';
-          }
-        };
-
-        model.getNew = function(value) {
-          if (value) {
-            let arr = value.split(',');
-            return arr.length >= 3 && arr[2] === 'True' ? '<i style=\"color: green; font-size: 28px;\" class=\"fa fa-search-plus\"></i>' : '';
-          } else {
-            return '';
-          }
-        };
-
-        ko.applyBindings(model);
-
-        window.dispatchEvent(new Event('data-ready'));
-
-        document.getElementById("bgVideo").load();
       });
-    }).then(function() {
-      return gapi.client.sheets.spreadsheets.values.get({
-        spreadsheetId: '1CEbz80I_EUkTEoZjRITm-jhU4eVxYsv6YFz4J9tSEbk',
-        range: 'items!A:C'
+    });
+
+    $('#planet-type').on('change', function(event) {
+      $('.planet').each(function(index, planet) {
+        if ($(event.currentTarget).val().toLowerCase() === 'all') {
+          $(planet).show();
+        } else if ($(planet).find('.planet-type').text().toLowerCase() === $(event.currentTarget).val().toLowerCase()) {
+          $(planet).show();
+        } else {
+          $(planet).hide();
+        }
       });
-    }).then(function(response) {
-      model.items = response.result.values;
-      model.items.splice(0, 1);
-      initShopping();
+
+      $('.data-bar .count').text($('.planet:visible').length + ' planets found...');
+    });
+
+    $('#color-search').on('input', function(event) {
+      let searchTerm = $(event.currentTarget).val();
+
+      $('.highlighted').removeClass('highlighted');
+
+      if (searchTerm === '') {
+        $('.planet').each(function(index, planet) {
+          $(planet).show();
+        });
+
+        $('.data-bar .count').text($('.planet:visible').length + ' planets found...');
+
+        return;
+      }
+
+      $('.planet').each(function(index, planet) {
+        let visible = false;
+        if ($(planet).find('.color').length > 0) {
+          $(planet).find('.color').each(function (index, color) {
+            if ($(color).text().toLowerCase().includes(searchTerm.toLowerCase())) {
+              visible = true;
+
+              $(color).closest('.color-row').find('.color').addClass('highlighted');
+
+              // Break out of the each loop
+              return false;
+            }
+          });
+        }
+
+        if (visible) {
+          $(planet).show();
+        } else {
+          $(planet).hide();
+        }
+      });
+
+      $('.data-bar .count').text($('.planet:visible').length + ' planets found...');
     });
   }
 
-  initPlanetExplorer();
-  //makeApiCall('http://192.168.1.16:8983/api/shopping/S/32805');
+  $(document).mouseup(function(e) {
+    let $container = $('.planet-resources');
+    if (!$container.is(e.target) && $container.has(e.target).length === 0) {
+      $container.fadeOut(500);
+    }
+  });
 
-  // Loads the JavaScript client library and invokes `start` afterwards.
-  setTimeout(function() {
-    gapi.load('client', initializeGapi);
-  }, 1200);
-
+  initializeContent();
+  initializeExplorer();
 })(jQuery);
