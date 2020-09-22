@@ -104,14 +104,8 @@ section img {
 .planet-grid {
   margin: 15px;
   display: grid;
-  grid-template-columns: auto auto auto;
   grid-gap: 15px 15px;
   grid-template-columns: repeat(auto-fill, minmax(375px,1fr));
-}
-
-.planet-grid .planet {
-  background-color: rgba(50, 50, 50, 0.8);
-  width: 375px
 }
 
 .filter-section form {
@@ -119,10 +113,26 @@ section img {
 }
 
 .filter-section form .fields {
-  margin-bottom: 15px;
+  margin-bottom: 10px;
+}
+
+.filter-section form .fields label {
+  margin-bottom: 5px;
 }
 
 .data-bar {
+  margin-left: 15px;
+}
+
+.data-bar i {
+  display: inline-block;
+  margin-top: 20px;
+  cursor: pointer
+}
+
+.count {
+  font-size: 16px;
+  display: inline-block;
   margin-left: 15px;
 }
 
@@ -130,11 +140,23 @@ section img {
   padding: 10px;
   border-radius: 4px;
   border: solid 1px #ffffff;
+  background-color: rgba(50, 50, 50, 0.8);
+  width: 375px;
+  height: 1030px;
+}
+
+.planet i {
+  cursor: pointer;
 }
 
 .planet .resource-btn {
   float:right;
-  margin-right: 5px;
+  margin-top: 5px;
+  border: none;
+}
+
+.planet .block-btn {
+  float:right;
   border: none;
 }
 
@@ -184,46 +206,56 @@ section img {
 .planet .colors .color {
   display: inline-block;
   width: 145px;
+  margin-left: -3px;
 }
 
 .planet .colors .color-square {
   text-align: center;
   display: inline-block;
-  width: 55px;
+  width: 63px;
+  margin-left: -3px;
 }
 
-.planet-resources {
-  background-color: rgba(30, 30, 30, 1);
-  padding: 10px;
-  border-radius: 4px;
-  border: solid 1px #ffffff;
+.planet .planet-resources-card {
   display: none;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+}
+
+.planet-resources-card {
   font-size: 13px;
-  -webkit-box-shadow: -9px 9px 15px 0px rgba(0,0,0,0.75);
-  -moz-box-shadow: -9px 9px 15px 0px rgba(0,0,0,0.75);
-  box-shadow: -9px 9px 15px 0px rgba(0,0,0,0.75);
 }
 
-.planet-resources .resource-row .resource-name {
+.planet-resources-card .resource-row .resource-name {
   display: inline-block;
-  width: 170px;
+  width: 145px;
 }
 
-.planet-resources .resource-row .resource-percent {
+.planet-resources-card .resource-row .resource-percent {
   display: inline-block;
-  width: 60px;
+  width: 135px;
 }
 
-.planet-resources .resource-row .resource-count {
+.planet-resources-card .resource-row .resource-count {
   display: inline-block;
-  width: 90px;
+  width: 65px;
 }
 
 .highlighted {
   background-color: #DDD;
   color: black;
+}
+
+#filter-sliiide {
+  background-color: rgba(27, 27, 27, 0.95);
+  width: 375px;
+}
+
+#filter-sliiide .field {
+  padding-top: 15px;
+}
+
+#filter-sliiide i {
+  float: right;
+  margin-top: 15px;
+  margin-right: 15px;
+  cursor: pointer;
 }

@@ -13,55 +13,94 @@
 		<noscript><link href="assets/css/noscript.css" rel="stylesheet" /></noscript>
 	</head>
 	<body>
+    <div id="filter-sliiide">
 
-    <div class="filter-section">
-      <form class="filters" onkeydown="return event.key !== 'Enter';">
-        <div class="fields">
-          <div class="field half">
-            <label for="planet-type">Filter By Planet</label>
-            <select id="planet-type">
-              <option value="all">All</option>
-              <option value="home">Home</option>
-              <option value="exo">Exo</option>
-              <option value="sovereign">Sovereign</option>
-              <option value="creative">Creative</option>
-            </select>
+      <i id="close-filter-btn" class="fas fa-times fa-2x"></i>
+
+      <div class="filter-section">
+        <form class="filters" onkeydown="return event.key !== 'Enter';">
+          <div class="fields">
+            <div class="field">
+              <label for="planet-type">Filter By Planet</label>
+              <select id="planet-type">
+                <option value="all">All</option>
+                <option value="home">Home</option>
+                <option value="exo">Exo</option>
+                <option value="sovereign">Sovereign</option>
+                <option value="creative">Creative</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="planet-tier">Filter By Tier</label>
+              <select id="planet-tier">
+                <option value="all">All</option>
+                <option value="t1">T1</option>
+                <option value="t2">T2</option>
+                <option value="t3">T3</option>
+                <option value="t4">T4</option>
+                <option value="t5">T5</option>
+                <option value="t6">T6</option>
+                <option value="t7">T7</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="planet-atmosphere">Filter By Atmosphere</label>
+              <select id="planet-atmosphere">
+                <option value="all">All</option>
+                <option value="lush">Lush</option>
+                <option value="coal">Coal</option>
+                <option value="metal">Metal</option>
+                <option value="toxic">Toxic</option>
+                <option value="corrosive">Corrosive</option>
+                <option value="blast">Blast</option>
+                <option value="burn">Burn</option>
+                <option value="shock">Shock</option>
+                <option value="chill">Chill</option>
+                <option value="darkmatter">Darkmatter</option>
+              </select>
+            </div>
+
+            <div class="field ">
+              <label for="color-search">Search Colors</label>
+              <input id="color-search" placeholder="Search for colors..." type="text"/>
+            </div>
           </div>
-          <div class="field half">
-            <label for="color-search">Search Colors</label>
-            <input id="color-search" placeholder="Search for colors..." type="text"/>
-          </div>
-        </div>
-      </form>
+        </form>
+      </div>
     </div>
 
     <section class="data-bar">
+      <i id="filter-btn" class="fas fa-filter fa-lg"></i>
       <div class="count">Please wait while we pull the latest data...</div>
     </section>
 
     <section class="planet-grid" data-bind="foreach: { data: planets, as: 'planet' }">
       <div class="planet" data-bind="attr: {'data-planet-id': planet.id}">
-        <i class="resource-btn fas fa-cubes fa-lg"></i>
-        <h3 class="planet-name" data-bind="text: planet.display_name"></h3>
-        <h4 class="planet-type" data-bind="text: $root.getPlanetType(planet.id)"></h4>
-        <h4 class="planet-tier" data-bind="text: $root.getPlanetTier(planet.id)"></h4>
-        <h4 class="planet-atmosphere" data-bind="text: $root.getPlanetAtmosphere(planet.id)"></h4>
-        <div class="colors" data-bind="foreach: planet.colors">
-          <div class="color-row">
-            <div class="block" data-bind="text: item.title"></div>
-            <div class="color" data-bind="text: color.color_name"></div>
-            <div class="color-square" data-bind="text: color.color_hex, style: { 'background-color': color.color_hex }"></div>
+        <div class="planet-blocks-card">
+          <i class="resource-btn fas fa-gem fa"></i>
+          <h3 class="planet-name" data-bind="text: planet.display_name"></h3>
+          <h4 class="planet-type" data-bind="text: $root.getPlanetType(planet.id)"></h4>
+          <h4 class="planet-tier" data-bind="text: $root.getPlanetTier(planet.id)"></h4>
+          <h4 class="planet-atmosphere" data-bind="text: $root.getPlanetAtmosphere(planet.id)"></h4>
+          <div class="colors" data-bind="foreach: planet.colors">
+            <div class="color-row">
+              <div class="block" data-bind="text: item.title"></div>
+              <div class="color" data-bind="text: color.color_name + ' (' + color.color_id + ')'"></div>
+              <div class="color-square" data-bind="text: color.color_hex, style: { 'background-color': color.color_hex }"></div>
+            </div>
           </div>
+        </div>
+        <div class="planet-resources-card">
+          <i class="block-btn fas fa-cubes fa-2x"></i>
         </div>
       </div>
     </section>
 
-    <section class="planet-resources">
-
-    </section>
-
 		<!-- Scripts -->
     <script src="assets/js/vendor/jquery.min.js"></script>
+    <script src="assets/js/vendor/sliiide.min.js"></script>
     <script src="assets/js/browser.min.js"></script>
     <script src="assets/js/breakpoints.min.js"></script>
     <script src="assets/js/vendor/jquery.background-video.js"></script>

@@ -5,8 +5,7 @@
       'streamList': [],
       'youtubeChannelList': [],
       'usefulLinkList': [],
-      'planets': [],
-      'items': []
+      'planets': []
     },
     items,
     colorMappings,
@@ -24,37 +23,56 @@
     return title;
   }
 
-  function handleFetchErrors(response) {
-    if (!response.ok) {
-      throw Error(response.statusText);
-    }
-
-    return response;
+  function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
   }
 
   function cachedFetch(url, options) {
-    let cacheKey = url;
-
-    let cached = localStorage.getItem(cacheKey)
-    if (cached !== null) {
-      let response = new Response(new Blob([cached]))
-      return Promise.resolve(response);
+    let expiry = 15 * 60;
+    if (typeof options === 'number') {
+      expiry = options;
+      options = undefined;
+    } else if (typeof options === 'object') {
+      expiry = options.seconds || expiry
     }
 
-    return fetch(url, options)
-      .then(handleFetchErrors)
-      .then(response => {
+    let cacheKey = url;
+    let cached = localStorage.getItem(cacheKey);
+    let whenCached = localStorage.getItem(cacheKey + ':ts');
+    if (cached !== null && whenCached !== null) {
+      let age = (Date.now() - whenCached) / 1000;
+      if (age < expiry) {
+        let response = new Response(new Blob([cached]));
+        return Promise.resolve(response)
+      } else {
+        localStorage.removeItem(cacheKey);
+        localStorage.removeItem(cacheKey + ':ts')
+      }
+    }
+
+    return fetch(url, options).then(response => {
         if (response.status === 200) {
           let ct = response.headers.get('Content-Type')
           if (ct && (ct.match(/application\/json/i) || ct.match(/text\//i))) {
             response.clone().text().then(content => {
               localStorage.setItem(cacheKey, content)
+              localStorage.setItem(cacheKey+':ts', Date.now())
             })
           }
         }
 
-        return Promise.resolve(response);
-      })
+        return response;
+    });
+  }
+
+  function initializeSliiide() {
+    $('#filter-sliiide').sliiide({
+      toggle: '#filter-btn',
+      exit_selector: "#close-filter-btn",
+      animation_duration: "0.5s",
+      place: "left",
+      body_slide: false
+    });
   }
 
   /**
@@ -173,6 +191,7 @@
               $.each(model.planets[worldIndex].colors, function (blockIndex, block) {
                 block.color.color_name = colors[block.color.game_id];
                 block.color.color_hex = colorMappings[block.color.game_id];
+                block.color.color_id = block.color.game_id;
                 for (let i = 0; i < items.count; i++) {
                   if (items.results[i].game_id === block.item.game_id) {
                     block.item.title = items.results[i].localization[0].name;
@@ -188,21 +207,32 @@
                   let planet = $(event.currentTarget).closest('.planet'),
                     planetId = $(planet).data('planet-id');
 
-                  event.preventDefault();
-                  $.getJSON('https://api.boundlexx.app/api/v1/worlds/' + planetId + '/polls/latest/resources/', function(resourcesResponse) {
-                    let $planetResources = $('.planet-resources');
-                    $planetResources.empty();
-                    $planetResources.append('<h5>' + $(event.currentTarget).closest(".planet").find(".planet-name").text() + ' resources</h5>');
-                    $.each(resourcesResponse.resources.resources, function(index, resource) {
-                      $planetResources.append('<div class="resource-row">' +
-                                              '  <div class="resource-name">' + getItemTitle(resource.item.game_id) + '</div>' +
-                                              '  <div class="resource-percent">' + resource.percentage + '%' + '</div>' +
-                                              '  <div class="resource-count">' + resource.count + '</div>' +
-                                              '</div>');
+                  let $planetResources = $(planet).find('.planet-resources-card');
+                  let $planetBlocks = $(planet).find('.planet-blocks-card');
+                  if ($(planet).find('.planet-resources-card .resource-name').length <= 0) {
+                    $.getJSON('https://api.boundlexx.app/api/v1/worlds/' + planetId + '/polls/latest/resources/', function (resourcesResponse) {
+                      $planetResources.append('<h3>' + $(event.currentTarget).closest(".planet").find(".planet-name").text() + '</h3>');
+                      $.each(resourcesResponse.resources.resources, function (index, resource) {
+                        $planetResources.append('<div class="resource-row">' +
+                          '  <div class="resource-name">' + getItemTitle(resource.item.game_id) + '</div>' +
+                          '  <div class="resource-percent">' + resource.percentage + '%' + '</div>' +
+                          '  <div class="resource-count">' + resource.count + '</div>' +
+                          '</div>');
+                      });
                     });
+                  }
 
-                    $planetResources.fadeIn(500);
-                  });
+                  $planetBlocks.hide();
+                  $planetResources.show();
+                });
+
+                $('.block-btn').click(function(event) {
+                  let planet = $(event.currentTarget).closest('.planet'),
+                      $planetResources = $(planet).find('.planet-resources-card'),
+                      $planetBlocks = $(planet).find('.planet-blocks-card');
+
+                  $planetBlocks.show();
+                  $planetResources.hide();
                 });
 
                 $('.data-bar .count').text($('.planet:visible').length + ' planets found...');
@@ -217,6 +247,34 @@
         if ($(event.currentTarget).val().toLowerCase() === 'all') {
           $(planet).show();
         } else if ($(planet).find('.planet-type').text().toLowerCase() === $(event.currentTarget).val().toLowerCase()) {
+          $(planet).show();
+        } else {
+          $(planet).hide();
+        }
+      });
+
+      $('.data-bar .count').text($('.planet:visible').length + ' planets found...');
+    });
+
+    $('#planet-tier').on('change', function(event) {
+      $('.planet').each(function(index, planet) {
+        if ($(event.currentTarget).val().toLowerCase() === 'all') {
+          $(planet).show();
+        } else if ($(planet).find('.planet-tier').text().toLowerCase() === $(event.currentTarget).val().toLowerCase()) {
+          $(planet).show();
+        } else {
+          $(planet).hide();
+        }
+      });
+
+      $('.data-bar .count').text($('.planet:visible').length + ' planets found...');
+    });
+
+    $('#planet-atmosphere').on('change', function(event) {
+      $('.planet').each(function(index, planet) {
+        if ($(event.currentTarget).val().toLowerCase() === 'all') {
+          $(planet).show();
+        } else if ($(planet).find('.planet-atmosphere').text().toLowerCase() === $(event.currentTarget).val().toLowerCase()) {
           $(planet).show();
         } else {
           $(planet).hide();
@@ -248,7 +306,7 @@
             if ($(color).text().toLowerCase().includes(searchTerm.toLowerCase())) {
               visible = true;
 
-              $(color).closest('.color-row').find('.color').addClass('highlighted');
+              $(color).closest('.color-row').find('.block, .color').addClass('highlighted');
 
               // Break out of the each loop
               return false;
@@ -276,4 +334,6 @@
 
   initializeContent();
   initializeExplorer();
+  initializeSliiide();
+
 })(jQuery);
