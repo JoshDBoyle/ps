@@ -11,6 +11,12 @@
     colorMappings,
     colors;
 
+  let expiry = 15 * 60;
+
+  function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
+
   function getItemTitle(gameId) {
     let title = '';
     $.each(items.results, function(index, item) {
@@ -23,19 +29,7 @@
     return title;
   }
 
-  function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-  }
-
   function cachedFetch(url, options) {
-    let expiry = 15 * 60;
-    if (typeof options === 'number') {
-      expiry = options;
-      options = undefined;
-    } else if (typeof options === 'object') {
-      expiry = options.seconds || expiry
-    }
-
     let cacheKey = url;
     let cached = localStorage.getItem(cacheKey);
     let whenCached = localStorage.getItem(cacheKey + ':ts');
@@ -51,17 +45,17 @@
     }
 
     return fetch(url, options).then(response => {
-        if (response.status === 200) {
-          let ct = response.headers.get('Content-Type')
-          if (ct && (ct.match(/application\/json/i) || ct.match(/text\//i))) {
-            response.clone().text().then(content => {
-              localStorage.setItem(cacheKey, content)
-              localStorage.setItem(cacheKey+':ts', Date.now())
-            })
-          }
+      if (response.status === 200) {
+        let ct = response.headers.get('Content-Type')
+        if (ct && (ct.match(/application\/json/i) || ct.match(/text\//i))) {
+          response.clone().text().then(content => {
+            localStorage.setItem(cacheKey, content)
+            localStorage.setItem(cacheKey+':ts', Date.now())
+          })
         }
+      }
 
-        return response;
+      return response;
     });
   }
 
@@ -158,6 +152,99 @@
     };
   }
 
+  function finalize() {
+    ko.applyBindings(model);
+
+    $('.resource-btn').click(function(event) {
+      let planet = $(event.currentTarget).closest('.planet'),
+        planetId = $(planet).data('planet-id');
+
+      let $planetResources = $(planet).find('.planet-resources-card');
+      let $planetBlocks = $(planet).find('.planet-blocks-card');
+      if ($(planet).find('.planet-resources-card .resource-name').length <= 0) {
+        $.getJSON('https://api.boundlexx.app/api/v1/worlds/' + planetId + '/polls/latest/resources/', function (resourcesResponse) {
+          $planetResources.append('<h3>' + $(event.currentTarget).closest(".planet").find(".planet-name").text() + '</h3>');
+          $.each(resourcesResponse.resources.resources, function (index, resource) {
+            $planetResources.append('<div class="resource-row">' +
+              '  <div class="resource-name">' + getItemTitle(resource.item.game_id) + '</div>' +
+              '  <div class="resource-percent">' + resource.percentage + '%' + '</div>' +
+              '  <div class="resource-count">' + resource.count + '</div>' +
+              '</div>');
+          });
+        });
+      }
+
+      $planetBlocks.hide();
+      $planetResources.show();
+    });
+
+    $('.block-btn').click(function(event) {
+      let planet = $(event.currentTarget).closest('.planet'),
+        $planetResources = $(planet).find('.planet-resources-card'),
+        $planetBlocks = $(planet).find('.planet-blocks-card');
+
+      $planetBlocks.show();
+      $planetResources.hide();
+    });
+
+    $('.data-bar .count').text($('.planet:visible').length + ' planets found...');
+  }
+
+  function getWorlds() {
+    $.ajax({
+      url: 'https://api.boundlexx.app/api/v1/worlds/?limit=10000',
+      async: false,
+      dataType: 'json',
+      success: function(worldResponse) {
+        model.planets = worldResponse.results;
+        $(document).trigger('worlds-ready');
+      },
+      error: function(worldError) {
+        console.log('ERROR RETRIEVING WORLDS: ' + worldError);
+      }
+    });
+  }
+
+
+  async function getBlocks() {
+    // At this point, the worlds have been retrieved and stuffed in model.planets
+    let worldIndex = 0;
+
+    // For each planet
+    for (const world of model.planets) {
+      // Wait 50ms
+      await sleep(25);
+      // Get the block colors for the current planet
+      $.ajax({
+        url: 'https://api.boundlexx.app/api/v1/worlds/' + world.id + '/block-colors/',
+        dataType: 'json',
+        success: function(colorsResponse) {
+          world.colors = colorsResponse.block_colors;
+
+          // For each block color, set the name, hex and id for ease of reference
+          $.each(world.colors, function (blockIndex, block) {
+            block.color.color_name = colors[block.color.game_id];
+            block.color.color_hex = colorMappings[block.color.game_id];
+            block.color.color_id = block.color.game_id;
+
+            // For each item that we have loaded from our mappings, set the item title for the block
+            for (let i = 0; i < items.count; i++) {
+              if (items.results[i].game_id === block.item.game_id) {
+                block.item.title = items.results[i].localization[0].name;
+                break;
+              }
+            }
+          });
+        }
+      });
+
+      // If our pre-incremented world index equals the number of planets we have then let's finalize
+      if (++worldIndex === model.planets.length) {
+        $(document).trigger('blocks-ready');
+      }
+    }
+  }
+
   function initializeExplorer() {
     fetch('assets/js/data/color-mappings.json')
       .then(res => res.json())
@@ -180,66 +267,15 @@
       .catch(err => console.error(err));
 
     $(document).on('mappings-ready', function () {
-      $.getJSON('https://api.boundlexx.app/api/v1/worlds/?limit=10000', function(worldResponse) {
-        let count = 0;
-        $.each(worldResponse.results, function (worldIndex, world) {
-          model.planets.push(world);
-          cachedFetch('https://api.boundlexx.app/api/v1/worlds/' + world.id + '/block-colors/')
-            .then(r => r.json())
-            .then(colorsResponse => {
-              model.planets[worldIndex].colors = colorsResponse.block_colors;
-              $.each(model.planets[worldIndex].colors, function (blockIndex, block) {
-                block.color.color_name = colors[block.color.game_id];
-                block.color.color_hex = colorMappings[block.color.game_id];
-                block.color.color_id = block.color.game_id;
-                for (let i = 0; i < items.count; i++) {
-                  if (items.results[i].game_id === block.item.game_id) {
-                    block.item.title = items.results[i].localization[0].name;
-                    break;
-                  }
-                }
-              });
+      getWorlds();
+    });
 
-              if (++count === worldResponse.results.length) {
-                ko.applyBindings(model);
+    $(document).on('worlds-ready', function () {
+      getBlocks();
+    });
 
-                $('.resource-btn').click(function(event) {
-                  let planet = $(event.currentTarget).closest('.planet'),
-                    planetId = $(planet).data('planet-id');
-
-                  let $planetResources = $(planet).find('.planet-resources-card');
-                  let $planetBlocks = $(planet).find('.planet-blocks-card');
-                  if ($(planet).find('.planet-resources-card .resource-name').length <= 0) {
-                    $.getJSON('https://api.boundlexx.app/api/v1/worlds/' + planetId + '/polls/latest/resources/', function (resourcesResponse) {
-                      $planetResources.append('<h3>' + $(event.currentTarget).closest(".planet").find(".planet-name").text() + '</h3>');
-                      $.each(resourcesResponse.resources.resources, function (index, resource) {
-                        $planetResources.append('<div class="resource-row">' +
-                          '  <div class="resource-name">' + getItemTitle(resource.item.game_id) + '</div>' +
-                          '  <div class="resource-percent">' + resource.percentage + '%' + '</div>' +
-                          '  <div class="resource-count">' + resource.count + '</div>' +
-                          '</div>');
-                      });
-                    });
-                  }
-
-                  $planetBlocks.hide();
-                  $planetResources.show();
-                });
-
-                $('.block-btn').click(function(event) {
-                  let planet = $(event.currentTarget).closest('.planet'),
-                      $planetResources = $(planet).find('.planet-resources-card'),
-                      $planetBlocks = $(planet).find('.planet-blocks-card');
-
-                  $planetBlocks.show();
-                  $planetResources.hide();
-                });
-
-                $('.data-bar .count').text($('.planet:visible').length + ' planets found...');
-              }
-            });
-        });
-      });
+    $(document).on('blocks-ready', function () {
+      finalize();
     });
 
     $('#planet-type').on('change', function(event) {
