@@ -137,6 +137,7 @@ section img {
 }
 
 .planet {
+  display: none;
   padding: 10px;
   border-radius: 4px;
   border: solid 1px #ffffff;

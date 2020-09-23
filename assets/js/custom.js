@@ -11,7 +11,7 @@
     colorMappings,
     colors;
 
-  let expiry = 15 * 60;
+  let expiry = 20 * 60;
 
   function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
@@ -27,36 +27,6 @@
     });
 
     return title;
-  }
-
-  function cachedFetch(url, options) {
-    let cacheKey = url;
-    let cached = localStorage.getItem(cacheKey);
-    let whenCached = localStorage.getItem(cacheKey + ':ts');
-    if (cached !== null && whenCached !== null) {
-      let age = (Date.now() - whenCached) / 1000;
-      if (age < expiry) {
-        let response = new Response(new Blob([cached]));
-        return Promise.resolve(response)
-      } else {
-        localStorage.removeItem(cacheKey);
-        localStorage.removeItem(cacheKey + ':ts')
-      }
-    }
-
-    return fetch(url, options).then(response => {
-      if (response.status === 200) {
-        let ct = response.headers.get('Content-Type')
-        if (ct && (ct.match(/application\/json/i) || ct.match(/text\//i))) {
-          response.clone().text().then(content => {
-            localStorage.setItem(cacheKey, content)
-            localStorage.setItem(cacheKey+':ts', Date.now())
-          })
-        }
-      }
-
-      return response;
-    });
   }
 
   function initializeSliiide() {
@@ -155,6 +125,8 @@
   function finalize() {
     ko.applyBindings(model);
 
+    $('.planet').show();
+
     $('.resource-btn').click(function(event) {
       let planet = $(event.currentTarget).closest('.planet'),
         planetId = $(planet).data('planet-id');
@@ -205,6 +177,21 @@
     });
   }
 
+  function buildWorldColors(world) {
+    $.each(world.colors, function (blockIndex, block) {
+      block.color.color_name = colors[block.color.game_id];
+      block.color.color_hex = colorMappings[block.color.game_id];
+      block.color.color_id = block.color.game_id;
+
+      // For each item that we have loaded from our mappings, set the item title for the block
+      for (let i = 0; i < items.count; i++) {
+        if (items.results[i].game_id === block.item.game_id) {
+          block.item.title = items.results[i].localization[0].name;
+          break;
+        }
+      }
+    });
+  }
 
   async function getBlocks() {
     // At this point, the worlds have been retrieved and stuffed in model.planets
@@ -212,35 +199,44 @@
 
     // For each planet
     for (const world of model.planets) {
-      // Wait 50ms
-      await sleep(25);
-      // Get the block colors for the current planet
-      $.ajax({
-        url: 'https://api.boundlexx.app/api/v1/worlds/' + world.id + '/block-colors/',
-        dataType: 'json',
-        success: function(colorsResponse) {
-          world.colors = colorsResponse.block_colors;
+      let cacheKey = 'https://api.boundlexx.app/api/v1/worlds/' + world.id + '/block-colors/';
+      let cached = localStorage.getItem(cacheKey);
+      let whenCached = localStorage.getItem(cacheKey + ':ts');
 
-          // For each block color, set the name, hex and id for ease of reference
-          $.each(world.colors, function (blockIndex, block) {
-            block.color.color_name = colors[block.color.game_id];
-            block.color.color_hex = colorMappings[block.color.game_id];
-            block.color.color_id = block.color.game_id;
+      if (cached !== null && whenCached !== null && ((Date.now() - whenCached) / 1000) < expiry) {
+        world.colors = JSON.parse(cached);
 
-            // For each item that we have loaded from our mappings, set the item title for the block
-            for (let i = 0; i < items.count; i++) {
-              if (items.results[i].game_id === block.item.game_id) {
-                block.item.title = items.results[i].localization[0].name;
-                break;
-              }
-            }
-          });
-        }
-      });
+        // For each block color, set the name, hex and id for ease of reference
+        buildWorldColors(world);
+
+      } else {
+        localStorage.removeItem(cacheKey);
+        localStorage.removeItem(cacheKey + ':ts');
+
+        await sleep(40);
+
+        // Get the block colors for the current planet
+        $.ajax({
+          url: cacheKey,
+          dataType: 'json',
+          success: function (colorsResponse) {
+            world.colors = colorsResponse.block_colors;
+
+            // For each block color, set the name, hex and id for ease of reference
+            buildWorldColors(world);
+
+            localStorage.setItem(cacheKey, JSON.stringify(world.colors));
+            localStorage.setItem(cacheKey + ':ts', Date.now());
+          }
+        });
+      }
 
       // If our pre-incremented world index equals the number of planets we have then let's finalize
       if (++worldIndex === model.planets.length) {
+        $('.data-bar .count').text('Rendering planet grid...');
         $(document).trigger('blocks-ready');
+      } else {
+        $('.data-bar .count').text('Loaded ' + (worldIndex + 1) + ' of ' + model.planets.length + ' planets...');
       }
     }
   }
@@ -343,6 +339,42 @@
               visible = true;
 
               $(color).closest('.color-row').find('.block, .color').addClass('highlighted');
+
+              // Break out of the each loop
+              return false;
+            }
+          });
+        }
+
+        if (visible) {
+          $(planet).show();
+        } else {
+          $(planet).hide();
+        }
+      });
+
+      $('.data-bar .count').text($('.planet:visible').length + ' planets found...');
+    });
+
+    $('#name-search').on('input', function(event) {
+      let searchTerm = $(event.currentTarget).val();
+
+      if (searchTerm === '') {
+        $('.planet').each(function(index, planet) {
+          $(planet).show();
+        });
+
+        $('.data-bar .count').text($('.planet:visible').length + ' planets found...');
+
+        return;
+      }
+
+      $('.planet').each(function(index, planet) {
+        let visible = false;
+        if ($(planet).find('.planet-name').length > 0) {
+          $(planet).find('.planet-name').each(function (index, name) {
+            if ($(name).text().toLowerCase().includes(searchTerm.toLowerCase())) {
+              visible = true;
 
               // Break out of the each loop
               return false;
