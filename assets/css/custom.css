@@ -122,12 +122,11 @@ section img {
 
 .data-bar {
   margin-left: 15px;
+  margin-top: 20px;
 }
 
 .data-bar i {
-  display: inline-block;
-  margin-top: 20px;
-  cursor: pointer
+  cursor: pointer;
 }
 
 .count {
@@ -143,7 +142,6 @@ section img {
   border: solid 1px #ffffff;
   background-color: rgba(50, 50, 50, 0.8);
   width: 375px;
-  height: 1030px;
 }
 
 .planet i {
@@ -193,6 +191,12 @@ section img {
 .planet .planet-atmosphere {
   display: inline-block;
   margin-bottom: 0;
+  margin-right: 15px;
+}
+
+.planet .planet-region {
+  display: inline-block;
+  margin-bottom: 0;
 }
 
 .planet .colors {
@@ -232,12 +236,25 @@ section img {
 
 .planet-resources-card .resource-row .resource-percent {
   display: inline-block;
-  width: 135px;
+  width: 70px;
 }
 
 .planet-resources-card .resource-row .resource-count {
   display: inline-block;
   width: 65px;
+}
+
+.planet-resources-card .resource-row .resource-avg-per-chunk {
+  display: inline-block;
+  width: 65px;
+}
+
+.planet-resources-card h4 {
+  margin-bottom: 10px;
+}
+
+.planet-resources-card .embedded-resources {
+  margin-bottom: 10px;
 }
 
 .highlighted {

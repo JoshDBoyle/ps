@@ -11,7 +11,8 @@
     colorMappings,
     colors;
 
-  let expiry = 20 * 60;
+  // Set cache expiration to 4 hours
+  let expiry = 240 * 60;
 
   function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
@@ -71,8 +72,8 @@
         }
 
         let creative = planet.is_creative,
-            sovereign = planet.is_sovereign,
-            exo = planet.is_exo;
+          sovereign = planet.is_sovereign,
+          exo = planet.is_exo;
 
         if (creative) {
           return 'Creative';
@@ -120,6 +121,22 @@
         return '';
       }
     };
+
+    model.getPlanetRegion = function (id) {
+      if (id) {
+        let planet = {};
+        for (let i = 0; i < model.planets.length; i++) {
+          if (model.planets[i].id === id) {
+            planet = model.planets[i];
+            break;
+          }
+        }
+
+        return planet.region;
+      } else {
+        return '';
+      }
+    };
   }
 
   function finalize() {
@@ -136,11 +153,15 @@
       if ($(planet).find('.planet-resources-card .resource-name').length <= 0) {
         $.getJSON('https://api.boundlexx.app/api/v1/worlds/' + planetId + '/polls/latest/resources/', function (resourcesResponse) {
           $planetResources.append('<h3>' + $(event.currentTarget).closest(".planet").find(".planet-name").text() + '</h3>');
+          $planetResources.append('<div class="embedded-resources"><h4>Embedded Resources</h4></div>');
+          $planetResources.append('<div class="surface-resources"><h4>Surface Resources</h4></div>');
           $.each(resourcesResponse.resources.resources, function (index, resource) {
-            $planetResources.append('<div class="resource-row">' +
+            let $rowLocation = resource.is_embedded ? $planetResources.find('.embedded-resources') : $planetResources.find('.surface-resources');
+            $rowLocation.append('<div class="resource-row">' +
               '  <div class="resource-name">' + getItemTitle(resource.item.game_id) + '</div>' +
               '  <div class="resource-percent">' + resource.percentage + '%' + '</div>' +
               '  <div class="resource-count">' + resource.count + '</div>' +
+              '  <div class="resource-avg-per-chunk">' + resource.average_per_chunk + '</div>' +
               '</div>');
           });
         });
@@ -242,6 +263,7 @@
   }
 
   function initializeExplorer() {
+    $('.data-bar .count').text('Loading content...');
     fetch('assets/js/data/color-mappings.json')
       .then(res => res.json())
       .then(data => {
@@ -263,10 +285,12 @@
       .catch(err => console.error(err));
 
     $(document).on('mappings-ready', function () {
+      $('.data-bar .count').text('Retrieving worlds...');
       getWorlds();
     });
 
     $(document).on('worlds-ready', function () {
+      $('.data-bar .count').text('Retrieving block data...');
       getBlocks();
     });
 
@@ -316,13 +340,26 @@
       $('.data-bar .count').text($('.planet:visible').length + ' planets found...');
     });
 
-    $('#color-search').on('input', function(event) {
-      let searchTerm = $(event.currentTarget).val();
+    $('#planet-region').on('change', function(event) {
+      $('.planet').each(function(index, planet) {
+        if ($(event.currentTarget).val().toLowerCase() === 'all') {
+          $(planet).show();
+        } else if ($(planet).find('.planet-region').text().toLowerCase() === $(event.currentTarget).val().toLowerCase()) {
+          $(planet).show();
+        } else {
+          $(planet).hide();
+        }
+      });
 
-      $('.highlighted').removeClass('highlighted');
+      $('.data-bar .count').text($('.planet:visible').length + ' planets found...');
+    });
+
+    $('#block-search').on('input', function(event) {
+      let searchTerm = $(event.currentTarget).val();
 
       if (searchTerm === '') {
         $('.planet').each(function(index, planet) {
+          $(planet).find('.color-row').show();
           $(planet).show();
         });
 
@@ -331,22 +368,41 @@
         return;
       }
 
-      $('.planet').each(function(index, planet) {
-        let visible = false;
-        if ($(planet).find('.color').length > 0) {
-          $(planet).find('.color').each(function (index, color) {
-            if ($(color).text().toLowerCase().includes(searchTerm.toLowerCase())) {
-              visible = true;
-
-              $(color).closest('.color-row').find('.block, .color').addClass('highlighted');
-
-              // Break out of the each loop
-              return false;
-            }
-          });
+      $('.planet .color-row .block').each(function(index, block) {
+        if ($(block).text().toLowerCase().includes(searchTerm.toLowerCase())) {
+          $(block).parent().show();
+        } else {
+          $(block).parent().hide();
         }
+      });
 
-        if (visible) {
+      $('.data-bar .count').text($('.planet:visible').length + ' planets found...');
+    });
+
+    $('#color-search').on('input', function(event) {
+      let searchTerm = $(event.currentTarget).val();
+
+      if (searchTerm === '') {
+        $('.planet').each(function(index, planet) {
+          $(planet).find('.color-row').show();
+          $(planet).show();
+        });
+
+        $('.data-bar .count').text($('.planet:visible').length + ' planets found...');
+
+        return;
+      }
+
+      $('.planet .color-row .color').each(function(index, color) {
+        if ($(color).text().toLowerCase().includes(searchTerm.toLowerCase())) {
+          $(color).parent().show();
+        } else {
+          $(color).parent().hide();
+        }
+      });
+
+      $('.planet').each(function(index, planet) {
+        if ($(planet).find('.color-row:visible').length > 0) {
           $(planet).show();
         } else {
           $(planet).hide();

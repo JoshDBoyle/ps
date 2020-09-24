@@ -59,14 +59,30 @@
             </div>
 
             <div class="field">
-              <label for="color-search">Search Colors</label>
-              <input id="color-search" placeholder="Search for colors..." type="text"/>
+              <label for="planet-region">Filter By Region</label>
+              <select id="planet-region">
+                <option value="all">All</option>
+                <option value="aus">AUS</option>
+                <option value="euc">EU</option>
+                <option value="use">USE</option>
+                <option value="usw">USW</option>
+              </select>
             </div>
-          </div>
 
-          <div class="field">
-            <label for="name-search">Search By Planet Name</label>
-            <input id="name-search" placeholder="Search for a planet by name..." type="text"/>
+            <div class="field">
+              <label for="block-search">Filter Blocks</label>
+              <input id="block-search" placeholder="Search for a block type..." type="text"/>
+            </div>
+
+            <div class="field">
+              <label for="color-search">Filter By Color</label>
+              <input id="color-search" placeholder="Search for a color..." type="text"/>
+            </div>
+
+            <div class="field">
+              <label for="name-search">Filter By Planet Name</label>
+              <input id="name-search" placeholder="Search for a planet by name..." type="text"/>
+            </div>
           </div>
       </div>
         </form>
@@ -83,9 +99,11 @@
         <div class="planet-blocks-card">
           <i class="resource-btn fas fa-gem fa"></i>
           <h3 class="planet-name" data-bind="text: planet.display_name"></h3>
-          <h4 class="planet-type" data-bind="text: $root.getPlanetType(planet.id)"></h4>
-          <h4 class="planet-tier" data-bind="text: $root.getPlanetTier(planet.id)"></h4>
-          <h4 class="planet-atmosphere" data-bind="text: $root.getPlanetAtmosphere(planet.id)"></h4>
+          <h5 class="planet-assignment" data-bind="text: planet.assignment ? planet.assignment.display_name : ''"></h5>
+          <h5 class="planet-type" data-bind="text: $root.getPlanetType(planet.id)"></h5>
+          <h5 class="planet-tier" data-bind="text: $root.getPlanetTier(planet.id)"></h5>
+          <h5 class="planet-atmosphere" data-bind="text: $root.getPlanetAtmosphere(planet.id)"></h5>
+          <h5 class="planet-region" data-bind="text: $root.getPlanetRegion(planet.id)"></h5>
           <div class="colors" data-bind="foreach: planet.colors">
             <div class="color-row">
               <div class="block" data-bind="text: item.title"></div>
