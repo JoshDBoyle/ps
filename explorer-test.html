@@ -1,0 +1,149 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Portal Seekers</title>
+		<meta charset="utf-8" />
+		<meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport" />
+		<link href="assets/css/main.css" rel="stylesheet" />
+    <link href="assets/css/custom.css" rel="stylesheet" />
+		<noscript><link href="assets/css/noscript.css" rel="stylesheet" /></noscript>
+	</head>
+	<body>
+    <div id="filter-sliiide">
+
+      <i id="close-filter-btn" class="fas fa-times fa-2x"></i>
+
+      <div class="filter-section">
+        <form class="filters" onkeydown="return event.key !== 'Enter';">
+          <div class="fields">
+            <div class="field">
+              <label for="planet-type">Filter By Planet</label>
+              <select id="planet-type">
+                <option value="all">All</option>
+                <option value="home">Home</option>
+                <option value="exo">Exo</option>
+                <option value="sovereign">Sovereign</option>
+                <option value="creative">Creative</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="planet-tier">Filter By Tier</label>
+              <select id="planet-tier">
+                <option value="all">All</option>
+                <option value="t1">T1</option>
+                <option value="t2">T2</option>
+                <option value="t3">T3</option>
+                <option value="t4">T4</option>
+                <option value="t5">T5</option>
+                <option value="t6">T6</option>
+                <option value="t7">T7</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="planet-atmosphere">Filter By Atmosphere</label>
+              <select id="planet-atmosphere">
+                <option value="all">All</option>
+                <option value="lush">Lush</option>
+                <option value="coal">Coal</option>
+                <option value="metal">Metal</option>
+                <option value="toxic">Toxic</option>
+                <option value="corrosive">Corrosive</option>
+                <option value="blast">Blast</option>
+                <option value="burn">Burn</option>
+                <option value="shock">Shock</option>
+                <option value="chill">Chill</option>
+                <option value="darkmatter">Darkmatter</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="planet-region">Filter By Region</label>
+              <select id="planet-region">
+                <option value="all">All</option>
+                <option value="aus">AUS</option>
+                <option value="euc">EU</option>
+                <option value="use">USE</option>
+                <option value="usw">USW</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="block-search">Filter Blocks</label>
+              <input id="block-search" placeholder="Search for a block type..." type="text"/>
+            </div>
+
+            <div class="field">
+              <label for="color-search">Filter By Color</label>
+              <input id="color-search" placeholder="Search for a color..." type="text"/>
+            </div>
+
+            <div class="field">
+              <label for="name-search">Filter By Planet Name</label>
+              <input id="name-search" placeholder="Search for a planet by name..." type="text"/>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <section class="data-bar">
+      <i id="filter-btn" class="fas fa-filter fa-lg"></i>
+      <div class="count">Please wait while we pull the latest data...</div>
+    </section>
+
+    <section class="planet-grid" data-bind="foreach: { data: planets, as: 'planet' }">
+      <div class="planet" data-bind="attr: {'data-planet-id': planet.id}">
+        <div class="planet-blocks-card">
+          <i class="data-btn fas fa-database fa"></i>
+          <i class="resource-btn fas fa-gem fa"></i>
+          <h3 class="planet-name" data-bind="text: planet.display_name"></h3>
+          <h5 class="planet-assignment" data-bind="text: planet.assignment ? planet.assignment.display_name : ''"></h5>
+          <h5 class="planet-type" data-bind="text: $root.getPlanetType(planet.id)"></h5>
+          <h5 class="planet-tier" data-bind="text: $root.getPlanetTier(planet.id)"></h5>
+          <h5 class="planet-atmosphere" data-bind="text: $root.getPlanetAtmosphere(planet.id)"></h5>
+          <h5 class="planet-region" data-bind="text: $root.getPlanetRegion(planet.id)"></h5>
+          <div class="colors" data-bind="foreach: planet.block_colors">
+            <div class="color-row">
+              <div class="block" data-bind="text: item.title"></div>
+              <div class="color" data-bind="text: color.color_name + ' (' + color.color_id + ')'"></div>
+              <div class="color-square" data-bind="text: color.color_hex, style: { 'background-color': color.color_hex }"></div>
+            </div>
+          </div>
+        </div>
+        <div class="planet-resources-card">
+          <i class="data-btn fas fa-database fa"></i>
+          <i class="block-btn fas fa-cubes fa-lg"></i>
+        </div>
+        <div class="planet-data-card">
+          <i class="resource-btn fas fa-gem fa"></i>
+          <i class="block-btn fas fa-cubes fa-lg"></i>
+          <h3 class="planet-name" data-bind="text: planet.display_name"></h3>
+          <h4 class="data-label">Chunks:</h4><div class="data-value" data-bind="text: planet.size"></div>
+          <h4 class="data-label">Regions:</h4><div class="data-value" data-bind="text: planet.number_of_regions"></div>
+          <h4 class="data-label">Visitable:</h4><div class="data-value" data-bind="text: planet.is_public ? 'Yes' : 'No'"></div>
+          <h4 class="data-label">Editable:</h4><div class="data-value" data-bind="text: planet.is_public_edit ? 'Yes' : 'No'"></div>
+          <h4 class="data-label">Claimable:</h4><div class="data-value" data-bind="text: planet.is_public_claim ? 'Yes' : 'No'"></div>
+          <h4 class="data-label">Appeared:</h4><div class="data-value" data-bind="text: moment(planet.start).format('MMM D YYYY, h:mm:ss A')"></div>
+          <h4 class="data-label">Dies:</h4><div class="data-value" data-bind="text: null == planet.end ? 'Never' : moment(planet.end).format('MMM D YYYY, h:mm:ss A')"></div>
+        </div>
+      </div>
+    </section>
+
+		<!-- Scripts -->
+    <script src="assets/js/vendor/jquery.min.js"></script>
+    <script src="assets/js/vendor/sliiide.min.js"></script>
+    <script src="assets/js/vendor/msgpack.min.js"></script>
+    <script src="assets/js/vendor/moment.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/vendor/knockout.js"></script>
+    <script type="text/javascript" src="assets/js/vendor/jquery.ajax-cross-origin.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/custom-test.js"></script>
+    <script src="https://kit.fontawesome.com/49f7ee01e1.js" crossorigin="anonymous"></script>
+
+	</body>
+</html>
