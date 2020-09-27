@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/JoshDBoyle/ps#readme",
   "dependencies": {
+    "gasparesganga-jquery-loading-overlay": "^2.1.7",
     "knockout": "^3.5.1",
     "moment": "^2.29.0"
   }

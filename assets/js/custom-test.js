@@ -9,23 +9,20 @@
     },
     items,
     colorMappings,
-    colors;
+    colors,
+    $leftNav = $('#left-nav');
 
-  // Set cache expiration to 4 hours
-  let expiry = 240 * 60;
-
-  function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
+  function showWaitOverlay() {
+    $.LoadingOverlay("show", {
+      image       : "",
+      fontawesome : "fa fa-spinner fa-spin",
+      fontawesomeColor: 'white',
+      background: "rgba(0, 0, 0, 0.0)"
+    });
   }
 
-  function initializeSliiide() {
-    $('#filter-sliiide').sliiide({
-      toggle: '#filter-btn',
-      exit_selector: "#close-filter-btn",
-      animation_duration: "0.5s",
-      place: "left",
-      body_slide: false
-    });
+  function hideWaitOverlay() {
+    $.LoadingOverlay("hide");
   }
 
   /**
@@ -144,6 +141,8 @@
 
   function finalize() {
     ko.applyBindings(model);
+
+    hideWaitOverlay();
 
     $('.planet').show();
 
@@ -326,6 +325,30 @@
     });
   }
 
+  $('#left-nav #close-filter-btn').click(function(event) {
+    $leftNav.animate({ 'left': -375 })
+  });
+
+  $('#filter-btn').click(function(event) {
+    $leftNav.animate({ 'left': 0 });
+    $leftNav.find('.filter-section').show();
+    $leftNav.find('.sort-section').hide();
+  });
+
+  $('#sort-btn').click(function(event) {
+    $leftNav.animate({ 'left': 0 });
+    $leftNav.find('.filter-section').hide();
+    $leftNav.find('.sort-section').show();
+  });
+
+  $(document).mouseup(function(e) {
+    if (!$leftNav.is(e.target) && $leftNav.has(e.target).length === 0) {
+      if ($leftNav.position().left === 0) {
+        $leftNav.animate({'left': -375});
+      }
+    }
+  });
+
   $('#watcher-btn').click(function(event) {
     $('.watcher-bg').show();
     $('#close-watcher-btn').click(function(event) {
@@ -335,6 +358,8 @@
     });
 
     $('#watcher #block-type').on('change', function(event) {
+      showWaitOverlay();
+
       let value = $(event.currentTarget).val();
       if (value !== '') {
         $.ajax({
@@ -353,15 +378,17 @@
                 '</div>');
               $('.watcher-color-hex:last-of-type').css('background-color', colorMappings[color.color.game_id]);
             }
+
+            hideWaitOverlay();
           },
           error: function() {
             console.log('Failed to retrieve block colors');
+            hideWaitOverlay();
           }
         })
       }
     });
   });
-
 
   $(document).mouseup(function(e) {
     let $container = $('.planet-resources');
@@ -370,8 +397,8 @@
     }
   });
 
+  showWaitOverlay();
   initializeContent();
   initializeExplorer();
-  initializeSliiide();
 
 })(jQuery);

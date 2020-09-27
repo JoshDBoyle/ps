@@ -9,7 +9,7 @@
   <noscript><link href="assets/css/noscript.css" rel="stylesheet" /></noscript>
 </head>
 <body>
-<div id="filter-sliiide">
+<div id="left-nav">
 
   <i id="close-filter-btn" class="fas fa-times fa-2x"></i>
 
@@ -87,10 +87,32 @@
       </div>
     </form>
   </div>
+
+  <div class="sort-section">
+    <form class="sorts" onkeydown="return event.key !== 'Enter';">
+      <div class="fields">
+        <div class="field">
+          <label for="sort-type">Sort By</label>
+          <select id="sort-type">
+            <option value=""></option>
+            <option value="rough diamond">Diamond %</option>
+            <option value="rough ruby">Ruby %</option>
+            <option value="rough topaz">Topaz %</option>
+            <option value="rough sapphire">Sapphire %</option>
+            <option value="rough emerald">Emerald %</option>
+            <option value="rough amethyst">Amethyst %</option>
+          </select>
+        </div>
+
+      </div>
+    </form>
+  </div>
+
 </div>
 
 <section class="data-bar">
   <i id="filter-btn" class="fas fa-filter fa-lg"></i>
+  <i id="sort-btn" class="fas fa-sort fa-lg"></i>
   <i id="watcher-btn" class="fas fa-binoculars fa-lg"></i>
   <div class="count">Please wait while we pull the latest data...</div>
 </section>
@@ -151,7 +173,7 @@
       <!-- ko foreach: { data: planet.latest_poll[0].resources, as: 'resource' } -->
       <div class="resource-row">
         <div class="resource-name" data-bind="attr: { 'data-embedded': resource.is_embedded }, text: $root.getItemTitle(resource.item.game_id)"></div>
-        <div class="resource-percent" data-bind="text: resource.percentage"></div>
+        <div class="resource-percent" data-bind="text: resource.percentage + '%'"></div>
         <div class="resource-count" data-bind="text: resource.count"></div>
         <div class="resource-avg-per-chunk" data-bind="text: resource.average_per_chunk.as_str"></div>
       </div>
@@ -175,12 +197,12 @@
 
 <!-- Scripts -->
 <script src="assets/js/vendor/jquery.min.js"></script>
-<script src="assets/js/vendor/sliiide.min.js"></script>
 <script src="assets/js/vendor/msgpack.min.js"></script>
 <script src="assets/js/vendor/moment.min.js"></script>
 <script src="assets/js/browser.min.js"></script>
 <script src="assets/js/breakpoints.min.js"></script>
 <script src="assets/js/vendor/knockout.js"></script>
+<script src="node_modules/gasparesganga-jquery-loading-overlay/dist/loadingoverlay.js"></script>
 <script type="text/javascript" src="assets/js/vendor/jquery.ajax-cross-origin.min.js"></script>
 <script src="assets/js/util.js"></script>
 <script src="assets/js/main.js"></script>
