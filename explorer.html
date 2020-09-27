@@ -113,6 +113,8 @@
             <option value="10830">Ancient Trunk</option>
             <option value="10838">Lustrous Trunk</option>
             <option value="10834">Twisted Trunk</option>
+            <option value="10814">Gravel</option>
+            <option value="10810">Sand</option>
           </select>
         </div>
       </div>
@@ -146,6 +148,17 @@
     <div class="planet-resources-card">
       <i class="data-btn fas fa-database fa"></i>
       <i class="block-btn fas fa-cubes fa-lg"></i>
+      <h3 data-bind="text: planet.display_name"></h3>
+      <!-- ko if: planet.latest_poll[0] -->
+        <!-- ko foreach: { data: planet.latest_poll[0].resources, as: 'resource' } -->
+          <div class="resource-row">
+            <div class="resource-name" data-bind="attr: { 'data-embedded': resource.is_embedded }, text: $root.getItemTitle(resource.item.game_id)"></div>
+            <div class="resource-percent" data-bind="text: resource.percentage"></div>
+            <div class="resource-count" data-bind="text: resource.count"></div>
+            <div class="resource-avg-per-chunk" data-bind="text: resource.average_per_chunk.as_str"></div>
+          </div>
+        <!-- /ko -->
+      <!-- /ko -->
     </div>
     <div class="planet-data-card">
       <i class="resource-btn fas fa-gem fa"></i>
@@ -166,10 +179,10 @@
 <script src="assets/js/vendor/jquery.min.js"></script>
 <script src="assets/js/vendor/sliiide.min.js"></script>
 <script src="assets/js/vendor/msgpack.min.js"></script>
-<script src="assets/js/vendor/moment.min.js"></script>
+<script src="node_modules/moment/min/moment.min.js"></script>
 <script src="assets/js/browser.min.js"></script>
 <script src="assets/js/breakpoints.min.js"></script>
-<script src="assets/js/vendor/knockout.js"></script>
+<script src="node_modules/knockout/build/output/knockout-latest.js"></script>
 <script type="text/javascript" src="assets/js/vendor/jquery.ajax-cross-origin.min.js"></script>
 <script src="assets/js/util.js"></script>
 <script src="assets/js/main.js"></script>

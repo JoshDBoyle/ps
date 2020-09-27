@@ -1,0 +1,389 @@
+video#bgVideo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -100;
+  -webkit-filter: grayscale(65%);
+  filter: grayscale(65%);
+}
+
+.logo img {
+  position: relative;
+  width: 65%;
+  margin-top: 19px;
+}
+
+.logo a {
+  text-decoration: none;
+  border: none;
+}
+
+#main article {
+  width: 70rem;
+  padding-top: 2.5rem;
+}
+
+section img {
+  width: 100%;
+}
+
+.links {
+  margin-top: 15px;
+}
+
+.links ul {
+  text-align: center;
+  list-style: none;
+  padding-left: 0;
+}
+
+.links ul li {
+  padding: 0;
+  border: solid 1px #ffffff;
+}
+
+.links ul li.shopping {
+  border-radius: 6px 6px 0 0;
+  margin-bottom: 15px;
+}
+
+.links ul li.explorer {
+  border-radius: 0 0 6px 6px;
+}
+
+.links ul li a {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  padding: 10px;
+  border: none;
+  line-height: 1.85rem;
+}
+
+.links ul li:hover {
+  background-color: rgba(255, 255, 255, 0.075);
+}
+
+#explorer div.legend {
+  text-align: right;
+}
+
+#explorer div.legend div {
+  display: inline-block;
+  margin-right: 15px;
+}
+
+.ui-menu.ui-autocomplete {
+  background-color: rgba(27, 27, 27, 0.95);
+  border: 1px solid #FFF;
+  border-radius: 4px;
+}
+
+#shopping table td {
+  padding: 0 0.75em;
+}
+
+#shopping .search-item {
+  text-align: right;
+  font-style: italic;
+}
+
+#maps iframe {
+  width: 100%;
+  min-height: 600px;
+}
+
+.filter-section {
+  margin-top: 15px;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.planet-grid {
+  margin: 15px;
+  display: grid;
+  grid-gap: 15px 15px;
+  grid-template-columns: repeat(auto-fill, minmax(375px,1fr));
+}
+
+.filter-section form {
+  margin-bottom: 15px;
+}
+
+.filter-section form .fields {
+  margin-bottom: 10px;
+}
+
+.filter-section form .fields label {
+  margin-bottom: 5px;
+}
+
+.data-bar {
+  margin-left: 15px;
+  margin-top: 20px;
+}
+
+.data-bar i {
+  cursor: pointer;
+  margin-right: 15px;
+}
+
+.count {
+  font-size: 16px;
+  display: inline-block;
+}
+
+.planet {
+  display: none;
+  padding: 10px;
+  border-radius: 4px;
+  border: solid 1px #ffffff;
+  background-color: rgba(50, 50, 50, 0.8);
+  width: 375px;
+}
+
+.planet i {
+  cursor: pointer;
+}
+
+.planet .resource-btn {
+  float:right;
+  margin-top: 5px;
+  margin-left: 10px;
+  border: none;
+}
+
+.planet .data-btn {
+  float: right;
+  margin-top: 5px;
+  margin-left: 10px;
+  border: none;
+}
+
+.planet .block-btn {
+  float:right;
+  border: none;
+  margin-top: 5px;
+}
+
+.planet a:hover,
+.planet a:visited,
+.planet a:link,
+.planet a:active {
+  text-decoration: none;
+}
+
+.planet .planet-name {
+  color: #ffffff;
+  width: 290px;
+  font-weight: 600;
+  line-height: 1.5;
+  margin: 0 0 0 0;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.planet .planet-type {
+  display: inline-block;
+  margin-right: 15px;
+  margin-bottom: 0;
+}
+
+.planet .planet-tier {
+  display: inline-block;
+  margin-right: 15px;
+  margin-bottom: 0;
+}
+
+.planet .planet-atmosphere {
+  display: inline-block;
+  margin-bottom: 0;
+  margin-right: 15px;
+}
+
+.planet .planet-region {
+  display: inline-block;
+  margin-bottom: 0;
+}
+
+.planet .colors {
+  font-size: 13px;
+}
+
+.planet .colors .block {
+  display: inline-block;
+  width: 145px;
+}
+
+.planet .colors .color {
+  display: inline-block;
+  width: 145px;
+  margin-left: -3px;
+}
+
+.planet .colors .color-square {
+  text-align: center;
+  display: inline-block;
+  width: 63px;
+  margin-left: -3px;
+}
+
+.planet .planet-data-card .data-label {
+  display: inline-block;
+  width: 155px;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.planet .planet-data-card .data-value {
+  display: inline-block;
+  width: 155px;
+  font-size: 14px;
+}
+
+.planet .planet-resources-card {
+  display: none;
+}
+
+.planet .planet-data-card {
+  display: none;
+}
+
+.planet-resources-card .resource-row {
+  font-size: 13px;
+}
+
+.planet-resources-card .resource-row .resource-name {
+  display: inline-block;
+  width: 145px;
+}
+
+.planet-resources-card .resource-row .resource-percent {
+  display: inline-block;
+  width: 70px;
+}
+
+.planet-resources-card .resource-row .resource-count {
+  display: inline-block;
+  width: 65px;
+}
+
+.planet-resources-card .resource-row .resource-avg-per-chunk {
+  display: inline-block;
+  width: 65px;
+}
+
+.planet-resources-card h4 {
+  margin-bottom: 10px;
+}
+
+.planet-resources-card .embedded-resources {
+  margin-bottom: 10px;
+}
+
+.highlighted {
+  background-color: #DDD;
+  color: black;
+}
+
+#filter-sliiide {
+  background-color: rgba(27, 27, 27, 0.95);
+  width: 375px;
+}
+
+#filter-sliiide .field {
+  padding-top: 15px;
+}
+
+#filter-sliiide i{
+  float: right;
+  margin-top: 15px;
+  margin-right: 15px;
+  cursor: pointer;
+}
+
+.watcher-bg {
+  position: fixed;
+  display: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(25, 25, 25, 0.9);
+  z-index: 1;
+}
+
+#watcher {
+  position: fixed;
+  width: 350px;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  transform: translate(-50%, -50%);
+  background-color: rgba(50, 50, 50, 0.8);
+  padding: 15px;
+  height: 550px;
+  border-radius: 4px;
+  border: solid 1px #ffffff;
+}
+
+#watcher i {
+  float: right;
+  cursor: pointer;
+  z-index: 2;
+}
+
+#watcher label {
+  margin-top: -33px;
+  z-index: 1;
+  width: 250px;
+}
+
+#watcher form {
+  margin-bottom: 15px;
+}
+
+#watcher .field {
+  padding-top: 0 !important;
+}
+
+#watcher .fields {
+  margin-bottom: 15px !important;
+}
+
+#watcher .watcher-colors {
+  height: 405px;
+  overflow: scroll;
+  line-height: 0;
+}
+
+#watcher .watcher-colors .watcher-color-name {
+  display: inline-block;
+  width: 222px;
+  font-size: 13px;
+}
+
+#watcher .watcher-colors .watcher-color-hex {
+  display: inline-block;
+  width: 95px;
+  font-size: 13px;
+  line-height: 25px;
+  text-align: center;
+}
+
+#watcher ::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
+}
+
+.planet-grid ::-webkit-scrollbar  {
+  width: 25px;
+}
+
+.noscroll {
+  overflow: hidden;
+}

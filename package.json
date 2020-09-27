@@ -1,0 +1,31 @@
+{
+  "name": "portal-seekers.com",
+  "version": "1.0.0",
+  "description": "Website for the Boundless guild Portal Seekers",
+  "main": "custom.js",
+  "directories": {
+    "doc": "doc"
+  },
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JoshDBoyle/ps.git"
+  },
+  "keywords": [
+    "Portal",
+    "Seekers",
+    "Boundless"
+  ],
+  "author": "Josh Boyle",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JoshDBoyle/ps/issues"
+  },
+  "homepage": "https://github.com/JoshDBoyle/ps#readme",
+  "dependencies": {
+    "knockout": "^3.5.1",
+    "moment": "^2.29.0"
+  }
+}
