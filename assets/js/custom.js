@@ -136,19 +136,13 @@
     }
   }
 
-  function finalize() {
-    ko.applyBindings(model);
-
-    hideWaitOverlay();
-
-    $('.planet').show();
-
+  function setCardHandlers() {
     $('.resource-btn').click(function(event) {
       let planet = $(event.currentTarget).closest('.planet');
 
       let $planetResources = $(planet).find('.planet-resources-card'),
-        $planetBlocks = $(planet).find('.planet-blocks-card'),
-        $planetData = $(planet).find('.planet-data-card');
+          $planetBlocks = $(planet).find('.planet-blocks-card'),
+          $planetData = $(planet).find('.planet-data-card');
 
       $planetBlocks.hide();
       $planetData.hide();
@@ -157,9 +151,9 @@
 
     $('.block-btn').click(function(event) {
       let planet = $(event.currentTarget).closest('.planet'),
-        $planetResources = $(planet).find('.planet-resources-card'),
-        $planetBlocks = $(planet).find('.planet-blocks-card'),
-        $planetData = $(planet).find('.planet-data-card');
+          $planetResources = $(planet).find('.planet-resources-card'),
+          $planetBlocks = $(planet).find('.planet-blocks-card'),
+          $planetData = $(planet).find('.planet-data-card');
 
       $planetResources.hide();
       $planetData.hide();
@@ -168,14 +162,24 @@
 
     $('.data-btn').click(function(event) {
       let planet = $(event.currentTarget).closest('.planet'),
-        $planetResources = $(planet).find('.planet-resources-card'),
-        $planetBlocks = $(planet).find('.planet-blocks-card'),
-        $planetData = $(planet).find('.planet-data-card');
+          $planetResources = $(planet).find('.planet-resources-card'),
+          $planetBlocks = $(planet).find('.planet-blocks-card'),
+          $planetData = $(planet).find('.planet-data-card');
 
       $planetResources.hide();
       $planetBlocks.hide();
       $planetData.show();
     });
+  }
+
+  function finalize() {
+    ko.applyBindings(model);
+
+    hideWaitOverlay();
+
+    $('.planet').show();
+
+    setCardHandlers();
 
     $('.data-bar .count').text($('.planet:visible').length + ' planets found...');
   }
@@ -270,30 +274,34 @@
           aNum,
           bNum;
 
-      if (aResourceNameNode) {
+      if (aResourceNameNode && aResourceNameNode.length > 0) {
         let aPercentText = aResourceNameNode.next().text();
         aNum = parseFloat(aPercentText.substr(0, aPercentText.indexOf('%')));
       } else {
         aNum = 0.0;
       }
 
-      if (bResourceNameNode) {
+      if (bResourceNameNode && bResourceNameNode.length > 0) {
         let bPercentText = bResourceNameNode.next().text();
         bNum = parseFloat(bPercentText.substr(0, bPercentText.indexOf('%')));
       } else {
         bNum = 0.0;
       }
 
-      return aNum > bNum;
+      return bNum - aNum;
     });
 
     $grid.html(sorted);
+
+    setCardHandlers();
   }
 
   $('#sort-type').on('change', function(event) {
     showWaitOverlay();
-    evaluateSorting();
-    hideWaitOverlay();
+    window.setTimeout(function() {
+      evaluateSorting($(event.currentTarget).val());
+      hideWaitOverlay();
+    }, 500);
   });
 
   function initializeExplorer() {
