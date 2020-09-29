@@ -25,9 +25,6 @@
     $.LoadingOverlay("hide");
   }
 
-  /**
-   * Initializes content from Kentico Kontent
-   */
   function initializeContent() {
     $.get("https://deliver.kontent.ai/a4f95819-8594-0090-4d5a-9046d8d19c69/items", function (data) {
       $.each(data.items, function (index, item) {
@@ -46,16 +43,8 @@
       });
     });
 
-    model.getPlanetType = function (id) {
-      if (id) {
-        let planet = {};
-        for (let i = 0; i < model.planets.length; i++) {
-          if (model.planets[i].id === id) {
-            planet = model.planets[i];
-            break;
-          }
-        }
-
+    model.getPlanetType = function (planet) {
+      if (planet) {
         let creative = planet.is_creative,
           sovereign = planet.is_sovereign,
           exo = planet.is_exo;
@@ -78,49 +67,9 @@
       }
     };
 
-    model.getPlanetTier = function (id) {
-      if (id) {
-        let planet = {};
-        for (let i = 0; i < model.planets.length; i++) {
-          if (model.planets[i].id === id) {
-            planet = model.planets[i];
-            break;
-          }
-        }
-
+    model.getPlanetTier = function (planet) {
+      if (planet) {
         return 'T' + (planet.tier + 1);
-      } else {
-        return '';
-      }
-    };
-
-    model.getPlanetAtmosphere = function (id) {
-      if (id) {
-        let planet = {};
-        for (let i = 0; i < model.planets.length; i++) {
-          if (model.planets[i].id === id) {
-            planet = model.planets[i];
-            break;
-          }
-        }
-
-        return planet.world_type;
-      } else {
-        return '';
-      }
-    };
-
-    model.getPlanetRegion = function (id) {
-      if (id) {
-        let planet = {};
-        for (let i = 0; i < model.planets.length; i++) {
-          if (model.planets[i].id === id) {
-            planet = model.planets[i];
-            break;
-          }
-        }
-
-        return planet.region;
       } else {
         return '';
       }
@@ -139,13 +88,7 @@
     }
   }
 
-  function finalize() {
-    ko.applyBindings(model);
-
-    hideWaitOverlay();
-
-    $('.planet').show();
-
+  function setCardHandlers() {
     $('.resource-btn').click(function(event) {
       let planet = $(event.currentTarget).closest('.planet');
 
@@ -179,6 +122,15 @@
       $planetBlocks.hide();
       $planetData.show();
     });
+  }
+
+  function finalize() {
+    initializeApp();
+    hideWaitOverlay();
+
+    $('.planet').show();
+
+    setCardHandlers();
 
     $('.data-bar .count').text($('.planet:visible').length + ' planets found...');
   }
@@ -261,6 +213,53 @@
     }
 
     $('.data-bar .count').text($('.planet:visible').length + ' planets found...');
+  }
+
+  function evaluateSorting(resource) {
+    let $grid = $('.planet-grid');
+    let $planets = $('.planet');
+
+    let sorted = $planets.sort(function (a, b) {
+      let aResourceNameNode = $(a).find('.planet-resources-card .resource-name:contains(' + resource + ')'),
+        bResourceNameNode = $(b).find('.planet-resources-card .resource-name:contains(' + resource + ')'),
+        aNum,
+        bNum;
+
+      if (aResourceNameNode && aResourceNameNode.length > 0) {
+        let aPercentText = aResourceNameNode.next().text();
+        aNum = parseFloat(aPercentText.substr(0, aPercentText.indexOf('%')));
+      } else {
+        aNum = 0.0;
+      }
+
+      if (bResourceNameNode && bResourceNameNode.length > 0) {
+        let bPercentText = bResourceNameNode.next().text();
+        bNum = parseFloat(bPercentText.substr(0, bPercentText.indexOf('%')));
+      } else {
+        bNum = 0.0;
+      }
+
+      return bNum - aNum;
+    });
+
+    $grid.html(sorted);
+
+    setCardHandlers();
+  }
+
+  $('#sort-type').on('change', function(event) {
+    showWaitOverlay();
+    window.setTimeout(function() {
+      evaluateSorting($(event.currentTarget).val());
+      hideWaitOverlay();
+    }, 500);
+  });
+
+  function initializeApp() {
+    let app = new Vue({
+      el: '#planet-explorer',
+      data: model
+    });
   }
 
   function initializeExplorer() {
@@ -388,13 +387,6 @@
         })
       }
     });
-  });
-
-  $(document).mouseup(function(e) {
-    let $container = $('.planet-resources');
-    if (!$container.is(e.target) && $container.has(e.target).length === 0) {
-      $container.fadeOut(500);
-    }
   });
 
   showWaitOverlay();

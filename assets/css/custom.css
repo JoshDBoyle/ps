@@ -44,15 +44,6 @@ section img {
   border: solid 1px #ffffff;
 }
 
-.links ul li.shopping {
-  border-radius: 6px 6px 0 0;
-  margin-bottom: 15px;
-}
-
-.links ul li.explorer {
-  border-radius: 0 0 6px 6px;
-}
-
 .links ul li a {
   font-size: 0.8rem;
   text-transform: uppercase;
@@ -75,12 +66,6 @@ section img {
   margin-right: 15px;
 }
 
-.ui-menu.ui-autocomplete {
-  background-color: rgba(27, 27, 27, 0.95);
-  border: 1px solid #FFF;
-  border-radius: 4px;
-}
-
 #shopping table td {
   padding: 0 0.75em;
 }
@@ -99,7 +84,7 @@ section img {
   margin: 15px;
   display: grid;
   grid-gap: 15px 15px;
-  grid-template-columns: repeat(auto-fill, minmax(375px,1fr));
+  grid-template-columns: repeat(auto-fill, minmax(375px, 1fr));
 }
 
 .filter-section form {
@@ -134,7 +119,7 @@ section img {
   padding: 10px;
   border-radius: 4px;
   border: solid 1px #ffffff;
-  background-color: rgba(50, 50, 50, 0.8);
+  background-color: #333; /*rgba(50, 50, 50, 0.8);*/
   width: 375px;
 }
 
@@ -143,23 +128,39 @@ section img {
 }
 
 .planet .resource-btn {
-  float:right;
-  margin-top: 5px;
+  float: right;
   margin-left: 10px;
+  margin-top: -30px;
+  margin-right: 30px;
   border: none;
 }
 
 .planet .data-btn {
   float: right;
-  margin-top: 5px;
+  margin-top: -30px;
   margin-left: 10px;
   border: none;
 }
 
 .planet .block-btn {
-  float:right;
+  float: right;
   border: none;
-  margin-top: 5px;
+  margin-top: -30px;
+  margin-right: 65px;
+}
+
+@media screen and (max-width: 1679px) {
+  .planet .resource-btn {
+    margin-top: -20px;
+  }
+
+  .planet .data-btn {
+    margin-top: -20px;
+  }
+
+  .planet .block-btn {
+    margin-top: -20px;
+  }
 }
 
 .planet a:hover,
@@ -169,9 +170,14 @@ section img {
   text-decoration: none;
 }
 
+.planet .card-state-btn {
+  float: right;
+  margin-top: -40px;
+}
+
 .planet .planet-name {
   color: #ffffff;
-  width: 290px;
+  width: 275px;
   font-weight: 600;
   line-height: 1.5;
   margin: 0 0 0 0;
@@ -350,9 +356,10 @@ section img {
 }
 
 #watcher .watcher-colors {
-  height: 405px;
+  height: 385px;
   overflow: scroll;
   line-height: 0;
+  scrollbar-width: none;
 }
 
 #watcher .watcher-colors .watcher-color-name {
@@ -374,7 +381,7 @@ section img {
   background: transparent;
 }
 
-.planet-grid ::-webkit-scrollbar  {
+.planet-grid ::-webkit-scrollbar {
   width: 25px;
 }
 
@@ -383,7 +390,7 @@ section img {
 }
 
 #left-nav {
-  position: absolute;
+  position: fixed;
   left: -375px;
   top: 0;
   bottom: 0;
@@ -394,4 +401,12 @@ section img {
 #left-nav .sort-section {
   display: none;
   margin: 15px;
+}
+
+.state-menu {
+  display: none;
+}
+
+.planet hr {
+  margin: 0;
 }
